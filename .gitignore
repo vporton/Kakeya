@@ -1,0 +1,6 @@
+*.pdf
+*,div
+*.aux
+*.log
+*.bbl
+*.blg
