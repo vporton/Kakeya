@@ -1,17 +1,22 @@
 \documentclass{amsart}
 \usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
 
 \newcommand{\funcoids}{\mathsf{FCD}}
 
 \newtheorem{theorem}{Theorem}
 
 \title{Proof Kakeya's conjecture}
+\author{Victor Porton}
+% \orcid{0000-0001-7064-7975}
 
 \begin{document}
 
 \textbf{Kakeya set conjecture:} Define a \emph{Besicovitch} set in $\mathbb{R}^n$ to be a set which contains a unit line segment in every direction. Is it true that such sets necessarily have Hausdorff dimension and Minkowski dimension equal to~$n$?
 
-\section{Kakeya proof sketch (rough draft)}
+\section{Kakeya proof (rough draft)}
+
+\emph{This article is yet to settle which kinds of dimensions: Hausdorff or Minkowski it uses, replace a reference to ChatGPT output with credible sources.}
 
 Let $K$ be a Besicovitch set in $\mathbb{R}^n$.
 
@@ -22,16 +27,20 @@ Here $r\geq 0$; $\theta_i\in[0;\pi]$ for $i=1,\dots,n-2$; $\theta_{n-1}\in[0;2\p
 
 We can represent $K$ as a union of line segments $K = \bigcup_{\theta'} u_{\theta'}$, where $u_{\theta'}$ is a unit segment of direction~$\theta'$.
 
-It can be reduced to stronger conjecture: for any $\theta'$, \[ K = \bigsqcup^{\funcoids}_{\theta'} (\Delta_{+,\theta'}+s_{\theta'}) \] (where $\Delta_{+,\theta'}$ is the positive vicinity of zero on $\theta'$-di\-rec\-ted line through zero, $s_{\theta'}$ is an arbitrary vector) has dimension~$n$. (We take the dimension of a funcoid the smallest dimension of its containing set.)
+It can be reduced to stronger conjecture: for any $\theta'$, \[ K = \bigsqcup^{\funcoids}_{\theta'} (\Delta_{+,\theta'}+s_{\theta'}) \] (where $\Delta_{+,\theta'}$ is the non-ne\-ga\-ti\-ve vicinity of zero on $\theta'$-di\-rec\-ted line through zero, $s_{\theta'}$ is an arbitrary vector) has dimension~$n$. (We take the dimension of a funcoid the smallest dimension of its containing set.)
 
-We can assume that $\theta'\mapsto s_{\theta'}$ is a dimension preserving function in both directions. Really,
-take $s_{\theta'}$ the inverse of the usual mapping from spherical coordinates to $\mathbb{R}^n$. This has
+We can assume that $\theta'\mapsto s_{\theta'}$ and $\theta\mapsto s_{\theta}$ are dimension preserving function in both directions. Really,
+take $s_{\theta'}$ the inverse of the usual mapping from spherical coordinates to $S^{n-1}$ and $s_{\theta}$ from $\mathbb{R}^n$. Both have
 a Jacobian matrix with full rank $n$ almost everywhere, therefore by \cite{gpt-preserve-dim} it preserves dimension.
 
-Then \[ \dim K = \dim\bigsqcup^{\funcoids}_{\theta} (\Delta_{{+,\theta'}}+r) = \dim\bigsqcup^{\funcoids}_{\theta'}(\Delta_{{+,\theta'}}\times[-\pi;\pi]) \]
+Then \[ s^{-1}K = \bigsqcup^{\funcoids}_{\theta'} \bigl((s^{-1}\Delta_{+,\theta'}+\theta')\times\{s^{-1}r\}\bigr) =
+\bigsqcup^{\funcoids}_{\theta'} \bigl((s^{-1}\Delta_{+,\theta'}+\theta')\times\{rS^{n-1}\}\bigr). \]
 
-Map the vicinity of zero of $\mathbb{R}^n$ to angles, preserving dimension. So, we have it equal to
-\[ \dim\prod^{\funcoids}\Delta_{+} = n. \]
+\[ \dim K = \dim s^{-1}K. \]
+
+Because $\Delta_{+}$ includes zero, we have \[ s^{-1}K \sqsupseteq \bigsqcup^{\funcoids}_{\theta'} \theta' \times\{rS^{n-1}\}. \]
+
+Finally, $\dim K=\dim\left(\bigsqcup^{\funcoids}_{\theta'} \theta' \times\{rS^{n-1}\}\right)\geq n$.
 
 \bibliographystyle{amsplain}
 \bibliography{kakeya}
