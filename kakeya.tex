@@ -27,10 +27,12 @@ Here $r\geq 0$; $\theta_i\in[0;\pi]$ for $i=1,\dots,n-2$; $\theta_{n-1}\in[0;2\p
 
 We can represent $K$ as a union of line segments $K = \bigcup_{\theta'} u_{\theta'}$, where $u_{\theta'}$ is a unit segment of direction~$\theta'$.
 
-It can be reduced to stronger conjecture: for any $\theta'$, \[ K = \bigsqcup^{\funcoids}_{\theta'} (\Delta_{+,\theta'}+s_{\theta'}) \] (where $\Delta_{+,\theta'}$ is the non-ne\-ga\-ti\-ve vicinity of zero on $\theta'$-di\-rec\-ted line through zero, $s_{\theta'}$ is an arbitrary vector) has dimension~$n$. (We take the dimension of a funcoid the smallest dimension of its containing set.)
+It can be reduced to stronger conjecture: for any $\theta'$, \[ K = \bigsqcup^{\funcoids}_{\theta'} (\Delta_{+,\theta'}+s_{\theta'}) \] 
+[FIXME: For product of Cantor sets, $s$ is not entirely defined.]
+(where $\Delta_{+,\theta'}$ is the non-ne\-ga\-ti\-ve vicinity of zero on $\theta'$-di\-rec\-ted line through zero, $s_{\theta'}$ is an arbitrary vector) has dimension~$n$. (We take the dimension of a funcoid the smallest dimension of its containing set.)
 
 We can assume that $\theta'\mapsto s_{\theta'}$ and $\theta\mapsto s_{\theta}$ are dimension preserving function in both directions. Really,
-take $s_{\theta'}$ the inverse of the usual mapping from spherical coordinates to $S^{n-1}$ and $s_{\theta}$ from $\mathbb{R}^n$. Both have
+take [FIXME: We can't take this, because image of~$s$ may be a Cantor set.] $s_{\theta'}$ the inverse of the usual mapping from spherical coordinates to $S^{n-1}$ and $s_{\theta}$ from~$\mathbb{R}^n$ [FIXME: It may be for example, a Cantor set instead of~$\mathbb{R}^n$, then $s^{-1}$ is not an entire function]. Both have
 a Jacobian matrix with full rank $n$ almost everywhere, therefore by \cite{gpt-preserve-dim} it preserves dimension.
 
 Then \[ s^{-1}K = \bigsqcup^{\funcoids}_{\theta'} \bigl((s^{-1}\Delta_{+,\theta'}+\theta')\times\{s^{-1}r\}\bigr) =
