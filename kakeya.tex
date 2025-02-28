@@ -38,11 +38,27 @@ a Jacobian matrix with full rank $n$ almost everywhere, therefore by \cite{gpt-p
 Then \[ s^{-1}K = \bigsqcup^{\funcoids}_{\theta'} \bigl((s^{-1}\Delta_{+,\theta'}+\theta')\times\{s^{-1}r\}\bigr) =
 \bigsqcup^{\funcoids}_{\theta'} \bigl((s^{-1}\Delta_{+,\theta'}+\theta')\times\{rS^{n-1}\}\bigr). \]
 
+So, we consider these ``hairs'' on the sphere $S^{n-1}$.
+
+---
+
 \[ \dim K = \dim s^{-1}K. \]
 
 Because $\Delta_{+}$ includes zero, we have \[ s^{-1}K \sqsupseteq \bigsqcup^{\funcoids}_{\theta'} \theta' \times\{rS^{n-1}\}. \]
 
 Finally, $\dim K=\dim\left(\bigsqcup^{\funcoids}_{\theta'} \theta' \times\{rS^{n-1}\}\right)\geq n$.
+
+\section{Transfinite induction}
+
+Well-order the set of directions $\theta'$.
+
+The statement of induction:
+\[ \dim\bigsqcup^{\funcoids}_{\theta'} \left(\Delta_{+,\theta'}+\begin{cases}0&\text{for }\theta'<\theta'_0\\s_{\theta'}&\text{otherwise}\end{cases}\right) = n \]
+for all $\theta'_0<\theta'^{\ast}_0$
+
+Let $\dim K = \dim\bigsqcup^{\funcoids}_{\theta'} (\Delta_{+,\theta'}+s_{\theta'}) = n$ for all $\theta'<\theta_0$.
+
+Then \[ \dim K = \dim\bigsqcup^{\funcoids}_{\theta'} (\Delta_{+,\theta'}+s_{\theta'}) = n \] for all $\theta'<\theta$.
 
 \bibliographystyle{amsplain}
 \bibliography{kakeya}
