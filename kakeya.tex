@@ -3,20 +3,26 @@
 \usepackage{hyperref}
 
 \newcommand{\funcoids}{\mathsf{FCD}}
+\newcommand{\supfun}[1]{\left\langle#1\right\rangle}
 
 \newtheorem{theorem}{Theorem}
 
-\title{Proof Kakeya's conjecture}
+\title{Proof of Kakeya's conjecture}
 \author{Victor Porton}
 % \orcid{0000-0001-7064-7975}
+\email{porton.victor@gmail.com}
 
 \begin{document}
+
+\maketitle  
+
+\emph{This is a preliminary draft sketch of my proposed proof of Kekeya conjecture. Report any errors, please.}
+
+The proof uses theory of funcoids~\cite{volume-1}.
 
 \textbf{Kakeya set conjecture:} Define a \emph{Besicovitch} set in $\mathbb{R}^n$ to be a set which contains a unit line segment in every direction. Is it true that such sets necessarily have Hausdorff dimension and Minkowski dimension equal to~$n$?
 
 \section{Kakeya proof (rough draft)}
-
-\emph{This article is yet to settle which kinds of dimensions: Hausdorff or Minkowski it uses, replace a reference to ChatGPT output with credible sources.}
 
 Let $K$ be a Besicovitch set in $\mathbb{R}^n$.
 
@@ -25,40 +31,21 @@ I also denote direction $\theta'=(\theta_1,\dots,\theta_{n-1})$.
 
 Here $r\geq 0$; $\theta_i\in[0;\pi]$ for $i=1,\dots,n-2$; $\theta_{n-1}\in[0;2\pi\mathclose[$ .
 
-We can represent $K$ as a union of line segments $K = \bigcup_{\theta'} u_{\theta'}$, where $u_{\theta'}$ is a unit segment of direction~$\theta'$.
+I will call the \emph{right vicinity} or \emph{one-si\-de vicinity} of a point~$a$ the filter~$\supfun{\Delta_{+}}\{a\}$.
 
-It can be reduced to stronger conjecture: for any $\theta'$, \[ K = \bigsqcup^{\funcoids}_{\theta'} (\Delta_{+,\theta'}+s_{\theta'}) \] 
-[FIXME: For product of Cantor sets, $s$ is not entirely defined.]
-(where $\Delta_{+,\theta'}$ is the non-ne\-ga\-ti\-ve vicinity of zero on $\theta'$-di\-rec\-ted line through zero, $s_{\theta'}$ is an arbitrary vector) has dimension~$n$. (We take the dimension of a funcoid the smallest dimension of its containing set.)
+It's enought to prove that join of one-si\-de vicinities on $S^{n-1}$ has dimension~$n$, provided that vicinities are of all directions.
+(Here dimension of a funcoid is defined as least dimension of a set above it.)
 
-We can assume that $\theta'\mapsto s_{\theta'}$ and $\theta\mapsto s_{\theta}$ are dimension preserving function in both directions. Really,
-take [FIXME: We can't take this, because image of~$s$ may be a Cantor set.] $s_{\theta'}$ the inverse of the usual mapping from spherical coordinates to $S^{n-1}$ and $s_{\theta}$ from~$\mathbb{R}^n$ [FIXME: It may be for example, a Cantor set instead of~$\mathbb{R}^n$, then $s^{-1}$ is not an entire function]. Both have
-a Jacobian matrix with full rank $n$ almost everywhere, therefore by \cite{gpt-preserve-dim} it preserves dimension.
+Let map the sphere together with its hairs to coordinates center by the formula $r\mapsto r-1$ for $r\geq 1$ (leaving $\theta'$ the same.
+This preserves the dimension because the Jacobian matrix has full rank almost everywhere.
 
-Then \[ s^{-1}K = \bigsqcup^{\funcoids}_{\theta'} \bigl((s^{-1}\Delta_{+,\theta'}+\theta')\times\{s^{-1}r\}\bigr) =
-\bigsqcup^{\funcoids}_{\theta'} \bigl((s^{-1}\Delta_{+,\theta'}+\theta')\times\{rS^{n-1}\}\bigr). \]
+Without loss of generality, we can assume that all hairs (except of one) point outside. Then hairs are preserved [they are deformed! need to take this into account] (up to a translation in space) by this.
 
-So, we consider these ``hairs'' on the sphere $S^{n-1}$.
+Thus we have enough to prove that join of one-si\-de vicinities of the same point (the center of coordinates) is~$n$.
 
----
+To prove this use di\-men\-si\-on-pre\-ser\-ving map from spherical corrdinates to Euclidean coordinates.
 
-\[ \dim K = \dim s^{-1}K. \]
-
-Because $\Delta_{+}$ includes zero, we have \[ s^{-1}K \sqsupseteq \bigsqcup^{\funcoids}_{\theta'} \theta' \times\{rS^{n-1}\}. \]
-
-Finally, $\dim K=\dim\left(\bigsqcup^{\funcoids}_{\theta'} \theta' \times\{rS^{n-1}\}\right)\geq n$.
-
-\section{Transfinite induction}
-
-Well-order the set of directions $\theta'$.
-
-The statement of induction:
-\[ \dim\bigsqcup^{\funcoids}_{\theta'} \left(\Delta_{+,\theta'}+\begin{cases}0&\text{for }\theta'<\theta'_0\\s_{\theta'}&\text{otherwise}\end{cases}\right) = n \]
-for all $\theta'_0<\theta'^{\ast}_0$
-
-Let $\dim K = \dim\bigsqcup^{\funcoids}_{\theta'} (\Delta_{+,\theta'}+s_{\theta'}) = n$ for all $\theta'<\theta_0$.
-
-Then \[ \dim K = \dim\bigsqcup^{\funcoids}_{\theta'} (\Delta_{+,\theta'}+s_{\theta'}) = n \] for all $\theta'<\theta$.
+We've got the funcoidal product (e.g.\ subatomic product) of $n$\ vicinities what is obviously of dimension~$n$.
 
 \bibliographystyle{amsplain}
 \bibliography{kakeya}
