@@ -6,6 +6,9 @@
 \newcommand{\supfun}[1]{\left\langle#1\right\rangle}
 
 \newtheorem{theorem}{Theorem}
+\newtheorem{lem}{Lemma}
+\newtheorem{claim}{Claim}
+\newtheorem{rem}{Remark}
 
 \title{Proof of Kakeya's conjecture}
 \author{Victor Porton, ORCID 0000-0001-7064-7975}
@@ -48,9 +51,42 @@ Mapping $\Pi_n$ from Euclidean coordinates to spherical coordinates is defined b
 \begin{aligned}r&={\textstyle {\sqrt {{x_{n}}^{2}+{x_{n-1}}^{2}+\cdots +{x_{2}}^{2}+{x_{1}}^{2}}}},\\\theta _{1}&=\operatorname {atan2} \left({\textstyle {\sqrt {{x_{n}}^{2}+{x_{n-1}}^{2}+\cdots +{x_{2}}^{2}}}},x_{1}\right),\\\theta _{2}&=\operatorname {atan2} \left({\textstyle {\sqrt {{x_{n}}^{2}+{x_{n-1}}^{2}+\cdots +{x_{3}}^{2}}}},x_{2}\right),\\&\qquad \vdots \\\theta _{n-2}&=\operatorname {atan2} \left({\textstyle {\sqrt {{x_{n}}^{2}+{x_{n-1}}^{2}}}},x_{n-2}\right),\\\theta _{n-1}&=\operatorname {atan2} \left(x_{n},x_{n-1}\right).\end{aligned}
 \]  
 
-[TODO: Jacobian of $\Pi_n$.]
+At points $0\notin\{r,\sin\theta_1,\dots,\sin\theta_{n-2}\}$ that is $0\notin\{x_1,\dots,x_{n-1}\}$ the Jacobian $(J\Pi_n)(x)$
+is full rank as a reverse of a full rank Jacobian.
+
+So, $\det (J\Pi_n)(x)\ne 0$ almost everywhere.
+
+\subsection{Stereographic projection diffeomorphism}
+
+Consider~$\Gamma_n$, the ``standard'' stereographic projection from $S^n$ without the North pole $\zeta=(0,\dots,0,1)$ to $\mathbb{R}^n$:
+
+\begin{align*}
+&\Gamma_n(q_1,\dots,q_{n+1}) = \left(\frac{q_1}{1-q_{n+1}},\dots,\frac{q_{n-1}}{1-q_{n+1}}\right);\\
+&\Gamma_n^{-1}(x_1,\dots,x_n) = \left(\frac{2x_1}{\lVert x\rVert^2+1},\dots,\frac{2x_{n+1}}{\lVert x\rVert^2+1},\frac{\lVert x\rVert^2-1}{\lVert x\rVert^2+1}\right),
+\end{align*}
+where $\lVert x\rVert^2 = x_1^2+\dots+x_n^2$.
+
+It is known [TODO: source] to be a diffeomorphism.
 
 \subsection{The proof}
+
+Instead of proving the Kakeya conjecture, we will prove a stronger statement:
+
+\begin{claim}
+(Funcoidal) join of one-si\-de vicinities of each point on $S^n\setminus\{\zeta\}$ has dimension~$n$, provided that the set of directions (measured as their ``projection'' to unit sphere) is $n$-di\-men\-sio\-nal. [FIXME: they seems to be curved.]
+\end{claim}
+
+\begin{rem}
+The set of projections of vicinities has the same dimensionality as the set of directions, because of the diffeomorphism.
+\end{rem}
+
+Kakeya conjecture is equivalent to 
+
+\begin{lem}
+Both $\Sigma$ and $\Pi$ map $n$-dimensional sets to $n$-dimensional sets.
+\end{lem}
+
+The function $\Pi_n$ is a bijection almost everywhere (except of ).
 
 Let $K$ be a Besicovitch set in $\mathbb{R}^n$.
 
