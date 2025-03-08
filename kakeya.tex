@@ -33,12 +33,20 @@ I also denote direction $\theta'=(\theta_1,\dots,\theta_{n-1})$.
 
 Here $r\geq 0$; $\theta_i\in[0;\pi]$ for $i=1,\dots,n-2$; $\theta_{n-1}\in[0;2\pi\mathclose[$ .
 
-Mapping $\Sigma$ from Euclidean coordinates to spherical coordinates is defined by the formulas:
+Mapping $\Sigma_n$ from Euclidean coordinates to spherical coordinates is defined by the formulas:
 \[
 \begin{aligned}x_{1}&=r\cos(\theta _{1}),\\x_{2}&=r\sin(\theta _{1})\cos(\theta _{2}),\\x_{3}&=r\sin(\theta _{1})\sin(\theta _{2})\cos(\theta _{3}),\\&\qquad \vdots \\x_{n-1}&=r\sin(\theta _{1})\cdots \sin(\theta _{n-2})\cos(\theta _{n-1}),\\x_{n}&=r\sin(\theta _{1})\cdots \sin(\theta _{n-2})\sin(\theta _{n-1}).\end{aligned}
 \]
 
-Mapping $\Pi$ from spherical coordinates to Euclidean coordinates is defined by the formulas:
+Accordingly~\cite{polar-jacobian} the Jacobian of this transformation is
+\[ J\Sigma_n = r\sin\theta_1\dots\sin\theta_{n-2}. \]
+Therefore
+\[
+J\Sigma_n\ne 0\Leftrightarrow 0\notin\{r,\sin\theta_1,\dots,\sin\theta_{n-2}\}.
+\]
+So $J\Sigma_n\ne 0$ almost everywhere.
+
+Mapping $\Pi_n$ from spherical coordinates to Euclidean coordinates is defined by the formulas:
 \[
 \begin{aligned}r&={\textstyle {\sqrt {{x_{n}}^{2}+{x_{n-1}}^{2}+\cdots +{x_{2}}^{2}+{x_{1}}^{2}}}},\\\theta _{1}&=\operatorname {atan2} \left({\textstyle {\sqrt {{x_{n}}^{2}+{x_{n-1}}^{2}+\cdots +{x_{2}}^{2}}}},x_{1}\right),\\\theta _{2}&=\operatorname {atan2} \left({\textstyle {\sqrt {{x_{n}}^{2}+{x_{n-1}}^{2}+\cdots +{x_{3}}^{2}}}},x_{2}\right),\\&\qquad \vdots \\\theta _{n-2}&=\operatorname {atan2} \left({\textstyle {\sqrt {{x_{n}}^{2}+{x_{n-1}}^{2}}}},x_{n-2}\right),\\\theta _{n-1}&=\operatorname {atan2} \left(x_{n},x_{n-1}\right).\end{aligned}
 \]  
