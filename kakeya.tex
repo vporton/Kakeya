@@ -26,10 +26,24 @@ The proof uses theory of funcoids~\cite{volume-1}. It looks like that funcoids c
 
 Let $K$ be a Besicovitch set in $\mathbb{R}^n$.
 
+\subsection{spherical coordinates}
+
 I will denote $n$-dimensional spherical coordinates as~$\theta=(r, \theta_1,\dots,\theta_{n-1})$.
 I also denote direction $\theta'=(\theta_1,\dots,\theta_{n-1})$.
 
 Here $r\geq 0$; $\theta_i\in[0;\pi]$ for $i=1,\dots,n-2$; $\theta_{n-1}\in[0;2\pi\mathclose[$ .
+
+Mapping $\Sigma$ from Euclidean coordinates to spherical coordinates is defined by the formulas:
+\[
+\begin{aligned}x_{1}&=r\cos(\varphi _{1}),\\x_{2}&=r\sin(\varphi _{1})\cos(\varphi _{2}),\\x_{3}&=r\sin(\varphi _{1})\sin(\varphi _{2})\cos(\varphi _{3}),\\&\qquad \vdots \\x_{n-1}&=r\sin(\varphi _{1})\cdots \sin(\varphi _{n-2})\cos(\varphi _{n-1}),\\x_{n}&=r\sin(\varphi _{1})\cdots \sin(\varphi _{n-2})\sin(\varphi _{n-1}).\end{aligned}
+\]
+
+Mapping $\Pi$ from spherical coordinates to Euclidean coordinates is defined by the formulas:
+\[
+\begin{aligned}r&={\textstyle {\sqrt {{x_{n}}^{2}+{x_{n-1}}^{2}+\cdots +{x_{2}}^{2}+{x_{1}}^{2}}}},\\\varphi _{1}&=\operatorname {atan2} \left({\textstyle {\sqrt {{x_{n}}^{2}+{x_{n-1}}^{2}+\cdots +{x_{2}}^{2}}}},x_{1}\right),\\\varphi _{2}&=\operatorname {atan2} \left({\textstyle {\sqrt {{x_{n}}^{2}+{x_{n-1}}^{2}+\cdots +{x_{3}}^{2}}}},x_{2}\right),\\&\qquad \vdots \\\varphi _{n-2}&=\operatorname {atan2} \left({\textstyle {\sqrt {{x_{n}}^{2}+{x_{n-1}}^{2}}}},x_{n-2}\right),\\\varphi _{n-1}&=\operatorname {atan2} \left(x_{n},x_{n-1}\right).\end{aligned}
+\]  
+
+\subsection{The proof}
 
 I will call the \emph{right vicinity} or \emph{one-si\-de vicinity} of a point~$a$ the filter~$\supfun{\Delta_{\geq}}\{a\}$.
 
@@ -39,10 +53,10 @@ It's enought to prove that join of one-si\-de vicinities on $S^n$ has dimension~
 of an arbitrarily chosen hyperplane~$\mathbb{R}^n$.
 (Here dimension of a funcoid is defined as least dimension of a set above it.)
 
+Without loss of generality, we can assume that all hairs point outside of $S^n$, because we can replace any vicinities to ``opposite direction'' vicinity without influencing trueness of the original Kakeya statement. Then hairs are preserved [they are deformed! need to take this into account] (up to a translation in space) by this.
+
 Let map the sphere together with its hairs to coordinates center by the formula $r\mapsto r-1$ for $r\geq 1$ (leaving $\theta'$ the same).
 This preserves the dimension because the Jacobian matrix has full rank almost everywhere.
-
-Without loss of generality, we can assume that all hairs point outside of $S^n$, because flipping directions to the opposite is ``allowed''. Then hairs are preserved [they are deformed! need to take this into account] (up to a translation in space) by this.
 
 Thus we have enough to prove that join of one-si\-de vicinities of the same point (the center of coordinates) is~$n$.
 
