@@ -35,12 +35,12 @@ Here $r\geq 0$; $\theta_i\in[0;\pi]$ for $i=1,\dots,n-2$; $\theta_{n-1}\in[0;2\p
 
 Mapping $\Sigma$ from Euclidean coordinates to spherical coordinates is defined by the formulas:
 \[
-\begin{aligned}x_{1}&=r\cos(\varphi _{1}),\\x_{2}&=r\sin(\varphi _{1})\cos(\varphi _{2}),\\x_{3}&=r\sin(\varphi _{1})\sin(\varphi _{2})\cos(\varphi _{3}),\\&\qquad \vdots \\x_{n-1}&=r\sin(\varphi _{1})\cdots \sin(\varphi _{n-2})\cos(\varphi _{n-1}),\\x_{n}&=r\sin(\varphi _{1})\cdots \sin(\varphi _{n-2})\sin(\varphi _{n-1}).\end{aligned}
+\begin{aligned}x_{1}&=r\cos(\theta _{1}),\\x_{2}&=r\sin(\theta _{1})\cos(\theta _{2}),\\x_{3}&=r\sin(\theta _{1})\sin(\theta _{2})\cos(\theta _{3}),\\&\qquad \vdots \\x_{n-1}&=r\sin(\theta _{1})\cdots \sin(\theta _{n-2})\cos(\theta _{n-1}),\\x_{n}&=r\sin(\theta _{1})\cdots \sin(\theta _{n-2})\sin(\theta _{n-1}).\end{aligned}
 \]
 
 Mapping $\Pi$ from spherical coordinates to Euclidean coordinates is defined by the formulas:
 \[
-\begin{aligned}r&={\textstyle {\sqrt {{x_{n}}^{2}+{x_{n-1}}^{2}+\cdots +{x_{2}}^{2}+{x_{1}}^{2}}}},\\\varphi _{1}&=\operatorname {atan2} \left({\textstyle {\sqrt {{x_{n}}^{2}+{x_{n-1}}^{2}+\cdots +{x_{2}}^{2}}}},x_{1}\right),\\\varphi _{2}&=\operatorname {atan2} \left({\textstyle {\sqrt {{x_{n}}^{2}+{x_{n-1}}^{2}+\cdots +{x_{3}}^{2}}}},x_{2}\right),\\&\qquad \vdots \\\varphi _{n-2}&=\operatorname {atan2} \left({\textstyle {\sqrt {{x_{n}}^{2}+{x_{n-1}}^{2}}}},x_{n-2}\right),\\\varphi _{n-1}&=\operatorname {atan2} \left(x_{n},x_{n-1}\right).\end{aligned}
+\begin{aligned}r&={\textstyle {\sqrt {{x_{n}}^{2}+{x_{n-1}}^{2}+\cdots +{x_{2}}^{2}+{x_{1}}^{2}}}},\\\theta _{1}&=\operatorname {atan2} \left({\textstyle {\sqrt {{x_{n}}^{2}+{x_{n-1}}^{2}+\cdots +{x_{2}}^{2}}}},x_{1}\right),\\\theta _{2}&=\operatorname {atan2} \left({\textstyle {\sqrt {{x_{n}}^{2}+{x_{n-1}}^{2}+\cdots +{x_{3}}^{2}}}},x_{2}\right),\\&\qquad \vdots \\\theta _{n-2}&=\operatorname {atan2} \left({\textstyle {\sqrt {{x_{n}}^{2}+{x_{n-1}}^{2}}}},x_{n-2}\right),\\\theta _{n-1}&=\operatorname {atan2} \left(x_{n},x_{n-1}\right).\end{aligned}
 \]  
 
 \subsection{The proof}
