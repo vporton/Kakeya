@@ -2,6 +2,9 @@
 \usepackage{amsmath,amssymb,amsthm,stmaryrd}
 \usepackage{hyperref}
 \usepackage{xcolor}
+\usepackage{fixme}
+\fxsetup{draft}
+\fxusetheme{color}
 
 \newcommand{\setcond}[2]{\left\{#1\mid#2\right\}}
 \newcommand{\funcoids}{\mathsf{FCD}}
@@ -51,8 +54,8 @@ For $n\leq m$ I will denote applying $m$-fun\-co\-id~$f$ to $n$-fun\-co\-id~$x$ 
 \[ \bigsqcap\setcond{\mathord{\uparrow} F[X]}{F\in f,X\in x}, \]
 where $F[X]$ is considered as a relation of $2$~arguments: $F\subseteq F_Y\times F_X$.
 
-[TODO: Need to prove that $n$-fun\-co\-ids are invariant regarding rotations. This is used to rotate the vicinities.
-Probably, the easiest way to prove is through atomic funcoids.]
+\fxwarning{Need to prove that $n$-fun\-co\-ids are invariant regarding rotations. This is used to rotate the vicinities.
+Probably, the easiest way to prove is through atomic funcoids.}
 
 \subsection{Spherical coordinates}
 
@@ -100,13 +103,13 @@ It is known~\cite{stereo} to be a diffeomorphism.
 
 Gnomonic projection is like stereographic projection, but with the projection hyperplane passing through the center of the hypersphere.
 
-[TODO: Below were copied from an AI, check.]
+\fxwarning{Below were copied from an AI, check.}
 
 The formulas for projection of a point $p=(p_1,\dots,p_{n+1})$ ($\lVert p\rVert = 1$) of the hypersphere are:
 
 $q=\frac{p}{s\cdot p}$, where $q$ is the projection, $s$ is the point of the sphere. Note that $q_{n+1}=1$. We will exclude this coordinate.
 
-It is evident [TODO: Prove.] that gnomonic projection is a diffeomorphism between the hyperplane and ``open-half-hy\-per\-sphe\-re'' ($s\cdot p>0$). Let denote it $S^n_{>}$.
+It is evident \fxwarning{Prove.} that gnomonic projection is a diffeomorphism between the hyperplane and ``open-half-hy\-per\-sphe\-re'' ($s\cdot p>0$). Let denote it $S^n_{>}$.
 
 I will denote the Gnomonic projection as~$\Phi_n$.
 
@@ -160,7 +163,7 @@ Thus we have enough to prove that the join~$bH$ of one-si\-de vicinities~$w_d$ f
 
 By properties of diffeomorphisms, $\dim bH = \dim H$.
 
-By properties of $n$-fun\-co\-ids, it's evident (because it, with possible exclusion of a finite set, is mapped by~$\Pi_n$ to a funcoidal product of full-measure one-si\-de vicinities on~$\mathbb{R}$) that $\dim bH=n+1$. [TODO: Define the product of funcoids.]
+By properties of $n$-fun\-co\-ids, it's evident (because it, with possible exclusion of a finite set, is mapped by~$\Pi_n$ to a funcoidal product of full-measure one-si\-de vicinities on~$\mathbb{R}$) that $\dim bH=n+1$. \fxwarning{Define the product of funcoids.}
 
 \bibliographystyle{amsplain}
 \bibliography{kakeya}
