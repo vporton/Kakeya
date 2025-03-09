@@ -12,8 +12,10 @@
 \newtheorem{theorem}{Theorem}
 \newtheorem{lem}{Lemma}
 \newtheorem{obvious}{Obvious}
+\newtheorem{cor}{Corollary}
 \newtheorem{claim}{Claim}
 \newtheorem{rem}{Remark}
+\newtheorem{exer}{Exercise}
 
 \title{Proof of Kakeya's conjecture}
 \author{Victor Porton, ORCID 0000-0001-7064-7975}
@@ -27,11 +29,27 @@
 
 The proof uses theory of funcoids~\cite{volume-1}. It looks like that funcoids can be easily excluded from the proof, making the proof elementary. In this case, the role of funcoids is to provide intuition that helped to find the proof.
 
-By an $n$-fun\-co\-id we will understand a filter on the set of finite unions of $n$-cu\-bes. I will denote join and meet of funcoids in the order \emph{reverse} to set-the\-o\-re\-tic inclusion respectively as $\bigsqcup$ and $\bigsqcap$.
-
 \textbf{Kakeya set conjecture:} Define a \emph{Besicovitch} set in $\mathbb{R}^n$ to be a set which contains a unit line segment in every direction. Is it true that such sets necessarily have Hausdorff dimension and Minkowski dimension equal to~$n$?
 
 \section{Kakeya proof (rough draft)}
+
+\subsection{$n$-fun\-co\-ids}
+
+By an $n$-fun\-co\-id (for a natural~$n$) we will understand a filter on the set~$\Gamma_n$ of finite unions of Cartesian products of $n$~sets. I will denote join and meet of funcoids in the order \emph{reverse} to set-the\-o\-re\-tic inclusion respectively as $\bigsqcup$ and $\bigsqcap$.
+
+By $\mathord{\uparrow}F$ I denote the $n$-fun\-co\-id corresponding to $n$-ary relation~$F$ by the formula
+\[ \mathord{\uparrow}F = \setcond{X\in\Gamma_F}{X\supseteq F}. \]
+
+\begin{exer}
+$\bigcap\mathord{\uparrow}F = F$.
+\end{exer}
+
+Thus, we have an injection from the set of $n$-ary relations (on some sets) to the set of $n$-fun\-co\-ids.
+This allows to idenitify $F$ with $\uparrow F$.
+
+For $n\leq m$ I will denote applying $m$-fun\-co\-id~$f$ to $n$-fun\-co\-id~$x$ as
+\[ \bigsqcap\setcond{\mathord{\uparrow} F[X]}{F\in f,X\in x}, \]
+where $F[X]$ is considered as a relation of $2$~arguments: $F\subseteq F_Y\times F_X$.
 
 \subsection{Spherical coordinates}
 
@@ -73,7 +91,7 @@ Consider~$\Gamma_n$, the ``standard'' stereographic projection from $S^n$ withou
 \end{align*}
 where $\lVert x\rVert^2 = x_1^2+\dots+x_n^2$.
 
-It is known [TODO: source] to be a diffeomorphism.
+It is known~\cite{stereo} to be a diffeomorphism.
 
 \subsection{The proof}
 
@@ -83,17 +101,19 @@ I will call the \emph{right vicinity} or \emph{one-si\-de vicinity} of a point~$
 
 We will do our geometry in $\mathbb{R}^{n+1}$.
 
+Dimensionality of a funcoid is defined as least dimensionality of a set above it.
+
 Instead of proving the Kakeya conjecture, we will prove a stronger statement:
 
 \begin{claim}
-(Funcoidal) join~$L$ of one-si\-de vicinities of each point on $S^n\setminus\{\zeta\}$ has dimension~$n$, provided that the set~$K_1$ of directions (measured as their ``projection'' to unit sphere) is $n$-di\-men\-sio\-nal. [FIXME: North pole?]
+(Funcoidal) join~$L$ of one-si\-de vicinities of each point on $S^n\setminus\{\zeta\}$ has dimension~$n$, provided that the set~$K_1$ of directions (measured as their ``projection'' to unit sphere) is $n$-di\-men\-sio\-nal.
 \end{claim}
 
-(Here dimension of a funcoid is defined as least dimension of a set above it.)
+The above claim is equivalent to (because adding one point does not change dimension):
 
-\begin{rem}
-The set of projections of vicinities has the same dimensionality as the set of directions, because of the diffeomorphism.
-\end{rem}
+\begin{claim}
+(Funcoidal) join~$L$ of one-si\-de vicinities of each point on $S^n$ has dimension~$n$, provided that the set~$K_1$ of directions (measured as their ``projection'' to unit sphere) is $n$-di\-men\-sio\-nal.
+\end{claim}
 
 \begin{del}
 Consider a diffeomorphism of an open set of the sphere to open disk with center of the point~$a$ of touching in each its tangential hyperplane.
@@ -103,9 +123,9 @@ Consider vicinities from the sphere replaced by vicinities from the disk (we may
 Join of all vicinities in the disk, is some $(n+1)$-fun\-co\-id under the disk. Infinitely shrinking the disk, we get its corresponding funcoidal meet~$h_a$.
 \end{del}
 
-Replace each ``curved'' vicinity from point~$a$ of the hypersphere by a straight one~$h_a$ (going outside the hypersphere in~$\mathbb{R}^{n+1}$). Let $s_a$ be an ``outward'' radial vicinity of point~$a$. Then take funcoidal join $H=\bigsqcup_{a\in K_1}(h_a\sqcup s_a)$ of all these straight vicinities. $H$ is a ``swollen'' hypersphere in $\mathbb{R}^{n+1}$.
+Replace each ``curved'' vicinity from point~$a$ of the hypersphere by a straight one~$h_a$ (going outside the hypersphere in~$\mathbb{R}^{n+1}$). Let $s_a$ be an ``outward'' radial vicinity of point~$a$. Then take funcoidal join $H=\bigsqcup_{a\in K_1}(h_a\sqcup s_a)$ of all these straight vicinities. Informally, $H$ is a ``swelling'' on the hypersphere in $\mathbb{R}^{n+1}$.
 
-If $H$ projected to the sphere (by straight lines toward its center) has dimension~$n$, then the claim is proved, because it is [TODO: prove] diffeomorphic to~$L$.
+If $H$ projected to the sphere (by straight lines toward its center) has dimension~$n$, then the claim is proved, because it is [FIXME: seems wrong!] diffeomorphic [FIXME: seems wrong!] to~$L$. [TODO: To solve this problem, consider instead of a stereographic projection a small part of the sphere with a diffeomorphism mapping straight lines to parts of big circles.]
 
 \begin{lem}
 If a set $H$ has dimension~$n+1$, then its projection~$K_1$ to~$S^n$ has dimension~$n$.
