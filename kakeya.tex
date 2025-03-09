@@ -29,7 +29,7 @@
 
 The proof uses theory of funcoids~\cite{volume-1}. It looks like that funcoids can be easily excluded from the proof, making the proof elementary. In this case, the role of funcoids is to provide intuition that helped to find the proof.
 
-\textbf{Kakeya set conjecture:} \cite{kakeya-long}~\cite{tao-blog-kakeya} Define a \emph{Besicovitch} set in $\mathbb{R}^n$ to be a set which contains a unit line segment in every direction. Is it true that such sets necessarily have Hausdorff dimension and Minkowski dimension equal to~$n$?
+\textbf{Kakeya set conjecture:} \cite{kakeya-long}~\cite{tao-blog-kakeya} Define a \emph{Besicovitch} set in $\mathbb{R}^n$ to be a set which contains a unit line segment in every direction. Is it true that such sets necessarily have Hausdorff dimension and Minkowski\footnote{Minkowski dimensions are not addressed in this draft.} dimension equal to~$n$?
 
 \section{Kakeya proof}
 
@@ -45,11 +45,13 @@ $\bigcap\mathord{\uparrow}F = F$.
 \end{exer}
 
 Thus, we have an injection from the set of $n$-ary relations (on some sets) to the set of $n$-fun\-co\-ids.
-This allows to idenitify $F$ with $\uparrow F$.
+This allows to idenitify $F$ with $\mathord{\uparrow}F$.
 
 For $n\leq m$ I will denote applying $m$-fun\-co\-id~$f$ to $n$-fun\-co\-id~$x$ as
 \[ \bigsqcap\setcond{\mathord{\uparrow} F[X]}{F\in f,X\in x}, \]
 where $F[X]$ is considered as a relation of $2$~arguments: $F\subseteq F_Y\times F_X$.
+
+[TODO: Need to prove that $n$-fun\-co\-ids are invariant regarding rotations. This is used to rotate the vicinities.]
 
 \subsection{Spherical coordinates}
 
@@ -103,7 +105,7 @@ The formulas for projection of a point $p=(p_1,\dots,p_{n+1})$ ($\lVert p\rVert 
 
 $q=\frac{p}{s\cdot p}$, where $q$ is the projection, $s$ is the point of the sphere. Note that $q_{n+1}=1$. We will exclude this coordinate.
 
-It is evident [TODO: Prove.] that gnomonic projection is a diffeomorphism between the hyperplane and ``open-half-hy\-per\-sphe\-re'' ($s\cdot p>0$). Let denote it $S^n_{>}$
+It is evident [TODO: Prove.] that gnomonic projection is a diffeomorphism between the hyperplane and ``open-half-hy\-per\-sphe\-re'' ($s\cdot p>0$). Let denote it $S^n_{>}$.
 
 I will denote the Gnomonic projection as~$\Phi_n$.
 
@@ -125,7 +127,7 @@ Instead of proving the Kakeya conjecture, I will prove a stronger statement:
 (Funcoidal) join~$L$ of one-si\-de vicinities $v_a$ (laying on great circles) of each point on $S^n_{>}$ hemisphere has dimension~$n$, provided that the set~$K_1$ of directions (measured as their ``projection'' to unit sphere) is $n$-di\-men\-sio\-nal.
 \end{claim}
 
-Replace each ``curved'' vicinity $v_a$ by a straight one~$h_a$ (going outside the hypersphere in~$\mathbb{R}^{n+1}$) in the tangential ray determined by~$v_a$. Let $s_a$ be an ``outward'' radial (laying on the line from the center of the hypersphere to~$a$) vicinity of point~$a$. Then take funcoidal join $H=\bigsqcup_{a\in K_1}(h_a\sqcup s_a)$. Informally, $H$ is a ``swelling'' on the hypersphere in $\mathbb{R}^{n+1}$.
+Replace each ``curved'' vicinity $v_a$ by a straight one~$h_a$ (going outside the hypersphere in~$\mathbb{R}^{n+1}$) in the tangential ray determined by~$v_a$. Let $s_a$ be an ``outward'' radial (orthogonal to the hypersphere at point~$a$) one-si\-de vicinity. Then take funcoidal join $H=\bigsqcup_{a\in K_1}(h_a\sqcup s_a)$. Informally, $H$ is a ``swelling'' or ``hairs'' on the hypersphere in $\mathbb{R}^{n+1}$ into both tangential and orthogonal directions.
 
 The straight vicinities $h_a$, projected to the sphere by the radial projection, become exactly original curved vicinities $v_a$ (because they lay on great circles): $\Lambda h_a=v_a$, where $\Lambda$ is the radial projection to the hypersphere.
 
@@ -134,32 +136,30 @@ Thus $L = \Phi_n H$.
 If $\Phi_n H$ has dimension~$n$, then the claim is proved.
 
 \begin{lem}
-If a set $H$ has dimension~$n+1$, then its projection~$K_1$ to~$S^n$ has dimension~$n$.
+If a set $H$ has dimension~$n+1$, then its radial (toward the center of the hypersphere) projection~$K_1$ to~$S^n$ has dimension~$n$.
 \end{lem}
 
 \begin{proof}
 Follows from~\cite{189275}\footnote{Or \href{https://grok.com/share/bGVnYWN5_2e0aef8b-4309-420f-815c-a09d76ae97c1}{these AI musings}
-that I didn't check for correctness}.
+that I didn't check for correctness.}.
 (We also apply that spherical coordinates are diffeomorphic to Euclidean coordinates, except of a negligible set.)
 \end{proof}
 
-It follows, that if we prove that $H$ has dimension~$n+1$, then [TODO: Need to specify a diffeomorphism.] $K_1$~has dimension~$n$ and our claim is proved.
+It follows, that if we prove that $H$ has dimension~$n+1$, then $K_1$~has dimension~$n$ and our claim is proved.
 
 Let map (name the map $b$\footnote{From \textbf{b}lack hole.}) the sphere together with its swelling to coordinates center by the formula $r\mapsto r-1$ for $r\geq 1$ in spherical coordinates (leaving $\theta'$ the same).
 This preserves the dimension because the Jacobian matrix has full rank almost everywhere (hint: The Jacobian is the identity matrix).
-Obviously, it is a diffeomorphism of $\setcond{x}{r>1}$ to $\setcond{x}{r\ne 0}$. So we preserve the dimension of the $(n+1)$-fun\-co\-id~$H$.
-
-Thus we have enough to prove that join of one-si\-de vicinities of the same point (the center of our sphere without the North pole) is~$n$.
+Obviously, it is a diffeomorphism of $\setcond{x}{r>1}$ to $\setcond{x}{r\ne 0}$.
 
 \begin{obvious}
 $\supfun{b}s_a$ is a vicinity from the center to the direction~$a$.
 \end{obvious}
 
-[TODO: definition of $bH$]
+Thus we have enough to prove that the join~$bH$ of one-si\-de vicinities~$w_d$ for a full-me\-a\-su\-re choice~$d$ of directions of the same point (the center of our sphere) is~$n$.
 
 By properties of diffeomorphisms, $\dim bH = \dim H$.
 
-By properties of $n$-fun\-co\-ids, it's evident [TODO: Prove.] that $\dim bH=n+1$.
+By properties of $n$-fun\-co\-ids, it's evident (because it, with possible exclusion of a finite set, is mapped by~$\Pi_n$ to a funcoidal product of full-measure one-si\-de vicinities on~$\mathbb{R}$) that $\dim bH=n+1$. [TODO: Define the product of funcoids.]
 
 \bibliographystyle{amsplain}
 \bibliography{kakeya}
