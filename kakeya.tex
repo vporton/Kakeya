@@ -1,10 +1,13 @@
 \documentclass{amsart}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{hyperref}
+\usepackage{xcolor}
 
 \newcommand{\setcond}[2]{\left\{#1\mid#2\right\}}
 \newcommand{\funcoids}{\mathsf{FCD}}
 \newcommand{\supfun}[1]{\left\langle#1\right\rangle}
+% \newcommand{\del}[1]{\textcolor{gray}{#1}}
+\newenvironment{del}{\color{gray}}{}
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{lem}{Lemma}
@@ -80,28 +83,36 @@ We will do our geometry in $\mathbb{R}^{n+1}$.
 Instead of proving the Kakeya conjecture, we will prove a stronger statement:
 
 \begin{claim}
-(Funcoidal) join of one-si\-de vicinities of each point on $S^n\setminus\{\zeta\}$ has dimension~$n$, provided that the set~$K_1$ of directions (measured as their ``projection'' to unit sphere) is $n$-di\-men\-sio\-nal. [FIXME: North pole?]
+(Funcoidal) join~$L$ of one-si\-de vicinities of each point on $S^n\setminus\{\zeta\}$ has dimension~$n$, provided that the set~$K_1$ of directions (measured as their ``projection'' to unit sphere) is $n$-di\-men\-sio\-nal. [FIXME: North pole?]
 \end{claim}
+
+(Here dimension of a funcoid is defined as least dimension of a set above it.)
 
 \begin{rem}
 The set of projections of vicinities has the same dimensionality as the set of directions, because of the diffeomorphism.
 \end{rem}
 
+\begin{del}
 Consider a diffeomorphism of an open set of the sphere to open disk with center of the point~$a$ of touching in each its tangential hyperplane.
 
 Consider vicinities from the sphere replaced by vicinities from the disk (we may [TODO] further distort the disk in order to make them straight).
 
 Join of all vicinities in the disk, is some filter under the disk. Infinitely shrinking the disk, we get its corresponding funcoidal meet~$h_a$. [TODO: Funcoid or reloid?]
+\end{del}
 
-Let $H=\bigsqcup_{a\in??}h_a$ be the funcoidal join of all~$h_a$.
+Replace each ``curved'' vicinity from point~$a$ of the hypersphere by a straight one~$h_a$ (going outside the hypersphere in~$\mathbb{R}^{n+1}$). Then take funcoidal join $H=\bigsqcup_{a\in K_1}h_a$ of all these straight vicinities. $H$ is a ``swollen'' hypersphere in $\mathbb{R}^{n+1}$.
 
-We've got a swollen hypersphere in $\mathbb{R}^{n+1}$.
+If $H$ projected to the sphere (by straight lines toward its center) has dimension~$n$, then the claim is proved, because it is [TODO: prove] diffeomorphic to~$L$.
 
-If $H$ projected to the sphere (by straight lines toward its center) has dimension~$n$, then the claim is proved, because ??.
+\begin{lem}
+If a set $H$ has dimension~$n+1$, then its projection~$K_1$ to~$S^n$ has dimension~$n$.
+\end{lem}
+
+\begin{proof}
+Suppose, $\dim K_1<n$. Then \[ \dim H\leq\dim\setcond{tx}{t\geq 0,x\in K_1} =?? \dim K_1+1<n+1, \] contradiction.
+\end{proof}
 
 If [why?] we prove that $H$ has dimension~$n+1$, then then $K_1$~has dimension~$n$ and our claim is proved.
-
-(Here dimension of a funcoid is defined as least dimension of a set above it.)
 
 Let map the sphere together with its swelling to coordinates center by the formula $r\mapsto r-1$ for $r\geq 1$ (leaving $\theta'$ the same).
 This preserves the dimension because the Jacobian matrix has full rank almost everywhere (hint: The Jacobian is the identity matrix).
@@ -109,11 +120,23 @@ Obviously, it is a diffeomorphism of $\setcond{x}{r>1}$ to $\setcond{x}{r\ne 0}$
 
 Thus we have enough to prove that join of one-si\-de vicinities of the same point (the center of our sphere without the North pole) is~$n$.
 
-By properties of diffeomorphisms??, the shrinked swelling has (deformed) vicinities of a set of directions of full dimension.
+\begin{lem}
+$h_a$ is projected to a vicinity from the center to the direction~$a$.
+\end{lem}
 
+\begin{proof}
+$h_a$ is a vicinity of the point~$a$ on some line tangential to the hypersphere, immerse it into an interval $\left]0;\epsilon\right[$. This $0$ is projected to the center of the sphere, $\epsilon$ is projected approximately to the direction~$a$. Taking the funcoidal meet of all such intervals, we get a vicinity from the center to the direction~$a$. [FIXME: Is the resulting vicinity on a straight line?]
+\end{proof}
+
+By properties of diffeomorphisms, the shrinked by $r\mapsto r-1$ swelling~$H$ has the same dimensionality as~$H$.
+
+By properties of funcoids, it's evident that after being shrinked, it has dimensionality~$n+1$.
+
+\begin{del}
 To prove this use di\-men\-si\-on-pre\-ser\-ving map from spherical coordinates to Euclidean coordinates.
 
 We've got the funcoidal product (e.g.\ subatomic product) of $n$\ vicinities what is obviously of dimension~$n$.
+\end{del}
 
 \bibliographystyle{amsplain}
 \bibliography{kakeya}
