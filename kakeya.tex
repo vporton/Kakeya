@@ -1,5 +1,5 @@
 \documentclass{amsart}
-\usepackage{amsmath,amssymb,amsthm}
+\usepackage{amsmath,amssymb,amsthm,stmaryrd}
 \usepackage{hyperref}
 \usepackage{xcolor}
 
@@ -11,6 +11,7 @@
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{lem}{Lemma}
+\newtheorem{obvious}{Obvious}
 \newtheorem{claim}{Claim}
 \newtheorem{rem}{Remark}
 
@@ -24,11 +25,9 @@
 
 \emph{This is a preliminary draft sketch of my proposed proof of Kakeya conjecture. Report any errors, please.}
 
-\textbf{It seems that my proof attempt failed:} $\supfun{b}h_a$ isn't on a straight line, every ``hair'' is on its own curve, so not creating an entire vicinity of hypersphere center. So, it is not proved that the join of all~$\supfun{b}h_a$ has dimension~$n+1$.
-
-\textbf{The proof probably can be salvaged} by replacing each $h_a$ by the (funcoidal) join of $h_a$ and a radial one-side vicinity.
-
 The proof uses theory of funcoids~\cite{volume-1}. It looks like that funcoids can be easily excluded from the proof, making the proof elementary. In this case, the role of funcoids is to provide intuition that helped to find the proof.
+
+By an $n$-fun\-co\-id we will understand a filter on the set of finite unions of $n$-cu\-bes. I will denote join and meet of funcoids in the order \emph{reverse} to set-the\-o\-re\-tic inclusion respectively as $\bigsqcup$ and $\bigsqcap$.
 
 \textbf{Kakeya set conjecture:} Define a \emph{Besicovitch} set in $\mathbb{R}^n$ to be a set which contains a unit line segment in every direction. Is it true that such sets necessarily have Hausdorff dimension and Minkowski dimension equal to~$n$?
 
@@ -80,7 +79,7 @@ It is known [TODO: source] to be a diffeomorphism.
 
 Let $K$ be a Besicovitch set in $\mathbb{R}^n$.
 
-I will call the \emph{right vicinity} or \emph{one-si\-de vicinity} of a point~$a$ the filter~$\supfun{\Delta_{>}}\{a\}$.
+I will call the \emph{right vicinity} or \emph{one-si\-de vicinity} of a point~$a$ the funcoid~$\supfun{\Delta_{>}}\{a\}$.
 
 We will do our geometry in $\mathbb{R}^{n+1}$.
 
@@ -101,10 +100,10 @@ Consider a diffeomorphism of an open set of the sphere to open disk with center 
 
 Consider vicinities from the sphere replaced by vicinities from the disk (we may [TODO] further distort the disk in order to make them straight).
 
-Join of all vicinities in the disk, is some filter under the disk. Infinitely shrinking the disk, we get its corresponding funcoidal meet~$h_a$. [TODO: Funcoid or reloid?]
+Join of all vicinities in the disk, is some $(n+1)$-fun\-co\-id under the disk. Infinitely shrinking the disk, we get its corresponding funcoidal meet~$h_a$.
 \end{del}
 
-Replace each ``curved'' vicinity from point~$a$ of the hypersphere by a straight one~$h_a$ (going outside the hypersphere in~$\mathbb{R}^{n+1}$). Then take funcoidal join $H=\bigsqcup_{a\in K_1}h_a$ of all these straight vicinities. $H$ is a ``swollen'' hypersphere in $\mathbb{R}^{n+1}$.
+Replace each ``curved'' vicinity from point~$a$ of the hypersphere by a straight one~$h_a$ (going outside the hypersphere in~$\mathbb{R}^{n+1}$). Let $s_a$ be an ``outward'' radial vicinity of point~$a$. Then take funcoidal join $H=\bigsqcup_{a\in K_1}(h_a\sqcup s_a)$ of all these straight vicinities. $H$ is a ``swollen'' hypersphere in $\mathbb{R}^{n+1}$.
 
 If $H$ projected to the sphere (by straight lines toward its center) has dimension~$n$, then the claim is proved, because it is [TODO: prove] diffeomorphic to~$L$.
 
@@ -122,21 +121,17 @@ It follows, that if we prove that $H$ has dimension~$n+1$, then [TODO: Need to s
 
 Let map (name the map $b$\footnote{From \textbf{b}lack hole.}) the sphere together with its swelling to coordinates center by the formula $r\mapsto r-1$ for $r\geq 1$ (leaving $\theta'$ the same).
 This preserves the dimension because the Jacobian matrix has full rank almost everywhere (hint: The Jacobian is the identity matrix).
-Obviously, it is a diffeomorphism of $\setcond{x}{r>1}$ to $\setcond{x}{r\ne 0}$. So we preserve the dimension of the filter~$H$.
+Obviously, it is a diffeomorphism of $\setcond{x}{r>1}$ to $\setcond{x}{r\ne 0}$. So we preserve the dimension of the $(n+1)$-fun\-co\-id~$H$.
 
 Thus we have enough to prove that join of one-si\-de vicinities of the same point (the center of our sphere without the North pole) is~$n$.
 
-\begin{lem}
-$\supfun{b}h_a$ is a vicinity from the center to the direction~$a$. [FIXME: The resulting vicinity isn't on a straight line. This seems to create a big problem.]
-\end{lem}
-
-\begin{proof}
-$h_a$ is a vicinity of the point~$a$ on some line tangential to the hypersphere, immerse it into an interval $\left]0;\epsilon\right[$. This $0$ is projected to the center of the sphere, $\epsilon$ is projected approximately to the direction~$a$. Taking the funcoidal meet of all such intervals, we get a vicinity from the center to the direction~$a$.
-\end{proof}
+\begin{obvious}
+$\supfun{b}s_a$ is a vicinity from the center to the direction~$a$.
+\end{obvious}
 
 By properties of diffeomorphisms, the shrinked by $r\mapsto r-1$ swelling~$H$ has the same dimensionality as~$H$.
 
-By properties of funcoids, it's evident that after being shrinked, it has dimensionality~$n+1$.
+By properties of $n$-fun\-co\-ids, it's evident [TODO: Prove.] that after being shrinked, it has dimensionality~$n+1$.
 
 \begin{del}
 To prove this use di\-men\-si\-on-pre\-ser\-ving map from spherical coordinates to Euclidean coordinates.
