@@ -93,6 +93,20 @@ where $\lVert x\rVert^2 = x_1^2+\dots+x_n^2$.
 
 It is known~\cite{stereo} to be a diffeomorphism.
 
+\subsection{Gnomonic projection}
+
+Gnomonic projection is like stereographic projection, but with the projection hyperplane passing through the center of the hypersphere.
+
+[TODO: Below were copied from an AI, check.]
+
+The formulas for projection of a point $p=(p_1,\dots,p_{n+1})$ ($\lVert p\rVert = 1$) of the hypersphere are:
+
+$q=\frac{p}{s\cdot p}$, where $q$ is the projection, $s$ is the point of the sphere. Note that $q_{n+1}=1$. We will exclude this coordinate.
+
+It is evident [TODO: Prove.] that gnomonic projection is a diffeomorphism between the hyperplane and ``open-half-hy\-per\-sphe\-re'' ($s\cdot p>0$). Let denote it $S^n_{>}$
+
+It is well known that Gnomonic projection maps great circles to lines.
+
 \subsection{The proof}
 
 Let $K$ be a Besicovitch set in $\mathbb{R}^n$.
@@ -106,29 +120,14 @@ Dimensionality of a funcoid is defined as least dimensionality of a set above it
 Instead of proving the Kakeya conjecture, we will prove a stronger statement:
 
 \begin{claim}
-(Funcoidal) join~$L$ of one-si\-de vicinities of each point on $S^n\setminus\{\zeta\}$ has dimension~$n$, provided that the set~$K_1$ of directions (measured as their ``projection'' to unit sphere) is $n$-di\-men\-sio\-nal.
+(Funcoidal) join~$L$ of one-si\-de vicinities (laying on great circles) of each point on $S^n_{>}$ hemisphere has dimension~$n$, provided that the set~$K_1$ of directions (measured as their ``projection'' to unit sphere) is $n$-di\-men\-sio\-nal.
 \end{claim}
 
-The above claim is equivalent to (because adding one point does not change dimension):
+Replace each ``curved'' vicinity from point~$a$ of the hypersphere by a straight one~$h_a$ (going outside the hypersphere in~$\mathbb{R}^{n+1}$). Let $s_a$ be an ``outward'' radial vicinity of point~$a$. Then take funcoidal join $H=\bigsqcup_{a\in K_1}(h_a\sqcup s_a)$. Informally, $H$ is a ``swelling'' on the hypersphere in $\mathbb{R}^{n+1}$.
 
-\begin{claim}
-(Funcoidal) join~$L$ of one-si\-de vicinities of each point on $S^n$ has dimension~$n$, provided that the set~$K_1$ of directions (measured as their ``projection'' to unit sphere) is $n$-di\-men\-sio\-nal.
-\end{claim}
+The straight vicinities $h_a$, projected to the sphere by the radial projection, become exactly original curved vicinities (because they lay on great circles).
 
-\begin{del}
-Consider a diffeomorphism of an open set of the sphere to open disk with center of the point~$a$ of touching in each its tangential hyperplane.
-
-Consider vicinities from the sphere replaced by vicinities from the disk (we may [TODO] further distort the disk in order to make them straight).
-
-Join of all vicinities in the disk, is some $(n+1)$-fun\-co\-id under the disk. Infinitely shrinking the disk, we get its corresponding funcoidal meet~$h_a$.
-\end{del}
-
-Replace each ``curved'' vicinity from point~$a$ of the hypersphere by a straight one~$h_a$ (going outside the hypersphere in~$\mathbb{R}^{n+1}$). Let $s_a$ be an ``outward'' radial vicinity of point~$a$. Then take funcoidal join $H=\bigsqcup_{a\in K_1}(h_a\sqcup s_a)$ of all these straight vicinities. Informally, $H$ is a ``swelling'' on the hypersphere in $\mathbb{R}^{n+1}$.
-
-The straight vicinities $h_a$, projected to the sphere by the radial projection, become original curved vicinities,
-because stereographic projection maps lines [FIXME]. [FIXME: So, lines are not great circles, and it is yet to prove that $L$ is of the same dimensionality as~$\supfun{b}H$. It can be solved by considering a small part of the sphere and a small part of the Euclidean space corresponding by a diffeomorphism.]
-
-If $H$ projected to the sphere (by straight lines toward its center) has dimension~$n$, then the claim is proved, because it is diffeomorphic to~$L$.
+If $H$ projected to the sphere (by straight lines toward its center) has dimension~$n$, then the claim is proved, because it is obviously equal to~$L$.
 
 \begin{lem}
 If a set $H$ has dimension~$n+1$, then its projection~$K_1$ to~$S^n$ has dimension~$n$.
@@ -155,12 +154,6 @@ $\supfun{b}s_a$ is a vicinity from the center to the direction~$a$.
 By properties of diffeomorphisms, the shrinked by $r\mapsto r-1$ swelling~$H$ has the same dimensionality as~$H$.
 
 By properties of $n$-fun\-co\-ids, it's evident [TODO: Prove.] that after being shrinked, it has dimensionality~$n+1$.
-
-\begin{del}
-To prove this use di\-men\-si\-on-pre\-ser\-ving map from spherical coordinates to Euclidean coordinates.
-
-We've got the funcoidal product (e.g.\ subatomic product) of $n$\ vicinities what is obviously of dimension~$n$.
-\end{del}
 
 \bibliographystyle{amsplain}
 \bibliography{kakeya}
