@@ -44,7 +44,9 @@ A rather short proof of Kakeya conjecture in an arbitrary Euclidean spaces is pr
 
 The proof uses theory of funcoids~\cite{volume-1}. It looks like that funcoids can be easily excluded from the proof, making the proof elementary. In this case, the role of funcoids is to provide intuition that helped to find the proof.
 
-\textbf{Kakeya set conjecture:} \cite{kakeya-long}~\cite{tao-blog-kakeya} Define a \emph{Besicovitch} set in $\mathbb{R}^n$ to be a set which contains a unit line segment in every direction. Is it true that such sets necessarily have Hausdorff dimension and Minkowski\footnote{Minkowski dimensions are not addressed in this draft.} dimension equal to~$n$?
+\textbf{Kakeya set conjecture:} \cite{kakeya-long}~\cite{tao-blog-kakeya} Define a \emph{Besicovitch} set in $\mathbb{R}^n$ to be a set which contains a unit line segment in every direction. Is it true that such sets necessarily have Hausdorff dimension and Minkowski dimension equal to~$n$?
+
+We will prove only for Hausdorff dimension, because Minkowski dimension cannot be lower and having a proof for Hausdorff dimension also proves it for Minkowski one.
 
 \section{Kakeya proof}
 
@@ -87,49 +89,6 @@ Let $f_i = f_0,\dots,f_{k-1}$ be $n$-fun\-co\-ids (probably $n$~dependent on~$i$
 \begin{obvious}
 $a_i\in\prod^{\funcoids}f \Leftrightarrow \forall i\in\{0,\dots,n-1\}: a_i\intrs f_i$.
 \end{obvious}
-
-\subsubsection{Atomic funcoids}\fxwarning{Unneeded section?}
-
-\begin{defn}
-By \emph{atomic} $n$-fun\-co\-ids I understand atoms of the lattice of $n$-fun\-co\-ids.\footnote{I remind that the order considered is reverse to set-the\-o\-re\-tic inclusion, therefore atomic funcoids are the same as maximal filters on the lattice of funcoids.}
-\end{defn}
-
-\begin{thm}
-Atoms of the lattice of funcoids are exactly funcoidal products of atomic filters\footnote{The same as ultrafilters.}.
-\fxwarning{Also prove in the opposite direction.}
-\end{thm}
-
-\begin{proof}
-A non-least funcoid~$f$ cannot be strictly below such a product~$p$, because otherwise by properties of generalized filter bases~\cite{volume-1} it would exist a Cartesian product of sets above~$p$ but not above~$f$, what is clearly impossible.
-\end{proof}
-
-\begin{obvious}
-The lattice of $n$-fun\-co\-ids is atomic.
-\end{obvious}
-
-\begin{thm}
-The lattice of $n$-fun\-co\-ids is atomistic (that is each $n$-fun\-co\-id is a join of atomic $n$-fun\-co\-ids).
-\end{thm}
-
-\begin{proof}
-Similar to the proof for ($2$)-fun\-co\-ids in~\cite{volume-1}.
-\end{proof}
-
-% \begin{thm}\label{v-on-atoms}
-% \fxwarning{Seems unused.}
-% For an indexed set~$A$ of sets, a relation~$\delta\subseteq(\prod_i\atoms A_i)$ such that (for every $a\in\prod\atoms A_i$)
-% \begin{multline*}
-% \forall X:(\forall i\in\{0,\dots,n-1\}:X_i\in a_i\Rightarrow\exists x\in\delta\forall i\in\{0,\dots,n-1\}, x_i\in\atoms\mathord{\uparrow}X_i)
-% \\\Rightarrow a\in\delta
-% \end{multline*}
-% can be continued to the relation $\suprel{f}$ for a unique $n$-fun\-co\-id~$f$;
-% \[ \mathcal{X}\in\suprel{f} \Leftrightarrow \exists x\in\delta\forall i\in\{0,\dots,n-1\}:x_i\in\atoms\mathcal{X}_i \]
-% for every filters $\mathcal{X}_i$ on $A_i$.
-% \end{thm}
-
-% \begin{proof}
-% \fxwarning{Prove.}
-% \end{proof}
 
 \subsection{Vicinities}
 
