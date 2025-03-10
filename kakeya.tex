@@ -7,17 +7,22 @@
 \fxusetheme{color}
 
 \newcommand{\setcond}[2]{\left\{#1\mid#2\right\}}
+\newcommand{\intrs}{\not\asymp}
+\newcommand{\nintrs}{\asymp}
 \newcommand{\funcoids}{\mathsf{FCD}}
+\newcommand{\atoms}{\operatorname{atoms}}
 \newcommand{\supfun}[1]{\left\langle#1\right\rangle}
+\newcommand{\suprel}[1]{\left[#1\right]}
 % \newcommand{\del}[1]{\textcolor{gray}{#1}}
 \newenvironment{del}{\color{gray}}{}
 
-\newtheorem{theorem}{Theorem}
+\newtheorem{thm}{Theorem}
 \newtheorem{lem}{Lemma}
 \newtheorem{obvious}{Obvious}
 \newtheorem{cor}{Corollary}
 \newtheorem{claim}{Claim}
 \newtheorem{rem}{Remark}
+\newtheorem{defn}{Definition}
 \newtheorem{exer}{Exercise}
 
 \title{Proof of Kakeya's conjecture}
@@ -38,7 +43,10 @@ The proof uses theory of funcoids~\cite{volume-1}. It looks like that funcoids c
 
 \subsection{$n$-fun\-co\-ids}
 
-By an $n$-fun\-co\-id (for a natural~$n$) we will understand a filter on the lattice~$\Gamma_n$ of finite unions of Cartesian products of $n$~sets. I will denote join and meet of funcoids in the order \emph{reverse} to set-the\-o\-re\-tic inclusion respectively as $\bigsqcup$ and $\bigsqcap$.
+By an $n$-fun\-co\-id (for a natural~$n$) we will understand a filter\footnote{Including the improper filter.} on the lattice~$\Gamma_n$ of finite unions of Cartesian products of $n$~sets. I will denote join and meet of funcoids in the order~$\sqsubseteq$ \emph{reverse} to set-the\-o\-re\-tic inclusion respectively as $\bigsqcup$ and $\bigsqcap$. ($n$-fun\-co\-ids form a complete lattice~\cite{volume-1}, because $\Gamma_n$~is a boolean lattice.) $\bot$~is the least element of the lattice.
+
+I will also denote \[ a\nintrs b \Leftrightarrow \exists c\ne\bot: c\sqsubseteq a\land c\sqsubseteq b, \] or equivalently, $a\sqcap b\ne\bot$.
+$a\intrs b\Leftrightarrow\lnot(a\nintrs b)$.
 
 By $\mathord{\uparrow}F$ I denote the $n$-fun\-co\-id corresponding to $n$-ary relation~$F$ by the formula
 \[ \mathord{\uparrow}F = \setcond{X\in\Gamma_n}{X\supseteq F}. \]
@@ -56,12 +64,81 @@ where $F[X]$ is considered as a relation of $2$~arguments: $F\subseteq F_Y\times
 
 Note that $1$-fun\-co\-ids are the same as filters on a set.
 
+\begin{defn}
+$a\in\suprel{f} \Leftrightarrow \forall X\in f, i\in\{0,\dots,n-1\}: a_i \intrs \mathord{\uparrow}X_i$ for $f$~being an $n$-fun\-co\-id and $a$~being an indexed set of filters.
+\end{defn}
+
 \subsubsection{Product of funcoids}
 
-\fxwarning{Define the product of funcoids.}
+\begin{defn}
+Let $f_i = f_0,\dots,f_{k-1}$ be $n$-fun\-co\-ids (probably $n$~dependent on~$i$). The \emph{funcoidal product} $f\times g$ is defined by the formula:
+\[
+\prod^{\funcoids}f = \bigsqcap\setcond{\mathord{\uparrow}\prod F}{i\in\{0,\dots,n-1\}, F_i\in f_i}.
+\]
+\end{defn}
 
-\fxwarning{Need to prove that $n$-fun\-co\-ids are invariant regarding rotations. This is used to rotate the vicinities.
-Probably, the easiest way to prove is through atomic funcoids.}
+\begin{obvious}
+$a_i\in\prod^{\funcoids}f \Leftrightarrow \forall i\in\{0,\dots,n-1\}: a_i\intrs f_i$.
+\end{obvious}
+
+\subsubsection{Atomic funcoids}
+
+\begin{defn}
+By \emph{atomic} $n$-fun\-co\-ids I understand atoms of the lattice of $n$-fun\-co\-ids.\footnote{I remind that the order considered is reverse to set-the\-o\-re\-tic inclusion, therefore atomic funcoids are the same as maximal filters on the lattice of funcoids.}
+\end{defn}
+
+\begin{thm}
+Atoms of the lattice of funcoids are exactly funcoidal products of atomic filters\footnote{The same as ultrafilters.}.
+\fxwarning{Also prove in the opposite direction.}
+\end{thm}
+
+\begin{proof}
+A non-least funcoid~$f$ cannot be strictly below such a product~$p$, because otherwise by properties of generalized filter bases~\cite{volume-1} it would exist a Cartesian product of sets above~$p$ but not above~$f$, what is clearly impossible.
+\end{proof}
+
+\begin{obvious}
+The lattice of $n$-fun\-co\-ids is atomic.
+\end{obvious}
+
+\begin{thm}
+The lattice of $n$-fun\-co\-ids is atomistic (that is each $n$-fun\-co\-id is a join of atomic $n$-fun\-co\-ids).
+\end{thm}
+
+\begin{proof}
+Similar to the proof for ($2$)-fun\-co\-ids in~\cite{volume-1}.
+\end{proof}
+
+\begin{thm}
+For an indexed set~$A$ of sets, a relation~$\delta\subseteq(\prod_i\atoms A_i)$ such that (for every $a\in\prod\atoms A_i$)
+\begin{multline*}
+\forall X:(\forall i\in\{0,\dots,n-1\}:X_i\in a_i\Rightarrow\exists x\forall i\in\{0,\dots,n-1\}, x_i\in\atoms\mathord{\uparrow}X_i: x\in\delta)
+\\\Rightarrow a\in\delta
+\end{multline*}
+can be continued to the relation $\suprel{f}$ for a unique $n$-fun\-co\-id~$f$;
+\[ \mathcal{X}\in\suprel{f} \Leftrightarrow \exists x\in\delta\forall i\in\{0,\dots,n-1\}:x_i\in\atoms\mathcal{X} \]
+for every filters $\mathcal{X}_i$ on $A_i$.
+\end{thm}
+
+\begin{proof}
+\fxwarning{Prove.}
+\end{proof}
+
+\subsubsection{Rotating funcoids}
+
+We need to rotate funcoids, because below in the proof we will consider vicinities of different directions.
+
+\begin{thm}
+\fxerror{We need to rotate the space itself to define $n$-fun\-co\-id in the rotated space.}
+Let $P$ be a rotation of the space $\mathbb{R}^n$. Then
+\[ \lambda i\in\{0,\dots,n-1\}:P[x_i]\in\suprel{P[f]} \Leftrightarrow x\in\suprel{f}. \]
+\end{thm}
+
+\begin{proof}
+\fxwarning{Prove. Probably, the easiest way to prove is through atomic funcoids.}
+Without loss of generality (because every rotation can be represented as a composition of rotations around the coordinate axes) we can consider only a rotation around the axes~$i=0$ and~$i=1$. Let it be rotated by the formulas ??
+\end{proof}
+
+\fxwarning{More theorems about invariance of funcoids under rotations?}
 
 \subsection{Spherical coordinates}
 
@@ -95,7 +172,7 @@ So, $\det (J\Pi_n)(x)\ne 0$ almost everywhere.
 
 \subsection{Stereographic projection diffeomorphism}
 
-Consider~$\Gamma_n$, the ``standard'' stereographic projection from $S^n$ without the North pole $\zeta=(0,\dots,0,1)$ to $\mathbb{R}^n$:
+Consider~$\Gamma_n$, the ``standard'' stereographic projection from $S^n$ without the North pole $\zeta=(0,\dots,0,1)$ to $\mathbb{R}^n$: \fxwarning{Duplicate notation with the section about funcoids.}
 
 \begin{align*}
 &\Gamma_n(q_1,\dots,q_{n+1}) = \left(\frac{q_1}{1-q_{n+1}},\dots,\frac{q_{n-1}}{1-q_{n+1}}\right);\\
