@@ -18,6 +18,7 @@
 
 \newtheorem{thm}{Theorem}
 \newtheorem{lem}{Lemma}
+\newtheorem{prop}{Proposition}
 \newtheorem{obvious}{Obvious}
 \newtheorem{cor}{Corollary}
 \newtheorem{claim}{Claim}
@@ -87,7 +88,7 @@ Let $f_i = f_0,\dots,f_{k-1}$ be $n$-fun\-co\-ids (probably $n$~dependent on~$i$
 $a_i\in\prod^{\funcoids}f \Leftrightarrow \forall i\in\{0,\dots,n-1\}: a_i\intrs f_i$.
 \end{obvious}
 
-\subsubsection{Atomic funcoids}
+\subsubsection{Atomic funcoids}\fxwarning{Unneeded section?}
 
 \begin{defn}
 By \emph{atomic} $n$-fun\-co\-ids I understand atoms of the lattice of $n$-fun\-co\-ids.\footnote{I remind that the order considered is reverse to set-the\-o\-re\-tic inclusion, therefore atomic funcoids are the same as maximal filters on the lattice of funcoids.}
@@ -115,6 +116,7 @@ Similar to the proof for ($2$)-fun\-co\-ids in~\cite{volume-1}.
 \end{proof}
 
 \begin{thm}\label{v-on-atoms}
+\fxwarning{Seems unused.}
 For an indexed set~$A$ of sets, a relation~$\delta\subseteq(\prod_i\atoms A_i)$ such that (for every $a\in\prod\atoms A_i$)
 \begin{multline*}
 \forall X:(\forall i\in\{0,\dots,n-1\}:X_i\in a_i\Rightarrow\exists x\in\delta\forall i\in\{0,\dots,n-1\}, x_i\in\atoms\mathord{\uparrow}X_i)
@@ -129,70 +131,20 @@ for every filters $\mathcal{X}_i$ on $A_i$.
 \fxwarning{Prove.}
 \end{proof}
 
-\subsubsection{Rotating funcoids}
+\subsection{Vicinities}
 
-We need to rotate funcoids, because below in the proof we will consider vicinities of different directions.
+I will call the \emph{right vicinity} or \emph{one-si\-de vicinity} of a point~$a$ the filter (=~$1$-fun\-co\-id)~$\supfun{\Delta_{\geq}}\{a\}$.
 
-\begin{lem}
-If $a$,~$b$ are ultrafilters on~$\mathbb{R}$ and $k\in\mathbb{R}$, then:
-\begin{enumerate}
-\item $ka$ is an ultrafilter;
-\item $a+b$ is an ultrafilter.
-\end{enumerate}
-\end{lem}
+We also define vicinity amount a curve~$p$ locally continuous and locally injective at $t=0$ as the funcoid $\bigsqcap_{t>0}\mathord{\uparrow}\left[0;p(t)\right[$. A vicinity specified by a point direction is a vicinity along a straight line passing through that point (with $t=0$ at this point).
+
+\begin{prop}
+A locally continuous and locally injective mapping between locally continuous and locally injective curves maps a vicinity to a vicinity (with the corresponding point).
+\end{prop}
 
 \begin{proof}
-A defining property for~$x$  to be an ultrafilter is $\forall X:(X\in x\Leftrightarrow{\uparrow}X\intrs x)$.
-\begin{enumerate}
-\item $X\in ka \Leftrightarrow \frac{X}{k}\in a\Leftrightarrow \mathord{\uparrow}\frac{X}{k}\intrs a \Leftrightarrow \mathord{\uparrow}X\intrs ka$.
-\item $\mathord{\uparrow}X\intrs a+b \Leftrightarrow \forall I\in a,J\in b:X\intrs I+J \Leftrightarrow \forall I\in a,J\in b\exists i\in I,j\in J:i+j\in X$.
-\item $\mathbb{R}\setminus X\in a+b \Leftrightarrow \nexists x\in X:x\in a+b \Leftrightarrow
-\nexists x\in X\exists I\in a,J\in b:x\in I+J \Leftrightarrow \lnot \exists I\in a,J\in b\exists x\in X:x\in I+J \Leftrightarrow
-\lnot \exists I\in a,J\in b:X\cap(I+J)\ne\emptyset \Leftrightarrow \forall I\in a,J\in b:X\cap(I+J)=\emptyset \Leftrightarrow
-$
-.
-??
-\end{enumerate}
+\fxnote{Explain better.}
+Let $v$~be a vicinity on a curve~$f$. Let $r$ be its mapping to curve~$g$ (we suppose that the curves are locally continuous and locally injective. A short enough interval $\mathord{\uparrow}\left[0;t\right[$ is mapped to a short enough interval $\mathord{\uparrow}\left[0;r(t)\right[$. So, due to continuity and injectivity, it is a vicinity.
 \end{proof}
-
-The following theorem basically says that funcoids are invariant under rotations:
-
-\begin{thm}
-Let $P$ be a rotation of the space $\mathbb{R}^n$. Then
-\begin{equation}\label{rotated-funcoid}
-(\lambda i\in\{0,\dots,n-1\}:P[x_i])\in\suprel{f'} \Leftrightarrow x\in\suprel{f}
-\end{equation}
-for any filters~$x_0$, \dots, $x_{n-1}$ on $\mathbb{R}$,
-where $f'$ is a unique $n$-fun\-co\-id in the space $P^{-1}[\mathbb{R}^n]$.
-\end{thm}
-
-\begin{proof}
-\fxwarning{Prove. Probably, the easiest way to prove is through atomic funcoids.}
-Without loss of generality (because every rotation can be represented as a composition of rotations in a plane) we can consider only a rotation in the plane of the axes~$i=0$ and~$i=1$. Let it be rotated by the formulas
-\[ x_0' = x_0\cos\alpha - x_1\sin\alpha,\quad x_1' = x_0\sin\alpha + x_1\cos\alpha. \]
-So, let \[ x' = (x_0',x_1',x_2,\dots,x_{n-1}). \]
-If $x_0$,~$x_1$ are ultrafilters, then $x_0\cos\alpha$ and $x_1\sin\alpha$ are obviously ultrafilters. So, $x_0'$~is an ultrafilter because[TODO: Use lemma.] \[ X\intrs x_0\cos\alpha - x_1\sin\alpha \Leftrightarrow \forall I\in x_0\cos\alpha, J\in x_1\sin\alpha:X\intrs I-J?? \]
-??.
-Define $\delta'$ by the formula $x'\in\delta'\Leftrightarrow x\in\suprel{f}$. Then
-\begin{multline*}
-x'\in\delta' \Leftrightarrow \forall X\in f,i=\{0,\dots,n-1\}:x'\intrs\mathord{\uparrow}X_i\Leftrightarrow??\\
-\forall X\in f,i=\{0,\dots,n-1\}:x'\in\atoms X_i.
-\end{multline*}
-% \[ \delta' = \setcond{(\lambda i\in\{0,\dots,n-1\}:P[x_i])}{x\in\suprel{f}}. \]
-% Then??
-% \[ \delta' = \setcond{(\lambda i\in\{0,\dots,n-1\}:x_i)}{x\in\suprel{f}}. \]
-To prove the formula~\eqref{rotated-funcoid} and uniqueness of~$f'$ it is enough to prove that~$f'$ conforms to the conditions of the theorem~\ref{v-on-atoms}.
-
-Then\fxerror{$f'$ is not yet defined.}
-\begin{multline*}
-(\lambda i\in\{0,\dots,n-1\}:P[x_i])\in\suprel{f'} \Leftrightarrow\\
-x_0'\times^{\funcoids}x_1'\times^{\funcoids}x_2\times^{\funcoids}\dots\times^{\funcoids}x_{n-1} \in \suprel{f'}
-\end{multline*}
-??
-\end{proof}
-
-\fxwarning{Need the notation~$Pf$ for the rotated funcoid. This also extends to any motion~$P$ of the funcoid, because any motion is composition of shifts (obviously preserving the properties of a funcoid) and rotations (preserving by the above theorem).}
-\fxwarning{More theorems about invariance of funcoids under rotations?}
 
 \subsection{Spherical coordinates}
 
@@ -257,8 +209,6 @@ It is well known that Gnomonic projection maps great circles to lines.
 The intuition how I came up with this solution: I tried to apply funcoids theory to an open problem. Thus I replaced finite intervals in the problem formulation by funcoids (particularly, by one-si\-de vicinities of a point). I wanted to take a product of all the funcoids to get an $n$-di\-men\-si\-on\-al set, but found it not making sense, because different vicinities being attached to different points. Then I decided to transform the space in such a way to make all points into one. The transformation I intended was decreasing spherical coordinate~$r$ by one, with the problem on the sphere instead of the plane. But this way, I lost all the structure. So, I decided to move the vicinities outside the sphere. I also added radial vicinities, to be sure it fills the entire space. I reduced $n$-di\-men\-sio\-na\-li\-ty of the set of Kakeya set to $(n+1)$-di\-men\-sio\-na\-li\-ty of the resulting ``swollen'' sphere.
 
 Let $K$ be a Besicovitch set in $\mathbb{R}^n$.
-
-I will call the \emph{right vicinity} or \emph{one-si\-de vicinity} of a point~$a$ the funcoid~$\supfun{\Delta_{\geq}}\{a\}$.
 
 We will do our geometry in $\mathbb{R}^{n+1}$.
 
