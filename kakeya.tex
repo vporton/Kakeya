@@ -114,7 +114,7 @@ The lattice of $n$-fun\-co\-ids is atomistic (that is each $n$-fun\-co\-id is a 
 Similar to the proof for ($2$)-fun\-co\-ids in~\cite{volume-1}.
 \end{proof}
 
-\begin{thm}
+\begin{thm}\label{v-on-atoms}
 For an indexed set~$A$ of sets, a relation~$\delta\subseteq(\prod_i\atoms A_i)$ such that (for every $a\in\prod\atoms A_i$)
 \begin{multline*}
 \forall X:(\forall i\in\{0,\dots,n-1\}:X_i\in a_i\Rightarrow\exists x\in\delta\forall i\in\{0,\dots,n-1\}, x_i\in\atoms\mathord{\uparrow}X_i)
@@ -133,18 +133,62 @@ for every filters $\mathcal{X}_i$ on $A_i$.
 
 We need to rotate funcoids, because below in the proof we will consider vicinities of different directions.
 
+\begin{lem}
+If $a$,~$b$ are ultrafilters on~$\mathbb{R}$ and $k\in\mathbb{R}$, then:
+\begin{enumerate}
+\item $ka$ is an ultrafilter;
+\item $a+b$ is an ultrafilter.
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+A defining property for~$x$  to be an ultrafilter is $\forall X:(X\in x\Leftrightarrow{\uparrow}X\intrs x)$.
+\begin{enumerate}
+\item $X\in ka \Leftrightarrow \frac{X}{k}\in a\Leftrightarrow \mathord{\uparrow}\frac{X}{k}\intrs a \Leftrightarrow \mathord{\uparrow}X\intrs ka$.
+\item $\mathord{\uparrow}X\intrs a+b \Leftrightarrow \forall I\in a,J\in b:X\intrs I+J \Leftrightarrow \forall I\in a,J\in b\exists i\in I,j\in J:i+j\in X$.
+\item $\mathbb{R}\setminus X\in a+b \Leftrightarrow \nexists x\in X:x\in a+b \Leftrightarrow
+\nexists x\in X\exists I\in a,J\in b:x\in I+J \Leftrightarrow \lnot \exists I\in a,J\in b\exists x\in X:x\in I+J \Leftrightarrow
+\lnot \exists I\in a,J\in b:X\cap(I+J)\ne\emptyset \Leftrightarrow \forall I\in a,J\in b:X\cap(I+J)=\emptyset \Leftrightarrow
+$
+.
+??
+\end{enumerate}
+\end{proof}
+
 The following theorem basically says that funcoids are invariant under rotations:
 
 \begin{thm}
 Let $P$ be a rotation of the space $\mathbb{R}^n$. Then
-\[ (\lambda i\in\{0,\dots,n-1\}:P[x_i])\in\suprel{f'} \Leftrightarrow x\in\suprel{f} \]
+\begin{equation}\label{rotated-funcoid}
+(\lambda i\in\{0,\dots,n-1\}:P[x_i])\in\suprel{f'} \Leftrightarrow x\in\suprel{f}
+\end{equation}
 for any filters~$x_0$, \dots, $x_{n-1}$ on $\mathbb{R}$,
 where $f'$ is a unique $n$-fun\-co\-id in the space $P^{-1}[\mathbb{R}^n]$.
 \end{thm}
 
 \begin{proof}
 \fxwarning{Prove. Probably, the easiest way to prove is through atomic funcoids.}
-Without loss of generality (because every rotation can be represented as a composition of rotations in a plane) we can consider only a rotation in the plane of the axes~$i=0$ and~$i=1$. Let it be rotated by the formulas ??
+Without loss of generality (because every rotation can be represented as a composition of rotations in a plane) we can consider only a rotation in the plane of the axes~$i=0$ and~$i=1$. Let it be rotated by the formulas
+\[ x_0' = x_0\cos\alpha - x_1\sin\alpha,\quad x_1' = x_0\sin\alpha + x_1\cos\alpha. \]
+So, let \[ x' = (x_0',x_1',x_2,\dots,x_{n-1}). \]
+If $x_0$,~$x_1$ are ultrafilters, then $x_0\cos\alpha$ and $x_1\sin\alpha$ are obviously ultrafilters. So, $x_0'$~is an ultrafilter because[TODO: Use lemma.] \[ X\intrs x_0\cos\alpha - x_1\sin\alpha \Leftrightarrow \forall I\in x_0\cos\alpha, J\in x_1\sin\alpha:X\intrs I-J?? \]
+??.
+Define $\delta'$ by the formula $x'\in\delta'\Leftrightarrow x\in\suprel{f}$. Then
+\begin{multline*}
+x'\in\delta' \Leftrightarrow \forall X\in f,i=\{0,\dots,n-1\}:x'\intrs\mathord{\uparrow}X_i\Leftrightarrow??\\
+\forall X\in f,i=\{0,\dots,n-1\}:x'\in\atoms X_i.
+\end{multline*}
+% \[ \delta' = \setcond{(\lambda i\in\{0,\dots,n-1\}:P[x_i])}{x\in\suprel{f}}. \]
+% Then??
+% \[ \delta' = \setcond{(\lambda i\in\{0,\dots,n-1\}:x_i)}{x\in\suprel{f}}. \]
+To prove the formula~\eqref{rotated-funcoid} and uniqueness of~$f'$ it is enough to prove that~$f'$ conforms to the conditions of the theorem~\ref{v-on-atoms}.
+
+Then\fxerror{$f'$ is not yet defined.}
+\begin{multline*}
+(\lambda i\in\{0,\dots,n-1\}:P[x_i])\in\suprel{f'} \Leftrightarrow\\
+x_0'\times^{\funcoids}x_1'\times^{\funcoids}x_2\times^{\funcoids}\dots\times^{\funcoids}x_{n-1} \in \suprel{f'}
+\end{multline*}
+??
 \end{proof}
 
 \fxwarning{Need the notation~$Pf$ for the rotated funcoid. This also extends to any motion~$P$ of the funcoid, because any motion is composition of shifts (obviously preserving the properties of a funcoid) and rotations (preserving by the above theorem).}
