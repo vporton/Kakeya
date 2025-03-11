@@ -88,17 +88,18 @@ Let $f_i = f_0,\dots,f_{k-1}$ be $n$-fun\-co\-ids (probably $n$~dependent on~$i$
 \end{defn}
 
 \begin{obvious}
-$a_i\in\prod^{\funcoids}f \Leftrightarrow \forall i\in\{0,\dots,n-1\}: a_i\intrs f_i$.
+$a_i\in\suprel{\prod^{\funcoids}f} \Leftrightarrow \forall i\in\{0,\dots,n-1\}: a_i\intrs f_i$.
 \end{obvious}
 
 \subsection{Vicinities}
 
-I will call the \emph{right vicinity} or \emph{one-si\-de vicinity} of a point~$a$ the filter (=~$1$-fun\-co\-id)~$\supfun{\Delta_{\geq}}\{a\}$.
+I will call the \emph{right vicinity} or \emph{one-si\-de vicinity} of a point~$a$ the filter (=~$1$-fun\-co\-id)
+\[ \supfun{\Delta_{\geq}}\{a\} = \bigsqcap_{\epsilon>0}\mathord{\uparrow}\left[0;\epsilon\right[. \]
 
 We also define vicinity amount a curve~$p$ locally continuous and locally injective at $t=0$ as the funcoid $\bigsqcap_{t>0}\mathord{\uparrow}\left[0;p(t)\right[$. A vicinity specified by a point direction is a vicinity along a straight line passing through that point (with $t=0$ at this point).
 
 \begin{prop}
-A locally continuous and locally injective mapping between locally continuous and locally injective curves maps a vicinity to a vicinity (with the corresponding point).
+A locally continuous and co-con\-ti\-nu\-o\-us and locally injective mapping between locally continuous and locally injective curves maps a vicinity to a vicinity (with the corresponding point).
 \end{prop}
 
 \begin{proof}
@@ -219,7 +220,7 @@ that I didn't check for correctness.}.
 (We also apply that spherical coordinates are diffeomorphic to Euclidean coordinates, except of a negligible set.)
 \end{proof}
 
-It follows, that if we prove that $H$ has dimension~$n+1$, then $K'$~has dimension~$n$ and our claim is proved.
+It follows, that if we prove that $H$ has dimension~$n+1$, then $L$~has dimension~$n$ and our claim is proved.
 
 Let map (name the map $b$\footnote{From \textbf{b}lack hole.}) the sphere together with its swelling to coordinates center by the formula $r\mapsto r-1$ for $r\geq 1$ in spherical coordinates (leaving $\theta'$ the same).
 This preserves the dimension because the Jacobian matrix has full rank almost everywhere (hint: The Jacobian is the identity matrix).
