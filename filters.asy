@@ -50,6 +50,6 @@ triple ortho(real t) {
 
 draw(graph(circleCurve, start, end), red, arrow=Arrow3(), L=Label("$v_a$", position=EndPoint));
 draw(graph(straight, start, end), blue, arrow=Arrow3(), L=Label("$h_a$", position=EndPoint));
-draw(graph(ortho, start, end), magenta, arrow=Arrow3(), L=Label("$s_a$", position=EndPoint));
+draw(graph(ortho, start, 1.5), magenta, arrow=Arrow3(), L=Label("$s_a$", position=EndPoint, align=W));
 
 dot(curveStart, L=Label("$p\ne a$", position=W), red);
