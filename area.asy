@@ -1,5 +1,6 @@
-import three;
+//import three;
 import graph3;
+//import solids;
 
 size(15cm, 15cm);
 
@@ -30,7 +31,23 @@ triple circlePreimage(real t) {
     return (xs, ys, zs);
 }
 
-path3 preimage = graph(circlePreimage, 0, 2pi);
-draw(preimage);
+// https://grok.com/share/bGVnYWN5_f112fa38-7e6f-4ed6-9704-86c41f9d7ae5
+surface cap = surface(
+    new triple(pair p) {
+        // u: radial parameter (0 to 1), v: angular parameter (0 to 2pi)
+        real u = p.x; real v = p.y;
+        triple boundary = circlePreimage(v);
+        real t = u; // Interpolate from center to boundary
+        real x = (1-t) * center.x + t * boundary.x;
+        real y = (1-t) * center.y + t * boundary.y;
+        real z = (1-t) * center.z + t * boundary.z;
+        // Project back to sphere
+        real mag = sqrt(x^2 + y^2 + z^2);
+        return mag == 0 ? (0, 0, 0) :  (x/mag, y/mag, z/mag); // FIXME
+    },
+    (0, 0), (1, 2pi), 100, 100, graph3.Spline
+);
+//path3 preimage = graph(cap, 0, 2pi);
+draw(cap, opacity(0.2));
 
 //dot(center);
