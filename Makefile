@@ -12,7 +12,8 @@ kakeya.pdf:
 	asy -f pdf -render 0 $<
 
 %.ps: %.pdf
-	gs -q -dNOCACHE -dNOPAUSE -dBATCH -dSAFER -dPLATFONTS -sDEVICE=ps2write -sOutputFile=$@ $<
+#	gs -q -dNOCACHE -dNOPAUSE -dBATCH -dSAFER -dPLATFONTS -sDEVICE=ps2write -sOutputFile=$@ $<
+	pdftops $< $@
 
 %.dvi: %.tex
 	latex $<
@@ -28,3 +29,7 @@ kakeya.pdf:
 
 kakeya.pdf: gnomonic.pdf circles.pdf filters.pdf
 kakeya.dvi: gnomonic.eps circles.eps filters.eps
+
+.PHONY: clean
+clean:
+	rm -f *.aux *.bbl *.blg *.log *.out *.toc *.pdf *.dvi *.ps *.eps
