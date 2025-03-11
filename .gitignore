@@ -1,7 +1,9 @@
 *.pdf
-*,div
 *.aux
 *.log
 *.bbl
 *.blg
 *.out
+*.ps
+*.eps
+*.dvi
