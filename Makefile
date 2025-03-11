@@ -11,6 +11,9 @@ kakeya.pdf:
 %.pdf: %.asy
 	asy -f pdf -render 0 $<
 
+%.ps: %.pdf
+	gs -q -dNOCACHE -dNOPAUSE -dBATCH -dSAFER -dNOTRANSPARENCY -sDEVICE=ps2write -sOutputFile=$@ $<
+
 %.eps: %.asy
 	asy -f eps -render 0 $<
 
