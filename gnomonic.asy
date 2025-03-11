@@ -11,8 +11,10 @@ draw(-2Y--2Y, L=Label("$y$", position=EndPoint), arrow=Arrow3());
 draw(-2Z--2Z, L=Label("$z$", position=EndPoint), arrow=Arrow3());
 
 draw(shift(-1.5, -1.5, 0)*scale(3,3,3)*unitplane, surfacepen=white);
-draw(unithemisphere, surfacepen=green);
 
+path3 projectionLine = (0,0,1) -- (1.5,1.5,0);
+real[] pointOnSphere = intersect(projectionLine, unithemisphere);
 
-
-draw((0,0,1) -- (1.5,1.5,0));
+draw(projectionLine);
+draw(unithemisphere, surfacepen=green+opacity(0.2));
+dot((pointOnSphere[0], pointOnSphere[1], pointOnSphere[2]));
