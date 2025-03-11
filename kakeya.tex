@@ -41,11 +41,13 @@ A rather short proof of Kakeya conjecture in an arbitrary Euclidean spaces is pr
 
 \maketitle  
 
+In this article, I prove Kakeya conjecture in an arbitrary Euclidean spaces.
+
 The proof uses theory of funcoids~\cite{volume-1}. It looks like that funcoids can be easily excluded from the proof, making the proof elementary. In this case, the role of funcoids is to provide intuition that helped to find the proof.
 
 \textbf{Kakeya set conjecture:} \cite{kakeya-long,tao-blog-kakeya} Define a \emph{Besicovitch} set in $\mathbb{R}^n$ to be a set which contains a unit line segment in every direction. Is it true that such sets necessarily have Hausdorff dimension and Minkowski dimension equal to~$n$?
 
-We will prove only for Hausdorff dimension, because Minkowski dimension cannot be lower and having a proof for Hausdorff dimension also proves it for Minkowski one.
+We will prove only for Hausdorff dimension, because Minkowski dimension cannot be lower and having a proof for Hausdorff dimension also proves it for Minkowski one. $\dim$ operator will mean Hausdorff dimension.
 
 \section{Kakeya proof}
 
@@ -53,8 +55,8 @@ We will prove only for Hausdorff dimension, because Minkowski dimension cannot b
 
 By an $n$-fun\-co\-id (for a natural~$n$) we will understand a filter\footnote{Including the improper filter.} on the lattice~$\Gamma_n$ of finite unions of Cartesian products of $n$~sets. I will denote join and meet of funcoids in the order~$\sqsubseteq$ \emph{reverse} to set-the\-o\-re\-tic inclusion respectively as $\bigsqcup$ and $\bigsqcap$. ($n$-fun\-co\-ids form a complete lattice~\cite{volume-1}, because $\Gamma_n$~is a boolean lattice.) $\bot$~is the least element of the lattice.
 
-I will also denote \[ a\nintrs b \Leftrightarrow \exists c\ne\bot: c\sqsubseteq a\land c\sqsubseteq b, \] or equivalently, $a\sqcap b\ne\bot$.
-$a\intrs b\Leftrightarrow\lnot(a\nintrs b)$.
+I will also denote \[ a\intrs b \Leftrightarrow \exists c\ne\bot: c\sqsubseteq a\land c\sqsubseteq b, \] or equivalently, $a\sqcap b\ne\bot$.
+$a\nintrs b\Leftrightarrow\lnot(a\intrs b)$.
 
 By $\mathord{\uparrow}F$ I denote the $n$-fun\-co\-id corresponding to $n$-ary relation~$F$ by the formula
 \[ \mathord{\uparrow}F = \setcond{X\in\Gamma_n}{X\supseteq F}. \]
