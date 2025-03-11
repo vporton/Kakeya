@@ -4,10 +4,10 @@ settings.render = 0;
 
 import three;
 
-size(5cm,5cm);
+size(15cm, 15cm);
 
 pen coordinatePen = blue+dashed;
-draw(-2X--2.5X, L=Label("$x$", position=EndPoint), arrow=Arrow3(), coordinatePen);
+draw(-2X--2.5X, L=Label("$x$", position=EndPoint), arrow=Arrow3(), coordinatePen, align=N);
 draw(-2Y--2.5Y, L=Label("$y$", position=EndPoint), arrow=Arrow3(), coordinatePen);
 draw(-2Z--2Z, L=Label("$z$", position=EndPoint), arrow=Arrow3(), coordinatePen);
 
