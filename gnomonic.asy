@@ -11,7 +11,7 @@ triple pointOnSphere = point(projectionLine, t[0]);
 
 draw((0,0,0) -- pointOnPlane, red);
 draw(unithemisphere, surfacepen=green+opacity(0.4));
-draw(shift(-2.75, -2.75, 1)*scale(5.5, 5.5, 5.5)*unitplane, surfacepen=opacity(0.5));
+draw(shift(-2.75, -2.75, 1)*scale(5.5, 5.5, 5.5)*unitplane, surfacepen=opacity(0.2));
 
 pen coordinatePen = blue+dashed;
 draw(-2X--2.5X, L=Label("$x$", position=EndPoint), arrow=Arrow3(), coordinatePen, align=N);
