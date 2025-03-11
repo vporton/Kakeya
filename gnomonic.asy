@@ -8,7 +8,7 @@ draw(-2Y--2.5Y, L=Label("$y$", position=EndPoint), arrow=Arrow3(), coordinatePen
 draw(-1.5Z--1.5Z, L=Label("$z$", position=EndPoint), arrow=Arrow3(), coordinatePen, align=E);
 
 triple center = (0,0,0);
-triple pointOnPlane = (0.85, 1.5, -1);
+triple pointOnPlane = (0.5, 2.5, 1);
 
 //triple line(real t) {
 //    return center + t * (pointOnPlane - A);
@@ -18,10 +18,11 @@ path3 projectionLine = center - pointOnPlane -- pointOnPlane;
 real[] t = intersect(projectionLine, unithemisphere);
 triple pointOnSphere = point(projectionLine, t[0]);
 
-draw(shift(-3, -3, -1)*scale(6,6,6)*unitplane, surfacepen=white+opacity(0.5));
-draw(pointOnSphere -- pointOnPlane, red);
+draw(shift(-3, -3, 1)*scale(6,6,6)*unitplane, surfacepen=white+opacity(0.5));
+draw((0,0,0) -- pointOnPlane, red);
 draw(unithemisphere, surfacepen=green+opacity(0.4));
 dot(pointOnSphere, L=Label("$p$"));
 dot(pointOnPlane, L=Label("$q$"));
 dot(center);
-dot((0, 0, -1), L=Label("$s$"));
+dot((0, 0, 1), L=Label("$s$", align=NW));
+draw((0, 0, 1) -- pointOnPlane, dashed);
