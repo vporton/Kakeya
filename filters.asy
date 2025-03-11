@@ -58,3 +58,4 @@ draw(graph(ortho, 0, 1), magenta+dashed, L=Label("$s_a$", position=EndPoint, ali
 
 dot(a, L=Label("$a$", position=W), red);
 dot(curveStart, L=Label("$p$", position=W), red);
+dot((0, 0, 1));

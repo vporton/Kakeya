@@ -41,3 +41,4 @@ draw(preimage);
 label("$K'$", kPreimage((0, 0)));
 
 dot(center);
+dot((0, 0, 1));
