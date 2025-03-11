@@ -17,4 +17,4 @@ kakeya.pdf:
 %.eps: %.asy
 	asy -f eps -render 0 $<
 
-kakeya.pdf: gnomonic.pdf
+kakeya.pdf: gnomonic.pdf circles.pdf filters.pdf
