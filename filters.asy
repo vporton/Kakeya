@@ -16,8 +16,8 @@ triple pointOnPlane = (0.5, 2.5, 1);
 draw(unithemisphere, surfacepen=green+opacity(0.4));
 dot(center);
 
-pair directionStart = (-1, -1.5);
-pair directionEnd = (1, 1.5);
+pair directionStart = (-2, -2);
+pair directionEnd = (0, 1.5);
 triple directionStart3 = (directionStart.x, directionStart.y, 1);
 triple directionEnd3 = (directionEnd.x, directionEnd.y, 1);
 //path3 direction = directionStart -- directionEnd;
@@ -30,9 +30,9 @@ triple S2 = (directionEnd.x, directionEnd.y, 1)/r1;
 triple u2 = S2 - dot(S1, S2)*S1;
 triple V2d = u2/sqrt(dot(u2, u2));
 
-triple lineCurve(real t) {
-    return directionStart3 + (directionEnd3 - directionStart3) * t;
-}
+//triple lineCurve(real t) {
+//    return directionStart3 + (directionEnd3 - directionStart3) * t;
+//}
 
 triple circleCurve(real t) {
     return cos(t)*S1 + sin(t)*V2d;
@@ -40,15 +40,21 @@ triple circleCurve(real t) {
 
 path3 circle = graph(circleCurve, 0, 2pi);
 draw(circle);
-path3 line = graph(lineCurve, -0.5, 1.25);
-draw(line);
 
 real start = 0;
 real end = 1;
+triple curveStart = circleCurve(start);
 
 triple straight(real t) {
     return circleCurve(start) - t*sin(start)*S1 + t*cos(start)*V2d;
 }
 
-draw(graph(circleCurve, start, end), red, arrow=Arrow3());
-draw(graph(straight, start, end), blue, arrow=Arrow3());
+triple ortho(real t) {
+    return curveStart + t*curveStart;
+}
+
+draw(graph(circleCurve, start, end), red, arrow=Arrow3(), L=Label("$v_a$", position=EndPoint));
+draw(graph(straight, start, end), blue, arrow=Arrow3(), L=Label("$h_a$", position=EndPoint));
+draw(graph(ortho, start, end), magenta, arrow=Arrow3(), L=Label("$s_a$", position=EndPoint));
+
+dot(curveStart, L=Label("$p\ne a$", position=W), red);

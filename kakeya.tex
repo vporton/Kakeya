@@ -179,10 +179,17 @@ Dimensionality of a funcoid is defined as least dimensionality of a set above it
 Instead of proving the Kakeya conjecture, I will prove a stronger statement:
 
 \begin{claim}
-(Funcoidal) join~$L$ of one-si\-de vicinities $v_a$ (laying on great circles) of each point on $S^n_{>}$ hemisphere has dimension~$n$, provided that the set~$K_1$ of directions (measured as their ``projection'' to unit sphere) is $n$-di\-men\-sio\-nal.
+(Funcoidal) join~$L$ of one-si\-de vicinities $v_a$ (laying on great circles) of each point on $S^n_{>}$ hemisphere has dimension~$n$, provided that the set~$K'$ of directions (measured as their ``projection'' to unit sphere) is $n$-di\-men\-sio\-nal.
 \end{claim}
 
-Replace each ``curved'' vicinity $v_a$ by a straight one~$h_a$ (going outside the hypersphere in~$\mathbb{R}^{n+1}$) in the tangential ray determined by~$v_a$. Let $s_a$ be an ``outward'' radial (orthogonal to the hypersphere at point~$a$) one-si\-de vicinity. Then take funcoidal join $H=\bigsqcup_{a\in K_1}(h_a\sqcup s_a)$. Informally, $H$ is a ``swelling'' or ``hairs'' on the hypersphere in $\mathbb{R}^{n+1}$ into both tangential and orthogonal directions.
+(See figure~\ref{fig:filters}) replace each ``curved'' vicinity $v_a$ by a straight one~$h_a$ (going outside the hypersphere in~$\mathbb{R}^{n+1}$) in the tangential ray determined by~$v_a$. Let $s_a$ be an ``outward'' radial (orthogonal to the hypersphere at point~$a$) one-si\-de vicinity. Then take funcoidal join $H=\bigsqcup_{a\in K'}(h_a\sqcup s_a)$. Informally, $H$ is a ``swelling'' or ``hairs'' on the hypersphere in $\mathbb{R}^{n+1}$ into both tangential and orthogonal directions.
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=\textwidth]{filters}
+    \caption{The vicinities}
+    \label{fig:filters}
+\end{figure}
 
 The straight vicinities $h_a$, projected to the sphere by the radial projection, become exactly original curved vicinities $v_a$ (because they lay on great circles): $\Lambda h_a=v_a$, where $\Lambda$ is the radial projection to the hypersphere.
 
@@ -191,7 +198,7 @@ Thus $L = \Phi_n H$.
 If $\Phi_n H$ has dimension~$n$, then the claim is proved.
 
 \begin{lem}
-If a set $H$ has dimension~$n+1$, then its radial (toward the center of the hypersphere) projection~$K_1$ to~$S^n$ has dimension~$n$.
+If a set $H$ has dimension~$n+1$, then its radial (toward the center of the hypersphere) projection~$K'$ to~$S^n$ has dimension~$n$.
 \end{lem}
 
 \begin{proof}
@@ -200,7 +207,7 @@ that I didn't check for correctness.}.
 (We also apply that spherical coordinates are diffeomorphic to Euclidean coordinates, except of a negligible set.)
 \end{proof}
 
-It follows, that if we prove that $H$ has dimension~$n+1$, then $K_1$~has dimension~$n$ and our claim is proved.
+It follows, that if we prove that $H$ has dimension~$n+1$, then $K'$~has dimension~$n$ and our claim is proved.
 
 Let map (name the map $b$\footnote{From \textbf{b}lack hole.}) the sphere together with its swelling to coordinates center by the formula $r\mapsto r-1$ for $r\geq 1$ in spherical coordinates (leaving $\theta'$ the same).
 This preserves the dimension because the Jacobian matrix has full rank almost everywhere (hint: The Jacobian is the identity matrix).
