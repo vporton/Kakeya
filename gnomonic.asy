@@ -18,9 +18,10 @@ path3 projectionLine = center - pointOnPlane -- pointOnPlane;
 real[] t = intersect(projectionLine, unithemisphere);
 triple pointOnSphere = point(projectionLine, t[0]);
 
-draw(shift(-2, -2, -1)*scale(4,4,4)*unitplane, surfacepen=white+opacity(0.5));
+draw(shift(-3, -3, -1)*scale(6,6,6)*unitplane, surfacepen=white+opacity(0.5));
 draw(pointOnSphere -- pointOnPlane, red);
 draw(unithemisphere, surfacepen=green+opacity(0.4));
 dot(pointOnSphere, L=Label("$p$"));
 dot(pointOnPlane, L=Label("$q$"));
 dot(center);
+dot((0, 0, -1), L=Label("$s$"));
