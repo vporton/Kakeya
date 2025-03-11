@@ -53,7 +53,8 @@ triple ortho(real t) {
 draw(graph(circleCurve, start, end), red, arrow=Arrow3(), L=Label("$v_a$", position=EndPoint));
 draw(graph(straight, start, end), blue, arrow=Arrow3(), L=Label("$h_a$", position=EndPoint));
 
-draw(graph(ortho, 0, 2.7), magenta, arrow=Arrow3(), L=Label("$s_a$", position=EndPoint, align=W));
+draw(graph(ortho, 1, 2.7), magenta, arrow=Arrow3(), L=Label("$s_a$", position=EndPoint, align=W));
+draw(graph(ortho, 0, 1), magenta+dashed, L=Label("$s_a$", position=EndPoint, align=W));
 
 dot(a, L=Label("$a$", position=W), red);
 dot(curveStart, L=Label("$p$", position=W), red);
