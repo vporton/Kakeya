@@ -3,17 +3,16 @@ import graph3;
 
 size(15cm, 15cm);
 
-pen coordinatePen = blue+dashed;
-draw(-2X--2.5X, L=Label("$x$", position=EndPoint), arrow=Arrow3(), coordinatePen, align=N);
-draw(-2Y--2.5Y, L=Label("$y$", position=EndPoint), arrow=Arrow3(), coordinatePen, align=N);
-draw(-1Z--1.5Z, L=Label("$z$", position=EndPoint), arrow=Arrow3(), coordinatePen, align=E);
-
-draw(shift(-2.5, -2.5, 1.25)*scale(5, 5, 5)*unitplane, surfacepen=opacity(0.5));
-
 triple center = (0,0,0);
 triple pointOnPlane = (0.5, 2.5, 1);
 
 draw(unithemisphere, surfacepen=green+opacity(0.4));
+draw(shift(-2.5, -2.5, 1.25)*scale(5, 5, 5)*unitplane, surfacepen=opacity(0.5));
+
+pen coordinatePen = blue+dashed;
+draw(-2X--2.5X, L=Label("$x$", position=EndPoint), arrow=Arrow3(), coordinatePen, align=N);
+draw(-2Y--2.5Y, L=Label("$y$", position=EndPoint), arrow=Arrow3(), coordinatePen, align=N);
+draw(-1Z--1.5Z, L=Label("$z$", position=EndPoint), arrow=Arrow3(), coordinatePen, align=E);
 dot(center);
 
 pair directionStart = (-1, -1.5);
