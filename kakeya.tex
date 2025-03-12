@@ -236,11 +236,34 @@ Thus we have enough to prove that the join~$bH$ of one-si\-de vicinities~$w_d$ f
 By properties of diffeomorphisms, $\dim bH = \dim H$.
 
 \begin{lem}
-The dimension of $bH$ is $n+1$.
+The dimension of $b\bigsqcap_{a\in K'}h_a$ is $n+1$.
 \end{lem}
 
 \begin{proof}
-Let $U_i$ be a countable cover of $bH$.
+\fxerror{Not finished proof.}
+Let $\chi_a$ be the curve (starting on~$a$) that $h_a$~starts from.
+
+\[ b\bigsqcap_{a\in K'}h_a = \bigsqcap_{\epsilon>0}\bigsqcup_{t\in\left[0;\epsilon\right[}b\chi_a(t). \]
+
+Fix $\epsilon>0$ and an neighborhood $D\ni h_a$. Then the function
+\[ z(x,\epsilon) = b\bigsqcap_{\epsilon>0}\bigsqcup_{t\in\left[0;\epsilon\right[}b\chi_x(t) \]
+is?? reversely Lipshitz, because ??
+
+Therefore??,
+\[
+\dim \bigsqcap_{\epsilon>0}\bigsqcup_{t\in\left[0;\epsilon\right[}b\chi_a(t) \leq
+\dim \bigsqcap_{\epsilon>0}\bigsqcup_{t\in\left[0;\epsilon\right[}b\rho_a(t) =
+\dim \bigsqcap_{d\text{ is a direction}}\bigsqcup_{t\in\left[0;\epsilon\right[}\beta_d(t) = n+1,
+\]
+where $\rho_a$ is the radial straight line starting from~$a$, $\beta_a$ is the radial straight line starting from~$0$, because there is a Lipshitz?? map from $\bigsqcup_{t\in\left[0;\epsilon\right[}b\rho_a(t)$ to $\bigsqcup_{t\in\left[0;\epsilon\right[}b\chi_a(t)$.
+
+The last formula is useless, because the dimension is anyway ${}\leq n+1$. Need to consider the opposite (non-mo\-no\-va\-lu\-ed) mapping.
+
+---
+
+??
+Let $U_i$ ($i\in\mathbb{N}$) be a countable cover of $bH$.
+??
 \end{proof}
 
 By properties of $n$-fun\-co\-ids, it's evident (because it, with possible exclusion of a finite set, is mapped by~$\Pi_n$ to a funcoidal product of full-me\-a\-su\-re one-si\-de vicinities on~$\mathbb{R}$) that $\dim bH=n+1$.
