@@ -44,18 +44,8 @@ triple straight(real t) {
     return circleCurve(start) - t*sin(start)*S1 + t*cos(start)*V2d;
 }
 
-triple a = (1/sqrt(3), 1/sqrt(3), 1/sqrt(3));
+draw(graph(circleCurve, start, end), red, arrow=Arrow3(), L=Label("$v$", position=EndPoint));
+draw(graph(straight, start, end), blue, arrow=Arrow3(), L=Label("$h_v$", position=EndPoint));
 
-triple ortho(real t) {
-    return  t*a;
-}
-
-draw(graph(circleCurve, start, end), red, arrow=Arrow3(), L=Label("$v_a$", position=EndPoint));
-draw(graph(straight, start, end), blue, arrow=Arrow3(), L=Label("$h_a$", position=EndPoint));
-
-draw(graph(ortho, 1, 2.7), magenta, arrow=Arrow3(), L=Label("$s_a$", position=EndPoint, align=W));
-draw(graph(ortho, 0, 1), magenta+dashed);
-
-dot(a, L=Label("$a$", position=W), red);
-dot(curveStart, L=Label("$p$", position=W), red);
+dot(curveStart, L=Label("$v_a$", position=W), red);
 dot((0, 0, 1));
