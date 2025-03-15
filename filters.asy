@@ -47,5 +47,5 @@ triple straight(real t) {
 draw(graph(circleCurve, start, end), red, arrow=Arrow3(), L=Label("$v$", position=EndPoint));
 draw(graph(straight, start, end), blue, arrow=Arrow3(), L=Label("$h_v$", position=EndPoint));
 
-dot(curveStart, L=Label("$v_a$", position=W), red);
+dot(curveStart, L=Label("$a_v$", position=E), red);
 dot((0, 0, 1));
