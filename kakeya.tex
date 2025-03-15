@@ -12,6 +12,7 @@
 \newcommand{\nintrs}{\asymp}
 \newcommand{\funcoids}{\mathsf{FCD}}
 \newcommand{\atoms}{\operatorname{atoms}}
+\newcommand{\norm}[1]{\lVert #1\rVert}
 \newcommand{\supfun}[1]{\left\langle#1\right\rangle}
 \newcommand{\suprel}[1]{\left[#1\right]}
 % \newcommand{\del}[1]{\textcolor{gray}{#1}}
@@ -27,7 +28,7 @@
 \newtheorem{defn}{Definition}
 \newtheorem{exer}{Exercise}
 
-\title{[WITH AN ERROR] Proof of Kakeya's conjecture}
+\title{Disproof of Kakeya's conjecture (rough draft)}
 \author{Victor Porton, ORCID 0000-0001-7064-7975}
 \email{porton.victor@gmail.com}
 \subjclass[2020]{28D99, 51M05, 54J99, 57N99, 51M15, 51M99}
@@ -149,7 +150,7 @@ Gnomonic projection (figure~\ref{fig:gnomonic}) is a projection with the project
     \label{fig:gnomonic}
 \end{figure}
 
-The formulas for projection of a point $p=(p_1,\dots,p_{n+1})$ ($\lVert p\rVert = 1$) of the hypersphere are:
+The formulas for projection of a point $p=(p_1,\dots,p_{n+1})$ ($\norm{p} = 1$) of the hypersphere are:
 
 $q=\frac{p}{s\cdot p}$, where $q$ is the projection, $s$ is the North point of the sphere. Note that $q_{n+1}=1$. We will exclude this coordinate.
 
@@ -199,9 +200,8 @@ The claims are equivalent, because we can take~$K'$ (figure~\ref{fig:area}) as t
 
 Let's draw (see figure~\ref{fig:filters}) a point~$a_v$ through which passes a great circle with vicinty~$v$ ``inside'' that a plane directions is mapped to.
 
-Replace each ``curved'' vicinity $v$ by a vicinity~$h_v$ in the projection plane in such a way that its projection in the direction opposite to $\vec{0a}$ will be $v$ (That's possible, because gnomonic projection maps circles to circles.) Then take funcoidal join $H=\bigsqcup_{a\in K'}h_v$. Informally, $H$ is a ``swelling'' or ``hairs'' on the hypersphere in $\mathbb{R}^{n+1}$ into both tangential directions.
+Replace each ``curved'' vicinity $v$ by a vicinity~$h_v$ in the tangent line of the great circle. Then take funcoidal join $H=\bigsqcup_{a\in K'}h_v$. Informally, $H$ is a ``swelling'' or ``hairs'' on the hypersphere in $\mathbb{R}^{n+1}$ into tangential directions.
 
-\fxerror{The arrow $h_a$ should be curved, too.}
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=\textwidth]{filters}
@@ -209,11 +209,11 @@ Replace each ``curved'' vicinity $v$ by a vicinity~$h_v$ in the projection plane
     \label{fig:filters}
 \end{figure}
 
-The vicinities $h_a$, projected to the sphere by the radial projection, become exactly original curved vicinities $v_a$: $\Lambda h_a=v_a$, where $\Lambda$ is the radial projection to the hypersphere.
+The vicinities $h_v$, projected to the sphere by the radial projection, become exactly original curved vicinities $v$: $\Lambda h_v=v$, where $\Lambda$ is the radial projection to the hypersphere.
 
-Thus $L = \Phi_n H$.
+Thus $L = \Lambda H$.
 
-If $\Phi_n H$ has dimension~$n$, then the claim is proved.
+If $\Lambda H$ has dimension~$n$, then the claim is proved.
 
 \begin{lem}
 If a set $H$ has dimension~$n+1$, then its radial (toward the center of the hypersphere) projection~$K'$ to~$S^n$ has dimension~$n$.
@@ -227,52 +227,40 @@ that I didn't check for correctness.}.
 
 It follows, that if we prove that $H$ has dimension~$n+1$, then $L$~has dimension~$n$ and our claim is proved.
 
-\fxnote{See the \href{https://grok.com/share/bGVnYWN5_7faaea68-8b18-4386-bc3f-7881cf5062be}{this AI musings}. It's a straight line. This allows to salvage the proof.}
+\fxnote{See the \href{https://grok.com/share/bGVnYWN5_3cb86ec3-4870-4efc-bde0-0510ab63ab02}{this AI musings}.}
 Let map (name the map $b$\footnote{From \textbf{b}lack hole.}) the sphere together with its swelling to coordinates center by the formula $r\mapsto r-1$ for $r\geq 1$ in spherical coordinates (leaving $\theta'$ the same).
 This preserves the dimension because the Jacobian matrix has full rank almost everywhere (hint: The Jacobian is the identity matrix).
 Obviously, it is a diffeomorphism of $\setcond{x}{r>1}$ to $\setcond{x}{r\ne 0}$.
 
-\begin{obvious}
-$b s_a$ is a vicinity from the center to the direction~$a$.
-\end{obvious}
+Thus we have enough to prove that the join~$bH$ of one-si\-de vicinities~$w_v$ for a full-me\-a\-su\-re choice~$d$ of directions of the same point (the center of our sphere) is~$n$. \fxerror{They are not directions, they are points~$a$ that are not necessarily full measure.}
 
-Thus we have enough to prove that the join~$bH$ of one-si\-de vicinities~$w_d$ for a full-me\-a\-su\-re choice~$d$ of directions of the same point (the center of our sphere) is~$n$. \fxerror{They are not directions, they are points~$a$ that are not necessarily full measure.}
+It's easy to show~(\cite{curve}) that
+\[ b(x(y)) = \left(\sqrt{1+t^2\norm{v^2}}-1\right)\frac{a+tv}{\sqrt{1+t^2\norm{v^2}}} \]
+where \fxwarning{Duplicate notation.}
+$x$~is the tangent line, $v$ is a vector of direction of vicinity~$v$.
 
 By properties of diffeomorphisms, $\dim bH = \dim H$.
 
 \begin{lem}
-The dimension of $b\bigsqcap_{a\in K'}h_a$ is $n+1$.
+$\dim bH<n+1$.
 \end{lem}
 
 \begin{proof}
-\fxerror{Not finished proof.}
-Let $\chi_a$ be the curve (starting on~$a$) that $h_a$~starts from.
+Let $C$~be the Cantor set.
 
-\[ b\bigsqcap_{a\in K'}h_a = \bigsqcap_{\epsilon>0}\bigsqcup_{t\in\left[0;\epsilon\right[}b\chi_a(t). \]
+Solve?? $b(x_a(\epsilon)) = \sum_{k\in\mathbb{N}}a_k 3^{-k}$, where $b(x(0)) = \sum_{k\in\mathbb{N}}\frac{a_k}{2} 2^{-k}$.
 
-Fix $\epsilon>0$ and an neighborhood $D\ni h_a$. Then the function
-\[ z(x,\epsilon) = b\bigsqcap_{\epsilon>0}\bigsqcup_{t\in\left[0;\epsilon\right[}b\chi_x(t) \]
-is?? reversely Lipshitz, because ??
+Then?? for $0<t<\epsilon$ we have $b(x_a(t))$ is a Lipshitz distortion~\cite{Cantor-distort}) of Cantor set and therefore has measure zero.
 
-Therefore??,
-\[
-\dim \bigsqcap_{\epsilon>0}\bigsqcup_{t\in\left[0;\epsilon\right[}b\chi_a(t) \leq
-\dim \bigsqcap_{\epsilon>0}\bigsqcup_{t\in\left[0;\epsilon\right[}b\rho_a(t) =
-\dim \bigsqcap_{d\text{ is a direction}}\bigsqcup_{t\in\left[0;\epsilon\right[}\beta_d(t) = n+1,
-\]
-where $\rho_a$ is the radial straight line starting from~$a$, $\beta_a$ is the radial straight line starting from~$0$, because there is a Lipshitz?? map from $\bigsqcup_{t\in\left[0;\epsilon\right[}b\rho_a(t)$ to $\bigsqcup_{t\in\left[0;\epsilon\right[}b\chi_a(t)$.
+By Fubini's theorem?? $m(b\bigsqcup_{a\in K'}h_v) = 0$ and therefore $\dim b\bigsqcup_{a\in K'}h_a<n+1$.
 
-The last formula is useless, because the dimension is anyway ${}\leq n+1$. Need to consider the opposite (non-mo\-no\-va\-lu\-ed) mapping.
-
----
-
-??
-Let $U_i$ ($i\in\mathbb{N}$) be a countable cover of $bH$.
 ??
 \end{proof}
 
-By properties of $n$-fun\-co\-ids, it's evident (because it, with possible exclusion of a finite set, is mapped by~$\Pi_n$ to a funcoidal product of full-me\-a\-su\-re one-si\-de vicinities on~$\mathbb{R}$) that $\dim bH=n+1$.
-\fxerror{Wrong.}
+% By properties of $n$-fun\-co\-ids, it's evident (because it, with possible exclusion of a finite set, is mapped by~$\Pi_n$ to a funcoidal product of full-me\-a\-su\-re one-si\-de vicinities on~$\mathbb{R}$) that $\dim bH=n+1$.
+% \fxerror{Wrong.}
+
+Therefore Kakeya conjecture is false.
 
 \section{``Political'' context}
 
