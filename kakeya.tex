@@ -28,15 +28,13 @@
 \newtheorem{defn}{Definition}
 \newtheorem{exer}{Exercise}
 
-\title{Disproof of Kakeya's conjecture (rough draft)}
+\title{Proof of Kakeya's conjecture (rough draft)}
 \author{Victor Porton, ORCID 0000-0001-7064-7975}
 \email{porton.victor@gmail.com}
 \subjclass[2020]{28D99, 51M05, 54J99, 57N99, 51M15, 51M99}
 \keywords{Kakeya conjecture, funcoids, dimensionality, diffeomorphism, geometry, general topology, long-standing open problem}
 
 \begin{document}
-
-\fxnote{It seems that it can be proved using measures from \url{https://grok.com/share/bGVnYWN5_c5cf4710-ac30-4c86-8700-358025c914ad}.}
 
 \begin{abstract}
 A rather short proof of Kakeya conjecture in arbitrary Euclidean spaces is presented. The proof uses theory of $n$-fun\-co\-ids and several space transformations/projections. The conjecture is reduced to a Ka\-ke\-ya-li\-ke theorem on a hypersphere.
@@ -234,10 +232,11 @@ Obviously, it is a diffeomorphism of $\setcond{x}{r>1}$ to $\setcond{x}{r\ne 0}$
 
 Thus we have enough to prove that the join~$bH$ of one-si\-de vicinities~$w_v$ for a full-me\-a\-su\-re choice~$d$ of directions of the same point (the center of our sphere) is~$n$. \fxerror{They are not directions, they are points~$a$ that are not necessarily full measure.}
 
-It's easy to show~(\cite{curve}) that
-\[ b(c(t)) = \left(\sqrt{1+t^2\norm{V}^2}-1\right)\frac{tV}{\sqrt{1+t^2\norm{V}^2}} \]
-where $c$~is the tangent line, $V$ is a vector of direction of vicinity~$v$.
-That is $b$~is a straight line.
+We have
+\[ b(c(t)) = c(t)-\frac{c(t)}{\norm{c(t)}} = \left(1-\frac{1}{\norm{c(t)}}\right)c(t) =
+\left(1-\frac{1}{\sqrt{a_v^2+V_v^2 t^2}}\right)(a_v+V_v t) = \]
+where $c(t)=a_v+V_v t$~is the tangent line, $V_v$ is a vector of direction of vicinity~$v$.
+That is $b$~is a straight line passing through center~$0$ of the sphere.
 
 By properties of diffeomorphisms, $\dim bH = \dim H$.
 
