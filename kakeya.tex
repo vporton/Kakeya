@@ -232,10 +232,11 @@ Obviously, it is a diffeomorphism of $\setcond{x}{r>1}$ to $\setcond{x}{r\ne 0}$
 
 Thus we have enough to prove that the join~$bH$ of one-si\-de vicinities~$w_v$ for a full-me\-a\-su\-re choice~$d$ of directions of the same point (the center of our sphere) is~$n$. \fxerror{They are not directions, they are points~$a$ that are not necessarily full measure.}
 
-We have
-\[ b(c(t)) = c(t)-\frac{c(t)}{\norm{c(t)}} = \left(1-\frac{1}{\norm{c(t)}}\right)c(t) =
-\left(1-\frac{1}{\sqrt{a_v^2+V_v^2 t^2}}\right)(a_v+V_v t) = \]
-where $c(t)=a_v+V_v t$~is the tangent line, $V_v$ is a vector of direction of vicinity~$v$.
+It's easy to show~(\cite{curve}) that
+\[ b(c_v(t)) = \left(\sqrt{1+t^2\norm{V_v}^2}-1\right)\frac{tV_v}{\sqrt{1+t^2\norm{V_v}^2}} =
+\left(1-\frac{1}{\sqrt{1+t^2\norm{V_v}^2}}\right)tV_v. \]
+where $c_v$~is the tangent line defined by $h_v$, $V_v$ is a vector of direction of vicinity~$v$.
+So, after a reparametrization $b(c_{v'}(t')) = t'V$.
 That is $b$~is a straight line passing through center~$0$ of the sphere.
 
 By properties of diffeomorphisms, $\dim bH = \dim H$.
@@ -247,9 +248,12 @@ $\dim bH<n+1$.
 \begin{proof}
 Let $C$~be the Cantor set.
 
-Solve?? $b(x_a(\epsilon)) = \sum_{k\in\mathbb{N}}a_k 3^{-k}$, where $b(x(0)) = \sum_{k\in\mathbb{N}}\frac{a_k}{2} 2^{-k}$.
+Solve?? $b(c_v(\epsilon)) = \sum_{k\in\mathbb{N}}q_k 3^{-k}$, where $\norm{a_v} = \sum_{k\in\mathbb{N}}\frac{q_k}{2} 2^{-k}$.
 
-Then?? for $0<t<\epsilon$ we have $b(x_a(t))$ is a Lipshitz distortion~\cite{Cantor-distort}) of Cantor set and therefore has measure zero.
+We have
+\[ \left(1-\frac{1}{\sqrt{1+\epsilon ^2\norm{V_v}^2}}\right)\epsilon V_v = \sum_{k\in\mathbb{N}}q_k 3^{-k} \]
+
+Then?? for $0<t<\epsilon$ we have $b(c_a(t))$ is a Lipshitz distortion~\cite{Cantor-distort}) of Cantor set and therefore has measure zero.
 
 By Fubini's theorem?? $m(b\bigsqcup_{a\in K'}h_v) = 0$ and therefore $\dim b\bigsqcup_{a\in K'}h_a<n+1$.
 
@@ -259,7 +263,7 @@ By Fubini's theorem?? $m(b\bigsqcup_{a\in K'}h_v) = 0$ and therefore $\dim b\big
 % By properties of $n$-fun\-co\-ids, it's evident (because it, with possible exclusion of a finite set, is mapped by~$\Pi_n$ to a funcoidal product of full-me\-a\-su\-re one-si\-de vicinities on~$\mathbb{R}$) that $\dim bH=n+1$.
 % \fxerror{Wrong.}
 
-Therefore Kakeya conjecture is true.
+Therefore Kakeya conjecture is false.
 
 \section{``Political'' context}
 
