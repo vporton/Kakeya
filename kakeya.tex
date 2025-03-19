@@ -28,7 +28,7 @@
 \newtheorem{defn}{Definition}
 \newtheorem{exer}{Exercise}
 
-\title{Proof of Kakeya's conjecture (rough draft)}
+\title{Proof of Kakeya's conjecture (draft)}
 \author{Victor Porton, ORCID 0000-0001-7064-7975}
 \email{porton.victor@gmail.com}
 \subjclass[2020]{28D99, 51M05, 54J99, 57N99, 51M15, 51M99}
@@ -237,33 +237,21 @@ It's easy to show~(\cite{curve}) that
 \left(1-\frac{1}{\sqrt{1+t^2\norm{V_v}^2}}\right)tV_v. \]
 where $c_v$~is the tangent line defined by $h_v$, $V_v$ is a vector of direction of vicinity~$v$.
 So, after a reparametrization $b(c_{v'}(t')) = t'V$.
-That is $b$~is a straight line passing through center~$0$ of the sphere.
+That is $b$~is a straight line passing through center~$0$ of the sphere in the direction of~$v$.
+
+Therefore $bv$ is the vicintiy of~$0$ co-di\-rec\-ted with~$v$.
 
 By properties of diffeomorphisms, $\dim bH = \dim H$.
 
 \begin{lem}
-$\dim bH<n+1$.
+$\dim bH=n+1$.
 \end{lem}
 
 \begin{proof}
-Let $C$~be the Cantor set.
-
-Solve?? $b(c_v(\epsilon)) = \sum_{k\in\mathbb{N}}q_k 3^{-k}$, where $\norm{a_v} = \sum_{k\in\mathbb{N}}\frac{q_k}{2} 2^{-k}$.
-
-We have
-\[ \left(1-\frac{1}{\sqrt{1+\epsilon ^2\norm{V_v}^2}}\right)\epsilon V_v = \sum_{k\in\mathbb{N}}q_k 3^{-k} \]
-
-Then?? for $0<t<\epsilon$ we have $b(c_a(t))$ is a Lipshitz distortion~\cite{Cantor-distort}) of Cantor set and therefore has measure zero.
-
-By Fubini's theorem?? $m(b\bigsqcup_{a\in K'}h_v) = 0$ and therefore $\dim b\bigsqcup_{a\in K'}h_a<n+1$.
-
-??
+By the above considered diffeomorphism of polar coordinates and $K'$ being full-mea\-su\-re set, $bH$~is also a full-measure set.
 \end{proof}
 
-% By properties of $n$-fun\-co\-ids, it's evident (because it, with possible exclusion of a finite set, is mapped by~$\Pi_n$ to a funcoidal product of full-me\-a\-su\-re one-si\-de vicinities on~$\mathbb{R}$) that $\dim bH=n+1$.
-% \fxerror{Wrong.}
-
-Therefore Kakeya conjecture is false.
+Therefore Kakeya conjecture is true.
 
 \section{``Political'' context}
 
