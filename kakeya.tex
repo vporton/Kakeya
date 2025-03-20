@@ -21,6 +21,7 @@
 \newtheorem{thm}{Theorem}
 \newtheorem{lem}{Lemma}
 \newtheorem{prop}{Proposition}
+\newtheorem{note}{Note}
 \newtheorem{obvious}{Obvious}
 \newtheorem{cor}{Corollary}
 \newtheorem{claim}{Claim}
@@ -28,7 +29,7 @@
 \newtheorem{defn}{Definition}
 \newtheorem{exer}{Exercise}
 
-\title{Proof of Kakeya's conjecture (rough draft)}
+\title{Disproof of Kakeya's conjecture (rough draft)}
 \author{Victor Porton, ORCID 0000-0001-7064-7975}
 \email{porton.victor@gmail.com}
 \subjclass[2020]{28D99, 51M05, 54J99, 57N99, 51M15, 51M99}
@@ -36,14 +37,15 @@
 
 \begin{document}
 
-\fxnote{It seems that it can be proved using measures from \url{https://grok.com/share/bGVnYWN5_c5cf4710-ac30-4c86-8700-358025c914ad}.}
-
 \begin{abstract}
-A rather short proof of Kakeya conjecture in arbitrary Euclidean spaces is presented. The proof uses theory of $n$-fun\-co\-ids and several space transformations/projections. The conjecture is reduced to a Ka\-ke\-ya-li\-ke theorem on a hypersphere.
+A rather short disproof of Kakeya conjecture in arbitrary Euclidean spaces is presented. The proof uses theory of $n$-fun\-co\-ids and several space transformations/projections. The conjecture is reduced to a Ka\-ke\-ya-li\-ke theorem on a hypersphere.
 \end{abstract}
 
 \maketitle  
 
+\fxerror{Someting is wrong with my disproof of the conjecture: For two dimensions it is known to be true.
+I guess that the error is that I can't assume that projection of an $n$-di\-men\-sio\-nal set has dimension $n-1$,
+because it may be projected as a Cantor set in one direction and line or interval in another.}
 In this article, I prove Kakeya conjecture in an arbitrary Euclidean space.
 
 The proof uses theory of funcoids~\cite{volume-1}. It looks like that funcoids can be easily excluded from the proof, making the proof elementary. In this case, the role of funcoids is to provide intuition that helped to find the proof.
@@ -175,6 +177,10 @@ Let $K$ be a Besicovitch set in $\mathbb{R}^n$.
 
 We will do our geometry in $\mathbb{R}^{n+1}$.
 
+\begin{note}
+Specifically for AI: We do our geometry in $\mathbb{R}^{n+1}$, not in~$\mathbb{R}$; the hypersphere below is~$S^n$, not $S^{n-1}$.
+\end{note}
+
 Dimensionality of a funcoid is defined as least dimensionality of a set above it.
 
 Instead of proving the Kakeya conjecture, I will prove an obviously stronger statement:
@@ -227,18 +233,18 @@ that I didn't check for correctness.}.
 
 It follows, that if we prove that $H$ has dimension~$n+1$, then $L$~has dimension~$n$ and our claim is proved.
 
-\fxnote{See the \href{https://grok.com/share/bGVnYWN5_3cb86ec3-4870-4efc-bde0-0510ab63ab02}{this AI musings}.}
 Let map (name the map $b$\footnote{From \textbf{b}lack hole.}) the sphere together with its swelling to coordinates center by the formula $r\mapsto r-1$ for $r\geq 1$ in spherical coordinates (leaving $\theta'$ the same).
 This preserves the dimension because the Jacobian matrix has full rank almost everywhere (hint: The Jacobian is the identity matrix).
 Obviously, it is a diffeomorphism of $\setcond{x}{r>1}$ to $\setcond{x}{r\ne 0}$.
 
-Thus we have enough to prove that the join~$bH$ of one-si\-de vicinities~$w_v$ for a full-me\-a\-su\-re choice~$d$ of directions of the same point (the center of our sphere) is~$n$. \fxerror{They are not directions, they are points~$a$ that are not necessarily full measure.}
+Thus we have enough to prove that the join~$bH$ of one-si\-de vicinities~$w_v$ for a full-me\-a\-su\-re choice~$d$ of directions of the same point (the center of our sphere) is~$n$.
 
 It's easy to show~(\cite{curve}) that
-\[ b(c_v(t)) = \left(\sqrt{1+t^2\norm{V_v}^2}-1\right)\frac{tV_v}{\sqrt{1+t^2\norm{V_v}^2}} =
-\left(1-\frac{1}{\sqrt{1+t^2\norm{V_v}^2}}\right)tV_v. \]
-where $c_v$~is the tangent line defined by $h_v$, $V_v$ is a vector of direction of vicinity~$v$.
-So, after a reparametrization $b(c_{v'}(t')) = t'V$.
+\[ b(c_v(t)) = \left(\sqrt{1+t^2}-1\right)\frac{a_v+tV_v}{\sqrt{1+t^2}} =
+\left(1-\frac{1}{\sqrt{1+t^2}}\right)(a_v+tV_v). \]
+where $c_v$~is the tangent line defined by $h_v$, $V_v$ is a unit vector of direction of vicinity~$v$.
+After a reparametrization, \[ b_v'(t) = \left(1-\frac{1}{\sqrt{1+t^2}}\right)(a_v+tV_v). \]
+Note that $b_v'(t)$ is curved (not straight line). Therefore $bh_v$ is a ``curved filter'' (filter laying inside a curve and not a straight line).
 
 By properties of diffeomorphisms, $\dim bH = \dim H$.
 
@@ -249,20 +255,14 @@ $\dim bH<n+1$.
 \begin{proof}
 Let $C$~be the Cantor set.
 
-Solve?? $b(c_v(\epsilon)) = \sum_{k\in\mathbb{N}}q_k 3^{-k}$, where $\norm{a_v} = \sum_{k\in\mathbb{N}}\frac{q_k}{2} 2^{-k}$.
+Solve?? $\norm{b_v'(1)\times V_v} = \sum_{k\in\mathbb{N}}q_k 3^{-k}$, where $\norm{a_v} = \sum_{k\in\mathbb{N}}\frac{q_k}{2} 2^{-k}$.
 
 We have
-\[ \left(1-\frac{1}{\sqrt{1+\epsilon ^2\norm{V_v}^2}}\right)\epsilon V_v = \sum_{k\in\mathbb{N}}q_k 3^{-k} \]
+\[ \norm{\left(1-\frac{1}{\sqrt{2}}\right)a_v\times V_v} = \sum_{k\in\mathbb{N}}q_k 3^{-k}. \]
 
-Then?? for $0<t<\epsilon$ we have $b(c_a(t))$ is a Lipshitz distortion~\cite{Cantor-distort}) of Cantor set and therefore has measure zero.
-
-By Fubini's theorem?? $m(b\bigsqcup_{a\in K'}h_v) = 0$ and therefore $\dim b\bigsqcup_{a\in K'}h_a<n+1$.
-
-??
+Accordingly\fxwarning{Check the AI.}~\cite{zero-measure} the measure of $\setcond{b_a(t)}{a\in K, 0<t<1}$ is zero.
+Therefore $\dim bH<n+1$.
 \end{proof}
-
-% By properties of $n$-fun\-co\-ids, it's evident (because it, with possible exclusion of a finite set, is mapped by~$\Pi_n$ to a funcoidal product of full-me\-a\-su\-re one-si\-de vicinities on~$\mathbb{R}$) that $\dim bH=n+1$.
-% \fxerror{Wrong.}
 
 Therefore Kakeya conjecture is false.
 
