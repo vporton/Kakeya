@@ -221,14 +221,24 @@ Thus $L = \Lambda H$.
 
 If $\Lambda H$ has dimension~$n$, then the claim is proved.
 
-\begin{lem}
-If a set $H$ has dimension~$n+1$, then its radial (toward the center of the hypersphere) projection~$K'$ to~$S^n$ has dimension~$n$.
-\end{lem}
+\begin{prop}
+$\dim(P\times\mathbb{R}^n) = \dim P + n$ for any set $P$.
+\end{prop}
 
 \begin{proof}
-Follows from~\cite{189275}\footnote{Or \href{https://grok.com/share/bGVnYWN5_2e0aef8b-4309-420f-815c-a09d76ae97c1}{these AI musings}
+\cite{189275}\footnote{Or \href{https://grok.com/share/bGVnYWN5_2e0aef8b-4309-420f-815c-a09d76ae97c1}{these AI musings}
 that I didn't check for correctness.}.
-(We also apply that spherical coordinates are diffeomorphic to Euclidean coordinates, except of a negligible set.)
+\end{proof}
+
+\begin{cor}
+\fxwarning{It's impossible to disprove Kakeya this way, because the reverse implication does not hold.
+So, if I proved $H$ has lesser dimension than~$n+1$, it does not disprove Kakeya conjecture.}
+If a set $H$ has dimension~$n+1$, then its radial (toward the center of the hypersphere) projection~$K'$ to~$S^n$ has dimension~$n$.
+\end{cor}
+
+\begin{proof}
+Apply to~$K'$ the reverse of the projection function. The result is $H'\supseteq H$ and therefore $\dim K'\times\mathbb{R}=\dim H'=n+1$. Therefore $\dim K'=n$.
+We also apply that spherical coordinates are diffeomorphic to Euclidean coordinates, except of a negligible set.
 \end{proof}
 
 It follows, that if we prove that $H$ has dimension~$n+1$, then $L$~has dimension~$n$ and our claim is proved.
