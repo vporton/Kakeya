@@ -53,61 +53,6 @@ We will prove only for Hausdorff dimension, because Minkowski dimension cannot b
 
 \section{Kakeya proof}
 
-\subsection{$n$-fun\-co\-ids}
-
-By an $n$-fun\-co\-id (for a natural~$n$) we will understand a filter\footnote{Including the improper filter.} on the lattice~$\Gamma_n$ of finite unions of Cartesian products of $n$~sets. I will denote join and meet of funcoids in the order~$\sqsubseteq$ \emph{reverse} to set-the\-o\-re\-tic inclusion respectively as $\bigsqcup$ and $\bigsqcap$. ($n$-fun\-co\-ids form a complete lattice~\cite{volume-1}, because $\Gamma_n$~is a boolean lattice.) $\bot$~is the least element of the lattice.
-
-I will also denote \[ a\intrs b \Leftrightarrow \exists c\ne\bot: c\sqsubseteq a\land c\sqsubseteq b, \] or equivalently, $a\sqcap b\ne\bot$.
-$a\nintrs b\Leftrightarrow\lnot(a\intrs b)$.
-
-By $\mathord{\uparrow}F$ I denote the $n$-fun\-co\-id corresponding to $n$-ary relation~$F$ by the formula
-\[ \mathord{\uparrow}F = \setcond{X\in\Gamma_n}{X\supseteq F}. \]
-
-\begin{exer}
-$\bigcap\mathord{\uparrow}F = F$.
-\end{exer}
-
-Thus, we have an injection from the set of $n$-ary relations (on some sets) to the set of $n$-fun\-co\-ids.
-This allows to idenitify $F$ with $\mathord{\uparrow}F$.
-
-For $n\leq m$ I will denote applying $m$-fun\-co\-id~$f$ to $n$-fun\-co\-id~$x$ as
-\[ \bigsqcap\setcond{\mathord{\uparrow} F[X]}{F\in f,X\in x}, \]
-where $F[X]$ is considered as a relation of $2$~arguments: $F\subseteq F_Y\times F_X$.
-
-Note that $1$-fun\-co\-ids are the same as filters on a set.
-
-\begin{defn}
-$a\in\suprel{f} \Leftrightarrow \forall X\in f, i\in\{0,\dots,n-1\}: a_i \intrs \mathord{\uparrow}X_i$ for $f$~being an $n$-fun\-co\-id and $a$~being an indexed set of filters.
-\end{defn}
-
-\subsubsection{Product of funcoids}
-
-\begin{defn}
-Let $f_i = f_0,\dots,f_{k-1}$ be $n$-fun\-co\-ids (probably $n$~dependent on~$i$). The \emph{funcoidal product} $\prod^{\funcoids}f$ is defined by the formula:
-\[
-\prod^{\funcoids}f = \bigsqcap\setcond{\mathord{\uparrow}\prod F}{i\in\{0,\dots,n-1\}, F_i\in f_i}.
-\]
-\end{defn}
-
-\begin{obvious}
-$a_i\in\suprel{\prod^{\funcoids}f} \Leftrightarrow \forall i\in\{0,\dots,n-1\}: a_i\intrs f_i$.
-\end{obvious}
-
-\subsection{Vicinities}
-
-I will call the \emph{right vicinity} or \emph{one-si\-de vicinity} of a point~$a$ the filter (=~$1$-fun\-co\-id)
-\[ \supfun{\Delta_{\geq}}\{a\} = \bigsqcap_{\epsilon>0}\mathord{\uparrow}\left[0;\epsilon\right[. \]
-
-We also define vicinity amount a curve~$p$ locally continuous and locally injective at $t=0$ as the funcoid $\bigsqcap_{t>0}\mathord{\uparrow}\left[0;p(t)\right[$. A vicinity specified by a point direction is a vicinity along a straight line passing through that point (with $t=0$ at this point).
-
-\begin{prop}
-A locally continuous and co-con\-ti\-nu\-o\-us and locally injective mapping between locally continuous and locally injective curves maps a vicinity to a vicinity (with the corresponding point).
-\end{prop}
-
-\begin{proof}
-Let $v$~be a vicinity on a curve~$f$. Let $r$ be its mapping to curve~$g$ (we suppose that the curves are locally continuous and locally injective. A short enough interval $\mathord{\uparrow}\left[0;t\right[$ is mapped to a short enough interval $\mathord{\uparrow}\left[0;r(t)\right[$, with the mapping being bijection for small enough~$t>0$. So, it maps a vicinity to a vicinity.
-\end{proof}
-
 \subsection{Spherical coordinates}
 
 I will denote $n$-dimensional spherical coordinates as~$\theta=(r, \theta_1,\dots,\theta_{n-1})$.
@@ -183,13 +128,13 @@ Dimensionality of a funcoid is defined as least dimensionality of a set above it
 Instead of proving the Kakeya conjecture, I will prove an obviously stronger statement:
 
 \begin{claim}
-(Funcoidal) join~$L$ of one-si\-de vicinities of each point of a set on~$\mathbb{R}^n$ has dimension~$n$, provided that the set~$K$ of directions of the vicinities is $n$-di\-men\-sio\-nal.
+Union~$L$ of one-si\-de intervals in~$\mathbb{R}^n$ has dimension~$n$, provided that the set~$K$ of directions of the intervals is $n$-di\-men\-sio\-nal.
 \end{claim}
 
 Using that $\mathbb{R}^n$ is diffeomorphic to~$S^n_{>}$, we can instead prove the claim for~$S^n_{>}$:
 
 \begin{claim}
-(Funcoidal) join~$L$ of one-si\-de vicinities $v_a$ (laying on great circles) of each point on $S^n_{>}$ hemisphere has dimension~$n$, provided that the set~$K'$ of directions (measured as their ``projection'' to unit sphere) is $n$-di\-men\-sio\-nal.
+Union~$L$ of one-si\-de arcs $v$ in~$S^n_{>}$ hemisphere has dimension~$n$, provided that the set~$K'$ of directions (measured as their ``projection'' to unit sphere) is $n$-di\-men\-sio\-nal.
 \end{claim}
 
 The claims are equivalent, because we can take~$K'$ (figure~\ref{fig:area}) as the result of the above considered diffeomorphism between~$\mathbb{R}^n$ and~$S^n_{>}$.
@@ -206,7 +151,7 @@ Let's draw (see figure~\ref{fig:filters}) a point~$a_v$ through which passes a g
 Let $z$ be projection to to the circle toward its center: $z(p)=\frac{p}{\norm{p}}$.
 
 \fxwarning{Need to modify pictures, because meaning of~$h_v$ has changed.}
-Replace each ``curved'' vicinity $v$ by the funcoid~$h_v=z^{-1}v$  (like a ``sector'' in a hyperplane). Then take funcoidal join $H=\bigsqcup_{a\in K'}h_v$.
+Replace each ``curved'' vicinity $v$ by the funcoid~$h_v=z^{-1}v$  (a ``sector'' in a hyperplane). Then take the union $H=\bigcup_{a\in K'}h_v$.
 
 \begin{figure}[hbt]
     \centering
