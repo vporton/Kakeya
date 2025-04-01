@@ -29,7 +29,7 @@
 \newtheorem{defn}{Definition}
 \newtheorem{exer}{Exercise}
 
-\title{An attempted proof of Kakeya's conjecture (rough draft)}
+\title{A Proof of Kakeya's Conjecture (rough draft)}
 \author{Victor Porton, ORCID 0000-0001-7064-7975}
 \email{porton.victor@gmail.com}
 \subjclass[2020]{28D99, 51M05, 54J99, 57N99, 51M15, 51M99}
@@ -206,7 +206,10 @@ The claims are equivalent, because we can take~$K'$ (figure~\ref{fig:area}) as t
 
 Let's draw (see figure~\ref{fig:filters}) a point~$a_v$ through which passes a great circle with vicinty~$v$ ``inside'' that a plane directions is mapped to.
 
-Replace each ``curved'' vicinity $v$ by a vicinity~$h_v$ in the tangent line of the great circle. Then take funcoidal join $H=\bigsqcup_{a\in K'}h_v$. Informally, $H$ is a ``swelling'' or ``hairs'' on the hypersphere in $\mathbb{R}^{n+1}$ into tangential directions.
+Let $z$ be projection to to the circle toward its center: $z(p)=\frac{p}{\norm{p}}$.
+
+\fxwarning{Need to modify pictures, because meaning of~$h_v$ has changed.}
+Replace each ``curved'' vicinity $v$ by the funcoid~$h_v=z^{-1}v$  (like a ``sector'' in a hyperplane). Then take funcoidal join $H=\bigsqcup_{a\in K'}h_v$.
 
 \begin{figure}[hbt]
     \centering
@@ -215,7 +218,7 @@ Replace each ``curved'' vicinity $v$ by a vicinity~$h_v$ in the tangent line of 
     \label{fig:filters}
 \end{figure}
 
-The vicinities $h_v$, projected to the sphere by the radial projection, become exactly original curved vicinities $v$: $\Lambda h_v=v$, where $\Lambda$ is the radial projection to the hypersphere.
+The funcoids $h_v$, projected to the sphere by the radial projection, become exactly original curved vicinities $v$: $\Lambda h_v=v$, where $\Lambda$ is the radial projection to the hypersphere.
 
 Thus $L = \Lambda H$.
 
@@ -231,8 +234,6 @@ that I didn't check for correctness.}.
 \end{proof}
 
 \begin{cor}
-\fxwarning{It's impossible to disprove Kakeya this way, because the reverse implication does not hold.
-So, if I proved $H$ has lesser dimension than~$n+1$, it does not disprove Kakeya conjecture.}
 If a set $H$ has dimension~$n+1$, then its radial (toward the center of the hypersphere) projection~$K'$ to~$S^n$ has dimension~$n$.
 \end{cor}
 
@@ -243,39 +244,8 @@ We also apply that spherical coordinates are diffeomorphic to Euclidean coordina
 
 It follows, that if we prove that $H$ has dimension~$n+1$, then $L$~has dimension~$n$ and our claim is proved.
 
-Let map (name the map $b$\footnote{From \textbf{b}lack hole.}) the sphere together with its swelling to coordinates center by the formula $r\mapsto r-1$ for $r\geq 1$ in spherical coordinates (leaving $\theta'$ the same).
-This preserves the dimension because the Jacobian matrix has full rank almost everywhere (hint: The Jacobian is the identity matrix).
-Obviously, it is a diffeomorphism of $\setcond{x}{r>1}$ to $\setcond{x}{r\ne 0}$.
-
-Thus we have enough to prove that the join~$bH$ of one-si\-de vicinities~$w_v$ for a full-me\-a\-su\-re choice~$d$ of directions of the same point (the center of our sphere) is~$n$.
-
-It's easy to show~(\cite{curve}) that
-\[ b(c_v(t)) = \left(\sqrt{1+t^2}-1\right)\frac{a_v+tV_v}{\sqrt{1+t^2}} =
-\left(1-\frac{1}{\sqrt{1+t^2}}\right)(a_v+tV_v). \]
-where $c_v$~is the tangent line defined by $h_v$, $V_v$ is a unit vector of direction of vicinity~$v$.
-After a reparametrization, \[ b_v'(t) = \left(1-\frac{1}{\sqrt{1+t^2}}\right)(a_v+tV_v). \]
-Note that $b_v'(t)$ is curved (not straight line). Therefore $bh_v$ is a ``curved filter'' (filter laying inside a curve and not a straight line).
-
-By properties of diffeomorphisms, $\dim bH = \dim H$.
-
-\begin{lem}
-$\dim bH=n+1$.
-\end{lem}
-
-\begin{proof}
-Let $C$~be the Cantor set.
-
-Solve?? $\norm{b_v'(1)\times V_v} = \sum_{k\in\mathbb{N}}q_k 3^{-k}$, where $\norm{a_v} = \sum_{k\in\mathbb{N}}\frac{q_k}{2} 2^{-k}$.
-
-We have
-\[ \norm{\left(1-\frac{1}{\sqrt{2}}\right)a_v\times V_v} = \sum_{k\in\mathbb{N}}q_k 3^{-k}. \]
-
-Accordingly\fxwarning{Check the AI.}~\cite{zero-measure} the measure of $\setcond{b_a(t)}{a\in K, 0<t<1}$ is zero.
-Therefore $\dim bH<n+1$.
-\end{proof}
-
-Therefore Kakeya conjecture is false.
-
+\fxwarning{Need more detailed proof.}
+But $H$ has dimension~$n+1$, because it is a compact set of planes passing through the center of the sphere.
 \section{``Political'' context}
 
 I discovered ordered semigroup/semicategory actions in 2019. The world didn't react obeying like a sheep to decision of Russian Orthodoxes to kick people like me from normal life such as academic carrier. That's scary: the most valuable component is a missing component. Missing ordered semigroup actions amount to like half of world economy missing~\cite{osa-important}.
