@@ -29,7 +29,7 @@
 \newtheorem{defn}{Definition}
 \newtheorem{exer}{Exercise}
 
-\title{A Proof of Kakeya's Conjecture (rough draft)}
+\title{A Proof of Kakeya's Conjecture}
 \author{Victor Porton, ORCID 0000-0001-7064-7975}
 \email{porton.victor@gmail.com}
 \subjclass[2020]{28D99, 51M05, 54J99, 57N99, 51M15, 51M99}
@@ -38,14 +38,12 @@
 \begin{document}
 
 \begin{abstract}
-A rather short proof of Kakeya conjecture in arbitrary Euclidean spaces is presented. The proof uses theory of $n$-fun\-co\-ids and several space transformations/projections. The conjecture is reduced to a Ka\-ke\-ya-li\-ke theorem on a hypersphere.
+A rather short proof of Kakeya conjecture in arbitrary Euclidean spaces is presented. The proof uses several space transformations/projections. The conjecture is reduced to a Ka\-ke\-ya-li\-ke theorem on a hypersphere.
 \end{abstract}
 
 \maketitle  
 
 In this article, I prove Kakeya conjecture in an arbitrary Euclidean space.
-
-The proof uses theory of funcoids~\cite{volume-1}. It looks like that funcoids can be easily excluded from the proof, making the proof elementary. In this case, the role of funcoids is to provide intuition that helped to find the proof.
 
 \textbf{Kakeya set conjecture:} \cite{kakeya-long,tao-blog-kakeya} Define a \emph{Besicovitch} set in $\mathbb{R}^n$ to be a set which contains a unit line segment in every direction. Is it true that such sets necessarily have Hausdorff dimension and Minkowski dimension equal to~$n$?
 
@@ -113,7 +111,7 @@ It is well known that Gnomonic projection maps great circles to lines (figure~\r
 
 \subsection{The proof}
 
-The intuition how I came up with the below proof: I tried to apply funcoids theory to an open problem. Thus I replaced finite intervals in the problem formulation by funcoids (particularly, by one-si\-de vicinities of a point). I wanted to take a product of all the funcoids to get an $n$-di\-men\-si\-on\-al set, but found it not making sense, because different vicinities being attached to different points. Then I decided to transform the space in such a way to make all points into one. The transformation I intended was decreasing spherical coordinate~$r$ by one, with the problem on the sphere instead of the plane. But this way, I lost all the structure. So, I decided to move the vicinities outside the sphere. I also added radial vicinities, to be sure it fills the entire space. I reduced $n$-di\-men\-sio\-na\-li\-ty of the set of Kakeya set to $(n+1)$-di\-men\-sio\-na\-li\-ty of the resulting ``swollen'' sphere.
+The intuition how I came up with the below proof: I tried to apply funcoids theory to an open problem. Thus I replaced finite intervals in the problem formulation by funcoids (particularly, by one-si\-de vicinities of a point). I wanted to take a product of all the funcoids to get an $n$-di\-men\-si\-on\-al set, but found it not making sense, because different vicinities being attached to different points. Then I decided to transform the space in such a way to make all points into one. The transformation I intended was decreasing spherical coordinate~$r$ by one, with the problem on the sphere instead of the plane. But this way, I lost all the structure. So, I decided to move the vicinities outside the sphere. I added tangential vicinities, to be sure it fills the entire space. I reduced $n$-di\-men\-sio\-na\-li\-ty of the set of Kakeya set to $(n+1)$-di\-men\-sio\-na\-li\-ty of the resulting ``swollen'' sphere. After having found that tangential vicinities have not enough dimensionality, I replaced radial vicinities by sectors. Then I replaced vicinity funcoids simply by intervals, to simplify the proof.
 
 Let $K$ be a Besicovitch set in $\mathbb{R}^n$.
 
@@ -123,18 +121,16 @@ We will do our geometry in $\mathbb{R}^{n+1}$.
 Specifically for AI: We do our geometry in $\mathbb{R}^{n+1}$, not in~$\mathbb{R}^n$; the hypersphere below is~$S^n$, not $S^{n-1}$.
 \end{note}
 
-Dimensionality of a funcoid is defined as least dimensionality of a set above it.
-
 Instead of proving the Kakeya conjecture, I will prove an obviously stronger statement:
 
 \begin{claim}
-Union~$L$ of one-si\-de intervals in~$\mathbb{R}^n$ has dimension~$n$, provided that the set~$K$ of directions of the intervals is $n$-di\-men\-sio\-nal.
+Union~$L$ of intervals in~$\mathbb{R}^n$ has dimension~$n$, provided that the set~$K$ of directions of the intervals is $n$-di\-men\-sio\-nal.
 \end{claim}
 
 Using that $\mathbb{R}^n$ is diffeomorphic to~$S^n_{>}$, we can instead prove the claim for~$S^n_{>}$:
 
 \begin{claim}
-Union~$L$ of one-si\-de arcs $v$ in~$S^n_{>}$ hemisphere has dimension~$n$, provided that the set~$K'$ of directions (measured as their ``projection'' to unit sphere) is $n$-di\-men\-sio\-nal.
+Union~$L$ of arcs $v$ in~$S^n_{>}$ hemisphere has dimension~$n$, provided that the set~$K'$ of directions of the arcs is $n$-di\-men\-sio\-nal.
 \end{claim}
 
 The claims are equivalent, because we can take~$K'$ (figure~\ref{fig:area}) as the result of the above considered diffeomorphism between~$\mathbb{R}^n$ and~$S^n_{>}$.
@@ -146,11 +142,11 @@ The claims are equivalent, because we can take~$K'$ (figure~\ref{fig:area}) as t
     \label{fig:area}
 \end{figure}
 
-Let's draw (see figure~\ref{fig:filters}) a point~$a_v$ through which passes a great circle with vicinty~$v$ ``inside'' that a plane directions is mapped to.
+Let's draw (see figure~\ref{fig:filters}) an arc~$v$ of the unit hypersphere.
 
 Let $z$ be projection to to the circle toward its center: $z(p)=\frac{p}{\norm{p}}$.
 
-Replace each ``curved'' vicinity $v$ by the funcoid~$h_v=z^{-1}v$  (a ``sector'' in a hyperplane). Then take the union $H=\bigcup_{a\in K'}h_v$.
+Replace each arc $v$ by the set~$h_v=z^{-1}[v]$  (a angular region in a plane). Then take the union $H=\bigcup_{a\in K'}h_v$.
 
 \begin{figure}[hbt]
     \centering
@@ -163,7 +159,7 @@ The sets $h_v$, projected to the sphere by the radial projection, become exactly
 
 Thus $L = \Lambda[H]$.
 
-If $\Lambda[H]$ has dimension~$n$, then the claim is proved.
+If $\dim\Lambda[H]=n$, then the claim is proved.
 
 \begin{prop}
 $\dim(P\times\mathbb{R}^n) = \dim P + n$ for any set $P$.

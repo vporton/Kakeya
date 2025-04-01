@@ -40,5 +40,10 @@ path3 preimage = graph(circlePreimage, 0, 2pi);
 draw(preimage);
 label("$K'$", kPreimage((0, 0)));
 
+draw((0, 0, 0) -- circleCenter3 + (radius, 0, 0), magenta+dashed);
+draw((0, 0, 0) -- circleCenter3 + (0, radius, 0), magenta+dashed);
+draw((0, 0, 0) -- circleCenter3 + (-radius, 0, 0), magenta+dashed);
+draw((0, 0, 0) -- circleCenter3 + (0, -radius, 0), magenta+dashed);
+
 dot(center);
 dot((0, 0, 1));
