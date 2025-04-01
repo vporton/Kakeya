@@ -37,9 +37,6 @@ triple circleCurveBig(real t) {
     return circleCurve(t)*1.2;
 }
 
-path3 circle = graph(circleCurve, 0, 2pi);
-draw(circle);
-
 real start = -0.25;
 real end = 0.25;
 triple curveStart = circleCurve(start);
@@ -53,5 +50,8 @@ draw(surface(sector_path2), emissive(lightblue));
 draw(graph(circleCurve, start, end), red);
 label("$v$", circleCurve(0), N, red);
 label("$h_v$", circleCurve(0)/2, black);
+
+path3 circle = graph(circleCurve, 0, 2pi);
+draw(circle);
 
 dot((0, 0, 1));
