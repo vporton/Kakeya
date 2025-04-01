@@ -33,19 +33,25 @@ triple circleCurve(real t) {
     return cos(t)*S1 + sin(t)*V2d;
 }
 
+triple circleCurveBig(real t) {
+    return circleCurve(t)*1.2;
+}
+
 path3 circle = graph(circleCurve, 0, 2pi);
 draw(circle);
 
-real start = 0;
-real end = 1;
+real start = -0.25;
+real end = 0.25;
 triple curveStart = circleCurve(start);
+path3 circleFragment = graph(circleCurveBig, start, end);
+path3 sector_path = (0, 0, 0) -- circleFragment -- cycle;
+draw(surface(sector_path), emissive(lightblue));
+path3 circleFragment2 = graph(circleCurveBig, start+pi, end+pi);
+path3 sector_path2 = (0, 0, 0) -- circleFragment2 -- cycle;
+draw(surface(sector_path2), emissive(lightblue));
 
-triple straight(real t) {
-    return circleCurve(start) - t*sin(start)*S1 + t*cos(start)*V2d;
-}
+draw(graph(circleCurve, start, end), red);
+label("$v$", circleCurve(0), N, red);
+label("$h_v$", circleCurve(0)/2, black);
 
-draw(graph(circleCurve, start, end), red, arrow=Arrow3(), L=Label("$v$", position=EndPoint));
-draw(graph(straight, start, end), blue, arrow=Arrow3(), L=Label("$h_v$", position=EndPoint));
-
-dot(curveStart, L=Label("$a_v$", position=E), red);
 dot((0, 0, 1));
