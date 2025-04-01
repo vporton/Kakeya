@@ -47,11 +47,11 @@ path3 circleFragment2 = graph(circleCurveBig, start+pi, end+pi);
 path3 sector_path2 = (0, 0, 0) -- circleFragment2 -- cycle;
 draw(surface(sector_path2), emissive(lightblue));
 
+path3 circle = graph(circleCurve, 0, 2pi);
+draw(circle);
+
 draw(graph(circleCurve, start, end), red);
 label("$v$", circleCurve(0), N, red);
 label("$h_v$", circleCurve(0)/2, black);
-
-path3 circle = graph(circleCurve, 0, 2pi);
-draw(circle);
 
 dot((0, 0, 1));
