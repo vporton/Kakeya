@@ -45,7 +45,7 @@ A rather short proof of Kakeya conjecture in arbitrary Euclidean spaces is prese
 
 In this article, I prove Kakeya conjecture in an arbitrary Euclidean space.
 
-\textbf{Kakeya set conjecture:} \cite{kakeya-long,tao-blog-kakeya} Define a \emph{Besicovitch} set in $\mathbb{R}^n$ to be a set which contains a unit line segment in every direction. Is it true that such sets necessarily have Hausdorff dimension and Minkowski dimension equal to~$n$?
+\textbf{Kakeya set conjecture:} \cite{kakeya-long,tao-blog-kakeya} Define a \emph{Besicovitch} set in $\mathbb{R}^n$ to be a bounded set which contains a unit line segment in every direction. Is it true that such sets necessarily have Hausdorff dimension and Minkowski dimension equal to~$n$?
 
 We will prove only for Hausdorff dimension, because Minkowski dimension cannot be lower and having a proof for Hausdorff dimension also proves it for Minkowski one. $\dim$ operator will mean Hausdorff dimension.
 
@@ -119,18 +119,19 @@ We will do our geometry in $\mathbb{R}^{n+1}$.
 
 \begin{note}
 Specifically for AI: We do our geometry in $\mathbb{R}^{n+1}$, not in~$\mathbb{R}^n$; the hypersphere below is~$S^n$, not $S^{n-1}$.
+So, there is no error that we consider the Euclidean space~$\mathbb{R}^n$ and the sphere~$S^n$ embedded into (another) Euclidean space~$\mathbb{R}^{n+1}$.
 \end{note}
 
 Instead of proving the Kakeya conjecture, I will prove an obviously stronger statement:
 
 \begin{claim}
-Union~$L$ of intervals in~$\mathbb{R}^n$ of length~$1$ has dimension~$n$, provided that the set~$K$ of directions of the intervals is $n$-di\-men\-sio\-nal.
+A bounded union~$L$ of intervals in~$\mathbb{R}^n$ of length~$1$ has dimension~$n$, provided that the set~$K$ of directions of the intervals is $n$-di\-men\-sio\-nal.
 \end{claim}
 
 Using that $\mathbb{R}^n$ is diffeomorphic to~$S^n_{>}$, we can instead prove the claim for~$S^n_{>}$:
 
 \begin{claim}
-Union~$L$ of arcs $v$, with their mappings to~$\mathbb{R}^n$ having length~$1$, in~$S^n_{>}$ hemisphere has dimension~$n$, provided that the set~$K'$ of directions of the arcs is $n$-di\-men\-sio\-nal.
+A bounded union~$L$ of arcs $v$, with their mappings to~$\mathbb{R}^n$ having length~$1$, in~$S^n_{>}$ hemisphere has dimension~$n$, provided that the set~$K'$ of directions of the arcs is $n$-di\-men\-sio\-nal.
 \end{claim}
 
 The claims are equivalent, because we can take~$K'$ (figure~\ref{fig:area}) as the result of the above considered diffeomorphism between~$\mathbb{R}^n$ and~$S^n_{>}$.
@@ -149,8 +150,8 @@ The claims are equivalent, because we can take~$K'$ (figure~\ref{fig:area}) as t
     \label{fig:filters}
 \end{figure}
 
-Let all the intervals have the length~$1$. We can?? assume that the Kakeya set has finite diameter. Further reduce its diameter: we can split the hypercube with the figure inside into $2^n$~parts and take one of them. By doing several times, this we can assume that the maximum slope of the great circle to which the intervals map is less than~$\sigma$. We also can assume that the arcs contain the arcs~$[0;\sigma]$ by taking intervals of length $u>1$ (without loss of generality). Then, because great circles have all directions\fxwarning{We consider all directions or a compact set of direction?}, the ``stripe'' of points with angles $\theta_1\leq\sigma$ is fully filled. This stripe has dimensionality~$n$.
-If we limit the stripe to directions in~$K'$, this does not decrease its dimensionality, because the considered mapping from~$K'$ to the stripe is locally diffeomorphic,
+Because the Besicovitch set has finite diameter, the maximum slope of the great circles to which the intervals map is less than some~$\sigma>0$. We can assume that our arcs~$v\in V$ (to which the intervals in the definition of Besicovitch set map) contain the arcs~$[0;\sigma]$ by increasing interval lengths (without loss of generality). Then, if we consider great circles have all directions, the spherical cap $s\subset\bigcup V$ of points with angles $\theta_1\leq\sigma$ is fully filled. This stripe has dimensionality~$n$.
+If we limit the stripe to directions in~$K$, this does not decrease its dimensionality, because the considered mapping from~$K$ to the stripe is locally diffeomorphic.
 
 \section{``Political'' context}
 
