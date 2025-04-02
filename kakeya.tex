@@ -111,7 +111,7 @@ It is well known that Gnomonic projection maps great circles to lines (figure~\r
 
 \subsection{The proof}
 
-The intuition how I came up with the below proof: I tried to apply funcoids theory to an open problem. Thus I replaced finite intervals in the problem formulation by funcoids (particularly, by one-si\-de vicinities of a point). I wanted to take a product of all the funcoids to get an $n$-di\-men\-si\-on\-al set, but found it not making sense, because different vicinities being attached to different points. Then I decided to transform the space in such a way to make all points into one. The transformation I intended was decreasing spherical coordinate~$r$ by one, with the problem on the sphere instead of the plane. But this way, I lost all the structure. So, I decided to move the vicinities outside the sphere. I added tangential vicinities, to be sure it fills the entire space. I reduced $n$-di\-men\-sio\-na\-li\-ty of the set of Kakeya set to $(n+1)$-di\-men\-sio\-na\-li\-ty of the resulting ``swollen'' sphere. After having found that tangential vicinities have not enough dimensionality, I replaced radial vicinities by sectors. Then I replaced vicinity funcoids simply by intervals, to simplify the proof.
+Initially, I tried to prove this conjecture as a demonstration of usage my theory of funcoids~\cite{volume-1}, but at a latter stage usage of funcoids was excluded from the proof. I can nevertheless thank funcoids for proving me with good intuition.
 
 Let $K$ be a Besicovitch set in $\mathbb{R}^n$.
 
@@ -150,7 +150,7 @@ The claims are equivalent, because we can take~$K'$ (figure~\ref{fig:area}) as t
     \label{fig:filters}
 \end{figure}
 
-Because the Besicovitch set has finite diameter, the maximum slope of the great circles to which the intervals map is less than some~$\sigma>0$. We can assume that our arcs~$v\in V$ (to which the intervals in the definition of Besicovitch set map) contain the arcs~$[0;\sigma]$ by increasing interval lengths (without loss of generality). Then, if we consider great circles have all directions, the spherical cap $s\subset\bigcup V$ of points with angles $\theta_1\leq\sigma$ is fully filled. This stripe has dimensionality~$n$.
+Because the Besicovitch set has finite diameter, the maximum slope of the great circles to which the intervals map is less than some~$\sigma>0$. We can assume that our arcs~$v\in V$ (to which the intervals in the definition of Besicovitch set map) contain the arcs~$[0;\sigma]$ by increasing interval lengths (without loss of generality). Then, if we consider great circles have all directions, the spherical cap $s\subseteq\bigcup V$ of points with angles $\theta_1\leq\sigma$ is fully filled. This stripe has dimensionality~$n$.
 If we limit the stripe to directions in~$K$, this does not decrease its dimensionality, because the considered mapping from~$K$ to the stripe is locally diffeomorphic.
 
 \section{``Political'' context}

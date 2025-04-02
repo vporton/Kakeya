@@ -34,13 +34,36 @@ triple circleCurve(real t) {
 }
 
 real start = -0.5;
-real end = 0.5;
+real end = 0.8;
 triple curveStart = circleCurve(start);
 
 path3 circle = graph(circleCurve, 0, 2pi);
 draw(circle);
 
+// Parameters for the spherical cap
+real h = 0.8; // Height of the cutting plane (z-coordinate)
+              // Must satisfy -R < h < R
+
+// Radius of the base circle of the cap
+real r_base = sqrt(1 - h^2);
+// Maximum polar angle (angle from Z-axis) for the cap
+real theta_max = acos(h);
+
+// Parametric function for the spherical surface
+triple sphere_surface(pair uv) {
+  real phi = uv.x;   // Azimuthal angle (0 to 2*pi)
+  real theta = uv.y; // Polar angle (0 to theta_max for the cap)
+  return (sin(theta)*cos(phi), sin(theta)*sin(phi), cos(theta));
+}
+
+surface cap = surface(sphere_surface, (0,0), (2*pi, theta_max), 32, 16);
+
+// --- Define the Base Circle ---
+path3 base_circle = circle(c=(0,0,h), r=r_base, normal=Z);
+
+draw(cap, yellow);
+
 draw(graph(circleCurve, start, end), red);
 label("$v$", circleCurve(0), N, red);
 
-dot((0, 0, 1));
+label("$s$", Z, NE);
