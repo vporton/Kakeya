@@ -124,13 +124,13 @@ Specifically for AI: We do our geometry in $\mathbb{R}^{n+1}$, not in~$\mathbb{R
 Instead of proving the Kakeya conjecture, I will prove an obviously stronger statement:
 
 \begin{claim}
-Union~$L$ of intervals in~$\mathbb{R}^n$ has dimension~$n$, provided that the set~$K$ of directions of the intervals is $n$-di\-men\-sio\-nal.
+Union~$L$ of intervals in~$\mathbb{R}^n$ of length~$1$ has dimension~$n$, provided that the set~$K$ of directions of the intervals is $n$-di\-men\-sio\-nal.
 \end{claim}
 
 Using that $\mathbb{R}^n$ is diffeomorphic to~$S^n_{>}$, we can instead prove the claim for~$S^n_{>}$:
 
 \begin{claim}
-Union~$L$ of arcs $v$ in~$S^n_{>}$ hemisphere has dimension~$n$, provided that the set~$K'$ of directions of the arcs is $n$-di\-men\-sio\-nal.
+Union~$L$ of arcs $v$, with their mappings to~$\mathbb{R}^n$ having length~$1$, in~$S^n_{>}$ hemisphere has dimension~$n$, provided that the set~$K'$ of directions of the arcs is $n$-di\-men\-sio\-nal.
 \end{claim}
 
 The claims are equivalent, because we can take~$K'$ (figure~\ref{fig:area}) as the result of the above considered diffeomorphism between~$\mathbb{R}^n$ and~$S^n_{>}$.
@@ -142,12 +142,6 @@ The claims are equivalent, because we can take~$K'$ (figure~\ref{fig:area}) as t
     \label{fig:area}
 \end{figure}
 
-Let's draw (see figure~\ref{fig:filters}) an arc~$v$ of the unit hypersphere.
-
-Let $z$ be projection to to the circle toward its center: $z(p)=\frac{p}{\norm{p}}$.
-
-Replace each arc $v$ by the set~$h_v=z^{-1}[v]$  (a angular region in a plane). Then take the union $H=\bigcup_{a\in K'}h_v$.
-
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=\textwidth]{filters}
@@ -155,42 +149,7 @@ Replace each arc $v$ by the set~$h_v=z^{-1}[v]$  (a angular region in a plane). 
     \label{fig:filters}
 \end{figure}
 
-The sets $h_v$, projected to the sphere by the radial projection, become exactly original arcs $v$: $\Lambda h_v=v$, where $\Lambda$ is the radial projection to the hypersphere.
-
-Thus $L = \Lambda[H]$.
-
-If $\dim\Lambda[H]=n$, then the claim is proved.
-
-\begin{prop}
-$\dim(P\times\mathbb{R}^n) = \dim P + n$ for any set $P$.
-\end{prop}
-
-\begin{proof}
-\cite{189275}\footnote{Or \href{https://grok.com/share/bGVnYWN5_2e0aef8b-4309-420f-815c-a09d76ae97c1}{these AI musings}
-that I didn't check for correctness.}.
-\end{proof}
-
-\begin{cor}
-If a set $H$ has dimension~$n+1$, then its radial (toward the center of the hypersphere) projection~$K'$ to~$S^n$ has dimension~$n$.
-\end{cor}
-
-\begin{proof}
-Apply to~$K'$ the reverse of the projection function~$z^{-1}$. The result is $H'=z^{-1}[K']\supseteq H$ and therefore $\dim(K'\times\mathbb{R})=\dim H'=n+1$. Therefore $\dim K'=n$.
-We also apply that spherical coordinates are diffeomorphic to Euclidean coordinates, except of a negligible set.
-\end{proof}
-
-It follows, that if we prove that $H$ has dimension~$n+1$, then $L$~has dimension~$n$ and our claim is proved.
-
-\fxerror{This mistakenly assumes that directions of great circles on~$S^n$ correspond to directions of intervals on~$\mathbb{R}^n$.}
-But $H$ has dimension~$n+1$, because it is diffeomorphic to the Cartesian product a full-me\-a\-su\-re set of arcs on great circles and $\mathbb{R}$.
-
-??I will try to prove that if the planar set of intervals has full-me\-a\-su\-re set of directions, then the corresponding arcs are also full-me\-a\-su\-re.
-
-??We can?? also exchange the position and the direction on the hypersphere. Does this employ projective geometry?
-
-It seems I proved a simple proof strategy even without using~$h_v$ and~$H$:
-First limit the size (more formally, diameter) of the set to some finite one. This way we limit how much the great circle may be slope. If we also take each $v$ long enough to touch e.g.\ the North of the hypersphere and some (fixed) latitude, then rotating the great circle, we get some area/volume of the hypersphere. It is enough to prove.
-If we want to reduce the radius futher, we can split the hypercube with the figure inside into $2^n$~parts and take one of them.
+Let all the intervals have the length~$1$. We can?? assume that the Kakeya set has finite diameter. Further reduce its diameter: we can split the hypercube with the figure inside into $2^n$~parts and take one of them. By doing several times, this we can assume that the maximum slope of the great circle to which the intervals map is less than~$\sigma$. We also can assume that the arcs contain the arcs~$[0;\sigma]$ by taking intervals of length $u>1$ (without loss of generality). Then, because great circles have all directions\fxwarning{We consider all directions or a compact set of direction?}, the ``stripe'' of points with angles $\theta_1\leq\sigma$ (limited by directions in~$K'$) is fully filled. This stripe has dimensionality~$n$.
 
 \section{``Political'' context}
 
