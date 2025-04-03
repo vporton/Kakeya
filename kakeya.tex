@@ -41,7 +41,7 @@
 A rather short proof of Kakeya conjecture in arbitrary Euclidean spaces is presented. The proof uses several space transformations/projections. The conjecture is reduced to a Ka\-ke\-ya-li\-ke theorem on a hypersphere.
 \end{abstract}
 
-\maketitle  
+\maketitle
 
 In this article, I prove Kakeya conjecture in an arbitrary Euclidean space.
 
@@ -171,6 +171,9 @@ that I didn't check for correctness.}.
 \end{proof}
 
 \begin{cor}
+[??It seems, it is~$n+1$, not~$n$.]
+\fxwarning{It's impossible to disprove Kakeya this way, because the reverse implication does not hold.
+So, if I proved $H$ has lesser dimension than~$n+1$, it does not disprove Kakeya conjecture.}
 If a set $H$ has dimension~$n+1$, then its radial (toward the center of the hypersphere) projection~$K'$ to~$S^n$ has dimension~$n$.
 \end{cor}
 
@@ -179,7 +182,7 @@ Apply to~$K'$ the reverse of the projection function~$z^{-1}$. The result is $H'
 We also apply that spherical coordinates are diffeomorphic to Euclidean coordinates, except of a negligible set.
 \end{proof}
 
-It follows, that if we prove that $H$ has dimension~$n+1$, then $L$~has dimension~$n$ and our claim is proved.
+It follows, that if we prove that $H$ has dimension~$n+1$, then $L$~has dimension~$n$ and our claim is proved.\fxnote{Prove $\dim H=n+1\Leftrightarrow\dim L=1$ using Fubini's theorem, instead. This, probably, makes no sense because by the same theorem I could direct vicinities orthogonally.}
 
 \fxerror{This mistakenly assumes that directions of great circles on~$S^n$ correspond to directions of intervals on~$\mathbb{R}^n$.}
 But $H$ has dimension~$n+1$, because it is diffeomorphic to the Cartesian product a full-me\-a\-su\-re set of arcs on great circles and $\mathbb{R}$.

@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-kakeya.pdf:
+counterexample.pdf:
 
 %.pdf: %.tex
 	pdflatex $<
@@ -29,6 +29,9 @@ kakeya.pdf:
 
 kakeya.pdf: gnomonic.pdf circles.pdf filters.pdf area.pdf
 kakeya.dvi: gnomonic.eps circles.eps filters.eps area.eps
+
+counterexample.pdf: cantor2.pdf
+counterexample.dvi: cantor2.eps
 
 .PHONY: clean
 clean:
