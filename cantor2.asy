@@ -25,7 +25,7 @@ void drawCantor(real x, real y, real len, int depth, string ternary) {
         real r = (ternaryToBinary(ternary));//;/(2^(length(ternary)+1));
         // draw((x, 0) -- (x0 + r * (3/2)^length(ternary), -100), red);
         real angle = r * pi;
-        pair p = (cos(angle), sin(angle)) * (x1-x0) / 2;
+        pair p = (cos(angle), sin(angle)) * (x1-x0) / (2*pi);
         draw((x, 0) -- (x, 0) - p, red);
         dot((x,0), blue);
     } else {

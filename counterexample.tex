@@ -1,0 +1,54 @@
+\documentclass[oneside,draft]{amsart}
+\usepackage{amsmath,amssymb,amsthm,stmaryrd}
+\usepackage[final]{hyperref}
+\usepackage[final]{graphicx}
+\usepackage{xcolor}
+\usepackage{fixme}
+\fxsetup{draft}
+\fxusetheme{color}
+
+\newcommand{\setcond}[2]{\left\{#1\mid#2\right\}}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}{Lemma}
+\newtheorem{prop}{Proposition}
+\newtheorem{note}{Note}
+\newtheorem{obvious}{Obvious}
+\newtheorem{cor}{Corollary}
+\newtheorem{claim}{Claim}
+\newtheorem{rem}{Remark}
+\newtheorem{defn}{Definition}
+\newtheorem{exer}{Exercise}
+
+\title{A counterexample against Kakeya's conjecture}
+\author{Victor Porton, ORCID 0000-0001-7064-7975}
+\email{porton.victor@gmail.com}
+% \subjclass[2020]{28D99, 51M05, 54J99, 57N99, 51M15, 51M99}
+\keywords{Kakeya conjecture, dimensionality, geometry, general topology, long-standing open problem}
+
+\begin{document}
+
+\begin{abstract}
+I give a counterexample against Kakeya's conjecture for~$n=2$, signifying that the classic proof was in error.
+\end{abstract}
+
+\maketitle  
+
+\section{Intro}
+
+It can be seen from the drawing~\ref{fig:example}, that Kakeya conjecture is false for~$n=2$. Below I will present a rigorous proof of this.
+
+Therefore the classic proof~\cite{kakeya2d} is wrong. Many articles need to be retracted.
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=\textwidth]{cantor2}
+    \caption{Counterexample to Kakeya for~$n=2$}
+    \label{fig:example}
+\end{figure}
+
+\bibliographystyle{amsplain}
+\bibliography{kakeya}
+
+\end{document}
