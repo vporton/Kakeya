@@ -58,17 +58,33 @@ I will point a counterexample against Kakeya's conjecture for~$n=2$.
 The counterexample:
 
 Let \[ x = \sum_{i\in\mathbb{N}} \frac{x_i}{2^i} \mapsto \sum_{i\in\mathbb{N}} \frac{2\cdot x_i}{3^i} = c(x) \] be the usual mapping from reals to the Cantor set.
-The counterexample is the union~$U=\bigcup_{x\in[0;1[}V_x$ of intervals \[ V_x = \setcond{(c(x)-t\cos(\pi x), t\sin(\pi x))}{t\in\left]0;1\right[}. \]
+The counterexample is the union~$U=\bigcup_{x\in[0;1[}I_x$ of intervals \[ I_x = \setcond{(c(x)-t\cos(\pi x), t\sin(\pi x))}{t\in\left]0;1\right[}. \]
 
 \section{The proof}
 
-First, it is easy to see that segments~$V_x$ don't intersect each other.
+First, it is easy to see that segments~$I_x$ don't intersect each other.
 
-Let vertical intervals \[ V'_x = \setcond{(c(x), t)}{t\in\left]0;1\right[}. \]
+Partition $\left[0;1\right[$ into~$2^m$ intervals $I_s=\left[\frac{k}{2^m};\frac{k+1}{2^m}\right[$, $k=0,\ldots,2^m-1$, each of length $1/2^m$, based on the first~$m$ binary digits $(s_1,\ldots,s_m)$. Define $U_s=\bigcup_{x\in I_s} I_x$, so $U=\bigcup_s U_s$.
 
-Using~\cite{189275} we easily deduce that $W=\bigcup_{x\in[0;1[}V'_x$ has dimension~$1+\alpha$ where $\alpha=\frac{\ln 2}{\ln 3}$ is the dimensionality of the Cantor set. We will prove, that $U$~and~$W$ are diffeomorphic to finish the proof. The diffeomorphism is given by the mapping \[ (c,t) \mapsto (c-t\cos(\pi x), t\sin(\pi x)). \]
+For $x\in I_x$, $c(x)=a_s+r$, where $a_s=\sum_{i=1}^m \frac{2s_i}{3^i}$ and $r=\sum_{i=m+1}^\infty \frac{2x_i}{3^i}\leq 1/3^m$, so $c(x)\in[a_s;a_s+1/3^m]$. Approximate~$U_s$ with a paralellogram~$T_s$:
+\[
+T_s = \bigcup_{c\in[a_s;a_s+1/3^m]} \setcond{(c-t\cos(\pi x_s), c+t\sin(\pi x_s)}{t\in[0;1]},
+\]
+where $x_s=k/2^m$. This paralellogram has base $1/3^m$ and height $\lvert\sin(\pi x_s)\rvert$ with area $O(1/3^m)$.
 
-It is an obvious bijection. That it is~$C^1$-smooth in both directions is also obvious.
+For $x\in I_s$, $\lvert\cos(\pi x)-\cos(\pi x_s)\rvert$ and $\lvert\sin(\pi x)-\sin(\pi x_s)\rvert$ are $O(1/2^m)$, so $U_s$ lies within a $\delta$-neigh\-bor\-hood of~$T_s$, with $\delta=O(1/2^m)$.
+
+Cover each~$T_s$ with balls of diameter $\epsilon=1/3^m$. The number of balls is $O(\mathrm{area}/\epsilon^2)$. Including the neighborhood, adjust the cover for~$U_s$, but the key is the total cost:
+
+\begin{itemize}
+\item Number of~$U_s$: $2^m$,
+\item Balls per~$U_s$: $O(3^m)$,
+\item Sum of~$(\diam)^2$: $2^m\circ O(3^m)\circ(1/3^m)^2=O((2/3)^m)$.
+\end{itemize}
+
+As $m\to\infty$, $(2/3)^m\to 0$ and $\epsilon\to 0$, so the Hausdorff measure $H^2(U)=0$.
+
+So $\dim U<2$.
 
 \section{``Political'' context}
 
