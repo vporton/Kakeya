@@ -25,7 +25,7 @@
 \title{A counterexample against Kakeya's conjecture}
 \author{Victor Porton, ORCID 0000-0001-7064-7975}
 \email{porton.victor@gmail.com}
-\subjclass[2020]{51N20, 54H99, 28A78}
+\subjclass[2020]{51N20, 54H99, 28A78, 54G20, 51M05}
 \keywords{Kakeya conjecture, dimensionality, geometry, general topology, long-standing open problem}
 
 \begin{document}
@@ -57,7 +57,7 @@ I will point a counterexample against Kakeya's conjecture for~$n=2$.
 
 The counterexample:
 
-Let \[ x = \sum_{i\in\mathbb{N}} \frac{x_i}{2^i} \mapsto \sum_{i\in\mathbb{N}} \frac{2\cdot x_i}{3^i} = c(x) \] be the usual mapping from reals to the Cantor set.
+Let \[ x = \sum_{i\in\mathbb{N}} \frac{x_i}{2^i} \mapsto \sum_{i\in\mathbb{N}} \frac{2x_i}{3^i} = c(x) \] be the usual mapping from reals to the Cantor set.
 The counterexample is the union~$U=\bigcup_{x\in[0;1[}S_x$ of intervals \[ S_x = \setcond{(c(x)-t\cos(\pi x), t\sin(\pi x))}{t\in\left]0;1\right[}. \]
 
 \section{The proof}
@@ -65,6 +65,10 @@ The counterexample is the union~$U=\bigcup_{x\in[0;1[}S_x$ of intervals \[ S_x =
 Obviously, $U$~contains intervals of all directions.
 
 First, it is easy to see that segments~$S_x$ don't intersect each other.
+
+\begin{rem}
+The further proof is based mainly on Grok 3 AI output (checked by me), that saved me time instead of writing the proof by myself.
+\end{rem}
 
 Partition $\left[0;1\right[$ into~$2^m$ intervals $I_s=\left[\frac{k}{2^m};\frac{k+1}{2^m}\right[$, $k=0,\ldots,2^m-1$, each of length $1/2^m$, based on the first~$m$ binary digits $(s_1,\ldots,s_m)$. Define $U_s=\bigcup_{x\in I_s} S_x$, so $U=\bigcup_s U_s$.
 
