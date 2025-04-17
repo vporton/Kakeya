@@ -125,15 +125,15 @@ where $x_s=k/2^m$. This parallelogram has base $1/3^m$ and height $\lvert\sin(\p
 
 For $x\in I_s$, $\lvert\cos(\pi x)-\cos(\pi x_s)\rvert$ and $\lvert\sin(\pi x)-\sin(\pi x_s)\rvert$ are (mean value theorem) $O(1/3^m)$, so $U_s$ lies within a $\delta$-neigh\-bor\-hood of~$T_s$, with $\delta\in O(1/3^m)$, because:
 \begin{multline*}
-\lvert(c(x_s)-t\cos(\pi x_s), c+t\sin(\pi x_s) - ((c(x)-t\cos(\pi x), t\sin(\pi x)))\rvert=\\
-\lvert((c(x_s)-c(x))-t(\cos(\pi x)-\cos(\pi x_s), t(\sin(\pi x_s)-\sin(\pi x)))\rvert\in O(1/3^m),
+\left\lvert\bigl(c(x_s)-t\cos(\pi x_s), c+t\sin(\pi x_s)\bigr) - \bigl(c(x)-t\cos(\pi x), t\sin(\pi x)\bigr)\right\rvert=\\
+\left\lvert\Bigl(\bigl(c(x_s)-c(x)\bigr)-t\bigl(\cos(\pi x)-\cos(\pi x_s)\bigr), t\bigl(\sin(\pi x_s)-\sin(\pi x)\bigr)\Bigr)\right\rvert\in O(1/3^m),
 \end{multline*}
 because $c(x_s)-c(x)\in O(1/3^m)$ and $\lvert\cos(\pi x)-\cos(\pi x_s)\rvert$ and $\lvert\sin(\pi x)-\sin(\pi x_s)\rvert$ are $O(1/2^m)$,
 $\lvert t\rvert\leq 1$.
 
 Further, split $T_s$ into smaller parallelograms:
 \[
-T_{sl} = \bigcup_{c\in[a_s;a_s+1/3^m]} \setcond{(c(x_s)-t\cos(\pi x_s), c(x_s)+t\sin(\pi x_s))}{t\in\left[\frac{l}{2^m};\frac{l+1}{2^m}\right[},
+T_{sl} = \bigcup_{c\in[a_s;a_s+1/3^m]} \setcond{\bigl(c(x_s)-t\cos(\pi x_s), c(x_s)+t\sin(\pi x_s)\bigr)}{t\in\left[\frac{l}{2^m};\frac{l+1}{2^m}\right[},
 \]
 where $l=0,\ldots,2^m-1$.
 
