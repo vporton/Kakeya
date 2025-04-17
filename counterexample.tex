@@ -69,58 +69,17 @@ of intervals \[ S_x = \setcond{(c(x)-t\cos(\pi x), t\sin(\pi x))}{t\in\left]0;1\
 
 \section{The proof}
 
-Following Donald Knuth, I will denote $f(n)\in\Theta (g(n))$, when asymptotically \[ \exists p_1,p_2>0: c_1 g(n) \leq f(n) \leq c_2 g(n). \]
+Let vertical intervals \[ V_x = \setcond{(c(x), t)}{t\in\left]0;1\right[}. \]
 
-Obviously, each interval~$S_x$ is of length~$1$.
+Using~\cite{189275} we easily deduce that $W=\bigcup_{x\in[0;1[}V_x$ has dimension~$1+\alpha$ where $\alpha=\frac{\ln 2}{\ln 3}$ is the dimensionality of the Cantor set. To finish our proof, will show that the dimension of~$U$ is below or equal the dimension of~$W$ by providing a Lipshitz mapping $m\colon \mathbb{R}\times\left]0;1\right[$  that sends $U$ to~$V$ (because it sends~$U_x$ to~$V_x$): \[ m(c,t) = (c(x)-t\cos(\pi x), t\sin(\pi x)) \]
+from~$U$ to~$W$.
 
-Obviously, $U$~contains intervals of all directions.
-
-Partition $\left[0;1\right[$ into~$2^m$ intervals $I_s=\left[\frac{k}{2^m};\frac{k+1}{2^m}\right[$, $k=0,\ldots,2^m-1$, each of length $1/2^m$, binary digits $s=(s_1,\ldots,s_m)$ (the first~$m$ binary digits of a number). Define $U_s=\bigcup_{x\in I_s} S_x$, so by~\eqref{maindef} we have $U=\bigcup_s U_s$.
-
-For $x\in I_x$, express $c(x)=a_s+r$, where $a_s=\sum_{i=1}^m \frac{2s_i}{3^i}$ and \[r=\sum_{i=m+1}^\infty \frac{2x_i}{3^i}.\] We have $r\leq 1/3^m$ by properties of ternary numbers.
- so $c(x)\in[a_s;a_s+1/3^m]$. Approximate~$U_s$ with a parallelogram~$T_s$:
-\[
-T_s = \bigcup_{c\in[a_s;a_s+1/3^m]} \setcond{(c(x_s)-t\cos(\pi x_s), c(x_s)+t\sin(\pi x_s)}{t\in[0;1]},
-\]
-where $x_s=k/2^m$. This parallelogram has base $1/3^m$ and height $\lvert\sin(\pi x_s)\rvert$ with area $\Theta(1/3^m)$.
-
-For $x\in I_s$, $\lvert\cos(\pi x)-\cos(\pi x_s)\rvert$ and $\lvert\sin(\pi x)-\sin(\pi x_s)\rvert$ are (mean value theorem) $\Theta(1/3^m)$, so $U_s$ lies within a $\delta$-neigh\-bor\-hood of~$T_s$, with $\delta\in\Theta(1/3^m)$, because:
-\begin{multline*}
-\lvert(c(x_s)-t\cos(\pi x_s), c+t\sin(\pi x_s) - ((c(x)-t\cos(\pi x), t\sin(\pi x)))\rvert=\\
-\lvert((c(x_s)-c(x))-t(\cos(\pi x)-\cos(\pi x_s), t(\sin(\pi x_s)-\sin(\pi x)))\rvert\in\Theta(1/3^m),
-\end{multline*}
-because $c(x_s)-c(x)\in\Theta(1/3^m)$ and $\lvert\cos(\pi x)-\cos(\pi x_s)\rvert$ and $\lvert\sin(\pi x)-\sin(\pi x_s)\rvert$ are $\Theta(1/2^m)$,
-$\lvert t\rvert\leq 1$.
-
-Further, split $T_s$ into smaller parallelograms:
-\[
-T_{sl} = \bigcup_{c\in[a_s;a_s+1/3^m]} \setcond{(c(x_s)-t\cos(\pi x_s), c(x_s)+t\sin(\pi x_s))}{t\in\left[\frac{l}{2^m};\frac{l+1}{2^m}\right[},
-\]
-where $l=0,\ldots,2^m-1$.
-
-Let fix balls of the radius $\epsilon = 1/3^m$.
-
-Cover $T_{sl}$ with balls.
-Since $T_{sl}$ lies inside a rectangle of dimensions \( 1/3^m \times 1/2^m \), we can cover it with
-\[
-\Theta(1) \cdot \Theta(3^m / 2^m) = \Theta(3^m / 2^m)
-\]
-balls.
-
-Therefore $T_s$~can be covered by $\Theta(2^m)\cdot \Theta(3^m / 2^m) = \Theta(3^m)$ and thus $U_s$ (as $\Theta(3^m)$-neigh\-bor\-hood of~$T_s$) can also be covered by balls of radius $2\epsilon$ where $\epsilon\in\Theta(3^m)$, that is by $\Theta(3^m)$~balls of radius~$\epsilon$.
-
-For \( U \), with \( 2^m \) sets \( U_s \), use:
-\[
-2^m \cdot \Theta(3^m) = \Theta(2^m \cdot 3^m)
-\]
-balls.
-
-The $d$-di\-men\-sio\-nal Hausdorff measure sum is:
-\[
-\Theta(2^m \cdot 3^m) \cdot \Theta(1/3^m)^d = \Theta(2^m\cdot 3^m\cdot 3^{-md}) = \Theta(2^m\cdot 3^{m(1-d)}).
-\]
-
-As $m\to\infty$, $(2/3)^m\to 0$ and $\epsilon\to 0$, so the Hausdorff measure $H^2(U)=0$.
+% It remains to show that the mapping is Lipschitz. But that follows from
+% \[
+%     \left\lvert\frac{\partial m}{\partial c}\right\rvert = \lvert(1-t\sin(\pi c), t\cos(\pi c)\rvert\leq\sqrt 2
+%     \text{ and }
+%     \left\lvert\frac{\partial m}{\partial t}\right\rvert = \left\lvert(\sin(\pi c), \cos(\pi c)\right\rvert)\leq\sqrt 2.
+% \]
 
 So $\dim U<2$.
 
