@@ -110,9 +110,27 @@ of intervals \[ S_x = \setcond{(c(x)-t\cos(\pi x), t\sin(\pi x))}{t\in\left]0;1\
 % \end{multline*}
 % \end{proof}
 
-Obviously, each interval~$S_x$ is of length~$1$.
+\begin{lem}
+Each interval~$S_x$ is of length~$1$.
+\end{lem}
 
+\begin{proof}
+Because $\sin^2 t+\cos^2 t = 1$.
+\end{proof}
+
+\begin{lem}
 Obviously, $U$~contains intervals of all directions.
+\end{lem}
+
+\begin{proof}
+Because $c(x)$ has all values in $\left[0;1\right[$.
+\end{proof}
+
+\begin{lem}
+$\dim U\le 2$.
+\end{lem}
+
+\begin{proof}
 
 Partition $\left[0;1\right[$ into~$2^m$ intervals $I_s=\left[\frac{k}{2^m};\frac{k+1}{2^m}\right[$, $k=0,\ldots,2^m-1$, each of length $1/2^m$, binary digits $s=(s_1,\ldots,s_m)$ (the first~$m$ binary digits of a number). Define $U_s=\bigcup_{x\in I_s} S_x$, so by~\eqref{maindef} we have $U=\bigcup_s U_s$.
 
@@ -162,6 +180,16 @@ O(2^m \cdot 3^m) \cdot O(1/3^m)^d = O(2^m\cdot 3^m\cdot 3^{-md}) = O(2^m\cdot 3^
 Obviously, $2^m\cdot 3^{m(1-d)}=2^m\cdot 3^{m(-1-\epsilon)}\to 0$ for $d=2-\epsilon$ for a small $\epsilon>0$.
 
 So the Hausdorff measure $H^{2-\epsilon}(U)=0$. Therefore \[ \dim U=\inf\setcond{d\geq 0}{H^d(U)=0}\leq 2-\epsilon. \]
+
+\end{proof}
+
+\begin{thm}
+For Besicovitch set~$U$ its Hausdorff dimensionality is less than~$2$.
+\end{thm}
+
+\begin{proof}
+Combining the lemmas. 
+\end{proof}
 
 \section{``Political'' context}
 
