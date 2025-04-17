@@ -25,7 +25,7 @@
 \title{A counterexample against Kakeya's conjecture}
 \author{Victor Porton, ORCID 0000-0001-7064-7975}
 \email{porton.victor@gmail.com}
-\subjclass[2020]{51N20, 54H99, 28A78, 54G20, 51M05}
+\subjclass[2020]{28A80, 51N20, 54H99, 28A78, 54G20, 51M05}
 \keywords{Kakeya conjecture, dimensionality, geometry, general topology, long-standing open problem}
 
 \begin{document}
@@ -38,7 +38,7 @@ I give a counterexample against Kakeya's conjecture for~$n=2$, signifying that t
 
 \section{Intro}
 
-It can be seen from the drawing~\ref{fig:example}, that Kakeya conjecture is false for~$n=2$. Below I will present a rigorous proof of this.
+It can be seen from the drawing on figure~\ref{fig:example}, that Kakeya conjecture is false for~$n=2$. Below I will present a rigorous proof of this.
 
 \begin{figure}[hbt]
     \centering
@@ -57,7 +57,7 @@ I will point a counterexample against Kakeya's conjecture for~$n=2$.
 
 I will denote Hausdorff dimension by $\dim$.
 
-The counterexample:
+\subsection{The counterexample}
 
 Let $x\mapsto u(x)=(x_0,x_1,\dots,)$ be any of (many) mappings from $x\in[0;1]$ to its binary representation, i.e. $x_i\in\{0,1\}$, $u(x)=\sum_{i=1}^\infty \frac{x_i}{2^i}$.
 
@@ -119,7 +119,7 @@ Because $\sin^2 t+\cos^2 t = 1$.
 \end{proof}
 
 \begin{lem}
-Obviously, $U$~contains intervals of all directions.
+$U$~contains intervals of all directions.
 \end{lem}
 
 \begin{proof}
@@ -127,14 +127,14 @@ Because $c(x)$ has all values in $\left[0;1\right[$.
 \end{proof}
 
 \begin{lem}
-$\dim U\le 2$.
+$\dim U<2$.
 \end{lem}
 
 \begin{proof}
 
-Partition $\left[0;1\right[$ into~$2^m$ intervals $I_s=\left[\frac{k}{2^m};\frac{k+1}{2^m}\right[$, $k=0,\ldots,2^m-1$, each of length $1/2^m$, binary digits $s=(s_1,\ldots,s_m)$ (the first~$m$ binary digits of a number). Define $U_s=\bigcup_{x\in I_s} S_x$, so by~\eqref{maindef} we have $U=\bigcup_s U_s$.
+Partition $\left[0;1\right[$ into~$2^m$ intervals $I_s=\left[\frac{k}{2^m};\frac{k+1}{2^m}\right[$, $k=0,\ldots,2^m-1$, each of length $1/2^m$. Consider binary digits $s=(s_1,\ldots,s_m)$ (the first~$m$ binary digits of a number). Define $U_s=\bigcup_{x\in I_s} S_x$, so by~\eqref{maindef} we have $U=\bigcup_s U_s$.
 
-For $x\in I_x$, express $c(x)=a_s+r$, where $a_s=\sum_{i=1}^m \frac{2s_i}{3^i}$ and \[r=\sum_{i=m+1}^\infty \frac{2x_i}{3^i}.\] We have $r\leq 1/3^m$ by properties of ternary numbers.
+For $x\in I_x$, express $c(x)=a_s+r$, where \[a_s=\sum_{i=1}^m \frac{2s_i}{3^i} \quad\text{and}\quad r=\sum_{i=m+1}^\infty \frac{2x_i}{3^i}.\] We have $r\leq 1/3^m$ by properties of ternary numbers.
 So $c(x)\in[a_s;a_s+1/3^m]$. Approximate~$U_s$ with a parallelogram~$T_s$:
 \[
 T_s = \bigcup_{c\in[a_s;a_s+1/3^m]} \setcond{(c(x_s)-t\cos(\pi x_s), c(x_s)+t\sin(\pi x_s)}{t\in[0;1]},
@@ -146,7 +146,7 @@ For $x\in I_s$, $\lvert\cos(\pi x)-\cos(\pi x_s)\rvert$ and $\lvert\sin(\pi x)-\
 \left\lvert\bigl(c(x_s)-t\cos(\pi x_s), c+t\sin(\pi x_s)\bigr) - \bigl(c(x)-t\cos(\pi x), t\sin(\pi x)\bigr)\right\rvert=\\
 \left\lvert\Bigl(\bigl(c(x_s)-c(x)\bigr)-t\bigl(\cos(\pi x)-\cos(\pi x_s)\bigr), t\bigl(\sin(\pi x_s)-\sin(\pi x)\bigr)\Bigr)\right\rvert\in O(1/3^m),
 \end{multline*}
-because $c(x_s)-c(x)\in O(1/3^m)$ and $\lvert\cos(\pi x)-\cos(\pi x_s)\rvert$ and $\lvert\sin(\pi x)-\sin(\pi x_s)\rvert$ are $O(1/2^m)$,
+because $c(x_s)-c(x)\in O(1/3^m)$ and $\lvert\cos(\pi x)-\cos(\pi x_s)\rvert$ and $\lvert\sin(\pi x)-\sin(\pi x_s)\rvert$ are $O(1/3^m)$,
 $\lvert t\rvert\leq 1$.
 
 Further, split $T_s$ into smaller parallelograms:
@@ -166,20 +166,25 @@ balls.
 
 Therefore $T_s$~can be covered by $O(2^m)\cdot O(3^m / 2^m) = O(3^m)$ and thus $U_s$ (as $O(3^m)$-neigh\-bor\-hood of~$T_s$) can also be covered by balls of radius $2\epsilon$ where $\epsilon\in O(3^m)$, that is by $O(3^m)$~balls of radius~$\epsilon$.
 
-For \( U \), with \( 2^m \) sets \( U_s \), use:
+For \( U \), because it consists of \( 2^m \) sets \( U_s \), use:
 \[
 2^m \cdot O(3^m) = O(2^m \cdot 3^m)
 \]
 balls.
 
-The $d$-di\-men\-sio\-nal Hausdorff measure sum is:
+I remind, that $d$-di\-men\-sio\-nal Hausdorff measure is defined by the formula:
+\[
+H^d_{\epsilon}(U) = \setcond{(\diam U_i)^d}{\sum_{i=1}^\infty U_i\supseteq U, \diam U_i\leq\epsilon}.
+\]
+
+The $d$-di\-men\-sio\-nal Hausdorff measure sum (the sum in the above formula) can be as small as:
 \[
 O(2^m \cdot 3^m) \cdot O(1/3^m)^d = O(2^m\cdot 3^m\cdot 3^{-md}) = O(2^m\cdot 3^{m(1-d)}).
 \]
 
 Obviously, $2^m\cdot 3^{m(1-d)}=2^m\cdot 3^{m(-1-\epsilon)}\to 0$ for $d=2-\epsilon$ for a small $\epsilon>0$.
 
-So the Hausdorff measure $H^{2-\epsilon}(U)=0$. Therefore \[ \dim U=\inf\setcond{d\geq 0}{H^d(U)=0}\leq 2-\epsilon. \]
+So the Hausdorff measure $H^d(U)=0$. Therefore \[ \dim U=\inf\setcond{d\geq 0}{H^d(U)=0}\leq 2-\epsilon. \]
 
 \end{proof}
 
