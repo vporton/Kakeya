@@ -29,7 +29,7 @@
 \newtheorem{defn}{Definition}
 \newtheorem{exer}{Exercise}
 
-\title{A Proof of Kakeya's Conjecture}
+\title{[ERRONEOUS] A Proof of Kakeya's Conjecture}
 \author{Victor Porton, ORCID 0000-0001-7064-7975}
 \email{porton.victor@gmail.com}
 \subjclass[2020]{28D99, 51M05, 54J99, 57N99, 51M15, 51M99}
@@ -50,6 +50,8 @@ In this article, I prove Kakeya conjecture in an arbitrary Euclidean space.
 We will prove only for Hausdorff dimension, because Minkowski dimension cannot be lower and having a proof for Hausdorff dimension also proves it for Minkowski one. $\dim$ operator will mean Hausdorff dimension.
 
 \section{Kakeya proof}
+
+\url{https://www.academia.edu/90158933/Equivalences_between_different_forms_of_the_Kakeya_conjecture_and_duality_of_Hausdorff_and_packing_dimensions_for_additive_complements}
 
 \subsection{Spherical coordinates}
 
@@ -142,7 +144,7 @@ The claims are equivalent, because we can take~$K'$ (figure~\ref{fig:area}) as t
     \label{fig:area}
 \end{figure}
 
-Let's draw (see figure~\ref{fig:filters}) an arc~$v$ of the unit hypersphere.
+Let's draw (see figure~\ref{fig:filters}) an arc~$v$ of the unit hypersphere. Let it passes through point~$a_v$ and has direction~$d_v$.
 
 Let $z$ be projection to to the circle toward its center: $z(p)=\frac{p}{\norm{p}}$.
 
@@ -171,27 +173,36 @@ that I didn't check for correctness.}.
 \end{proof}
 
 \begin{cor}
-[??It seems, it is~$n+1$, not~$n$.]
-\fxwarning{It's impossible to disprove Kakeya this way, because the reverse implication does not hold.
-So, if I proved $H$ has lesser dimension than~$n+1$, it does not disprove Kakeya conjecture.}
-If a set $H$ has dimension~$n+1$, then its radial (toward the center of the hypersphere) projection~$K'$ to~$S^n$ has dimension~$n$.
+Let~$H$~be a set in our space $\mathbb{R}^{n+1}$, then the dimensionality of its radial (toward the center of the hypersphere) projection~$K'$ to~$S^n$ $\dim K' \geq \dim H - 1$.
 \end{cor}
 
 \begin{proof}
-Apply to~$K'$ the reverse of the projection function~$z^{-1}$. The result is $H'=z^{-1}[K']\supseteq H$ and therefore $\dim(K'\times\mathbb{R})=\dim H'=n+1$. Therefore $\dim K'=n$.
+Apply to~$K'$ the reverse of the projection function~$z^{-1}$. The result is $H'=z^{-1}[K']\supseteq H$ and therefore $\dim(K'\times\mathbb{R})=\dim H'=n+1$. Therefore $\dim K' = \dim H' - 1 \geq \dim H - 1$.
 We also apply that spherical coordinates are diffeomorphic to Euclidean coordinates, except of a negligible set.
 \end{proof}
 
-It follows, that if we prove that $H$ has dimension~$n+1$, then $L$~has dimension~$n$ and our claim is proved.\fxnote{Prove $\dim H=n+1\Leftrightarrow\dim L=1$ using Fubini's theorem, instead. This, probably, makes no sense because by the same theorem I could direct vicinities orthogonally.}
+\begin{prop}
+$\dim H \geq \dim L$.
+\end{prop}
 
-\fxerror{This mistakenly assumes that directions of great circles on~$S^n$ correspond to directions of intervals on~$\mathbb{R}^n$.}
-But $H$ has dimension~$n+1$, because it is diffeomorphic to the Cartesian product a full-me\-a\-su\-re set of arcs on great circles and $\mathbb{R}$.
+\begin{proof}
+Because~$\Lambda$~is a Lipshitz map.
+\end{proof}
 
-??I will try to prove that if the planar set of intervals has full-me\-a\-su\-re set of directions, then the corresponding arcs are also full-me\-a\-su\-re.
+So, it remains to prove that $\dim L \geq n+1$.
+
+Consider the tangent line $c_v(t)$ corresponding to the direction~$h_v$ that is \[ c(t) = a_v + t d_v. \]
+
+Then by \url{https://grok.com/share/bGVnYWN5_3cb86ec3-4870-4efc-bde0-0510ab63ab02} \[ b_v(t) = \Lambda c_v(t) = \left(1-\frac{1}{\sqrt{1+t^2}}\right)(a_v + t d_v). \]
+
+\fxwarning{Proof not finished.}
+So, it seems, I've just reduced the problem to more complex problem.
+
+===
 
 ??We can?? also exchange the position and the direction on the hypersphere. Does this employ projective geometry?
 
-It seems I proved a simple proof strategy even without using~$h_v$ and~$H$:
+It looks like, I found a simple proof strategy even without using~$h_v$ and~$H$:
 First limit the size (more formally, diameter) of the set to some finite one. This way we limit how much the great circle may be slope. If we also take each $v$ long enough to touch e.g.\ the North of the hypersphere and some (fixed) latitude, then rotating the great circle, we get some area/volume of the hypersphere. It is enough to prove.
 If we want to reduce the radius futher, we can split the hypercube with the figure inside into $2^n$~parts and take one of them.
 

@@ -1,0 +1,77 @@
+\documentclass[oneside,draft]{amsart}
+\usepackage{amsmath,amssymb,amsthm,stmaryrd}
+\usepackage[final]{hyperref}
+\usepackage[final]{graphicx}
+\usepackage{xcolor}
+\usepackage{fixme}
+\fxsetup{draft}
+\fxusetheme{color}
+
+\newcommand{\setcond}[2]{\left\{#1\mid#2\right\}}
+\newcommand{\intrs}{\not\asymp}
+\newcommand{\nintrs}{\asymp}
+\newcommand{\funcoids}{\mathsf{FCD}}
+\newcommand{\atoms}{\operatorname{atoms}}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\supfun}[1]{\left\langle#1\right\rangle}
+\newcommand{\suprel}[1]{\left[#1\right]}
+% \newcommand{\del}[1]{\textcolor{gray}{#1}}
+\newenvironment{del}{\color{gray}}{}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}{Lemma}
+\newtheorem{prop}{Proposition}
+\newtheorem{note}{Note}
+\newtheorem{obvious}{Obvious}
+\newtheorem{cor}{Corollary}
+\newtheorem{claim}{Claim}
+\newtheorem{rem}{Remark}
+\newtheorem{defn}{Definition}
+\newtheorem{exer}{Exercise}
+
+\title{[Second Attempt] A Proof of Kakeya's Conjecture}
+\author{Victor Porton, ORCID 0000-0001-7064-7975}
+\email{porton.victor@gmail.com}
+\subjclass[2020]{28D99, 51M05, 54J99, 57N99, 51M15, 51M99}
+\keywords{Kakeya conjecture, funcoids, dimensionality, diffeomorphism, geometry, general topology, long-standing open problem}
+
+\begin{document}
+
+\begin{abstract}
+A rather short proof of Kakeya conjecture in arbitrary Euclidean spaces is presented. The proof uses several space transformations/projections. The conjecture is reduced to a Ka\-ke\-ya-li\-ke theorem on a hypersphere.
+\end{abstract}
+
+\maketitle
+
+In this article, I prove Kakeya conjecture in an arbitrary Euclidean space.
+
+\textbf{Kakeya set conjecture:} \cite{kakeya-long,tao-blog-kakeya} Define a \emph{Besicovitch} set in $\mathbb{R}^n$ to be a set which contains a unit line segment in every direction. Is it true that such sets necessarily have Hausdorff dimension and Minkowski dimension equal to~$n$?
+
+We will prove only for Hausdorff dimension, because Minkowski dimension cannot be lower and having a proof for Hausdorff dimension also proves it for Minkowski one. $\dim$ operator will mean Hausdorff dimension.
+
+\section{Kakeya proof}
+
+Is it enough to prove it for lines instead of line segments? If for lines we prove that a finite part of the set has dimension~$n$, then for unit segments it easily?? follows.
+
+So, we will solve for lines.
+
+We can assume that all ``Besicovitch lines'' intersect a certain hyperplane (I call it the ``ground plane'').
+
+Projections of lines to the ground plane form Besicovitch set of dimension~$n-1$. Assume it for induction.
+
+??What's about the set of intersections of our lines with the ground plane?
+
+On the ground plane, there is a set of dimensionality~$n-1$. Each point of that set lies on a line of our set of lines (in $n-1$, possibly not in $n$).
+
+\section{``Political'' context}
+
+I discovered ordered semigroup/semicategory actions in 2019. The world didn't react obeying like a sheep to decision of Russian Orthodoxes to kick people like me from normal life such as academic carrier. That's scary: the most valuable component is a missing component. Missing ordered semigroup actions amount to like half of world economy missing~\cite{osa-important}.
+
+I don't know how Kakeya conjecture is used in the rest of math, but I use it to build a bridge between two about halves: academic math and the second lost half, through my glorification.
+
+The advice: ``Solve some famous open problem to confirm utility of your theory.'' sounded for me like a mocking. But in the new reality, I indeed did it.
+
+\bibliographystyle{amsplain}
+\bibliography{kakeya}
+
+\end{document}
